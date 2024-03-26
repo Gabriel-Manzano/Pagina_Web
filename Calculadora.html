@@ -205,42 +205,42 @@
 
             switch (opcion) {
                 case 1:
-                    var w1 = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
-                    var v1 = parseFloat(prompt("Ingresa la velocidad (m/s): "));
-                    var k1 = k_numero_de_onda(w1, v1);
-                    mostrarResultado(`El número de onda (k) es ${k1} rad/m`);
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
+                    var v = parseFloat(prompt("Ingresa la velocidad (m/s): "));
+                    var k = k_numero_de_onda(w, v);
+                    mostrarResultado(`El número de onda (k) es ${k} rad/m`);
                     break;
                 case 2:
-                    var k12 = parseFloat(prompt("Ingresa el número de onda (rad/m): "));
-                    var v12 = parseFloat(prompt("Ingresa la velocidad (m/s): "));
-                    var w12 = w_frecuencia_angular(k12, v12);
-                    mostrarResultado(`La frecuencia angular (w) es ${w12} rad/s`);
+                    var k = parseFloat(prompt("Ingresa el número de onda (rad/m): "));
+                    var v = parseFloat(prompt("Ingresa la velocidad (m/s): "));
+                    var w = w_frecuencia_angular(k, v);
+                    mostrarResultado(`La frecuencia angular (w) es ${w} rad/s`);
                     break;
                 case 3:
-                    var w123 = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
-                    var k123 = parseFloat(prompt("Ingresa el número de onda (rad/m): "));
-                    var v123 = v_velocidad(w123, k123);
-                    mostrarResultado(`La velocidad (v) es ${v123} m/s`);
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
+                    var k = parseFloat(prompt("Ingresa el número de onda (rad/m): "));
+                    var v = v_velocidad(w, k);
+                    mostrarResultado(`La velocidad (v) es ${v} m/s`);
                     break;
                 case 4:
-                    var A1 = parseFloat(prompt("Ingresa la amplitud (m): "));
-                    var Asw1 = amplitud_onda_estacionaria(A1);
-                    mostrarResultado(`La amplitud de la onda estacionaria (Asw) es ${Asw1} m`);
+                    var A = parseFloat(prompt("Ingresa la amplitud (m): "));
+                    var Asw = amplitud_onda_estacionaria(A);
+                    mostrarResultado(`La amplitud de la onda estacionaria (Asw) es ${Asw} m`);
                     break;
                 case 5:
                     var Asw = parseFloat(prompt("Ingresa la amplitud de la onda estacionaria (m): "));
-                    var A12 = amplitud(Asw);
-                    mostrarResultado(`La amplitud (A) es ${A12} m`);
+                    var A = amplitud(Asw);
+                    mostrarResultado(`La amplitud (A) es ${A} m`);
                     break;
                 case 6:
-                    var f1 = parseFloat(prompt("Ingresa la frecuencia (Hz): "));
-                    var w1234 = frecuencia_angular(f1);
-                    mostrarResultado(`La frecuencia angular (w) es ${w1234} rad/s`);
+                    var f = parseFloat(prompt("Ingresa la frecuencia (Hz): "));
+                    var w = frecuencia_angular(f);
+                    mostrarResultado(`La frecuencia angular (w) es ${w} rad/s`);
                     break;
                 case 7:
-                    var w12345 = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
-                    var f12 = frecuencia(w12345);
-                    mostrarResultado(`La frecuencia (f) es ${f12} Hz`);
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
+                    var f = frecuencia(w);
+                    mostrarResultado(`La frecuencia (f) es ${f} Hz`);
                     break;
                 case 8:
                     console.log("¿Qué quieres calcular?");
@@ -260,19 +260,19 @@
                     }
                     break;
                 case 9:
-                    var f123 = parseFloat(prompt("Ingresa la frecuencia (Hz): "));
-                    var p1 = periodo(f123);
-                    mostrarResultado(`El periodo (T) es ${p1} s`);
+                    var f = parseFloat(prompt("Ingresa la frecuencia (Hz): "));
+                    var p = periodo(f);
+                    mostrarResultado(`El periodo (T) es ${p} s`);
                     break;
                 case 10:
-                    var λ1 = parseFloat(prompt("Ingresa la longitud de onda (m): "));
-                    var k1234 = k_numero_de_onda_λ(λ1);
-                    mostrarResultado(`El número de onda (k) es ${k1234} rad/m`);
+                    var λ = parseFloat(prompt("Ingresa la longitud de onda (m): "));
+                    var k = k_numero_de_onda_λ(λ);
+                    mostrarResultado(`El número de onda (k) es ${k} rad/m`);
                     break;
                 case 11:
-                    var t1 = parseFloat(prompt("Ingresa el tiempo (s): "));
+                    var t = parseFloat(prompt("Ingresa el tiempo (s): "));
                     var θ = parseFloat(prompt("Ingresa el la posición angular (rad)"));
-                    var vθ = velocidad_angular(t1, θ);
+                    var vθ = velocidad_angular(t, θ);
                     mostrarResultado(`La velocidad angular (vθ) es ${vθ} rad/s`);
                     break;
                 case 12:
@@ -285,127 +285,127 @@
                     mostrarResultado(`La velocidad angular (ω) es ${ω} rad/s`);
                     break;
                 case 14:
-                    var v1234 = parseFloat(prompt("Ingresa la velocidad (m/s): "));
-                    var λ12 = parseFloat(prompt("Ingresa la longitud de onda (m): "));
-                    var f1234 = frecuencia_longitud(v1234, λ12);
-                    mostrarResultado(`La frecuencia (f) es ${f1234} Hz`);
+                    var v = parseFloat(prompt("Ingresa la velocidad (m/s): "));
+                    var λ = parseFloat(prompt("Ingresa la longitud de onda (m): "));
+                    var f = frecuencia_longitud(v, λ);
+                    mostrarResultado(`La frecuencia (f) es ${f} Hz`);
                     break;
                 case 15:
-                    var x1 = parseFloat(prompt("Ingresa la posición x (m): "));
-                    var t12 = parseFloat(prompt("Ingresa el tiempo t (s): "));
-                    var A123 = parseFloat(prompt("Ingresa la amplitud máxima (m): "));
-                    var k12345 = parseFloat(prompt("Ingresa el número de onda (rad/m) : "));
-                    var w123456 = parseFloat(prompt("Ingresa la frecuencia angular (rad/s):  "));
-                    var φ1 = parseFloat(prompt("Ingresa la fase inicial (rad): "));
-                    var Axt1 = amplitud_xt(x1, t12, A123, k12345, w123456, φ1);
-                    mostrarResultado(`La amplitud de la onda en posición x y tiempo t es ${Axt1} m`);
+                    var x = parseFloat(prompt("Ingresa la posición x (m): "));
+                    var t = parseFloat(prompt("Ingresa el tiempo t (s): "));
+                    var A = parseFloat(prompt("Ingresa la amplitud máxima (m): "));
+                    var k = parseFloat(prompt("Ingresa el número de onda (rad/m) : "));
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular (rad/s):  "));
+                    var φ = parseFloat(prompt("Ingresa la fase inicial (rad): "));
+                    var Axt = amplitud_xt(x, t, A, k, w, φ);
+                    mostrarResultado(`La amplitud de la onda en posición x y tiempo t es ${Axt} m`);
                     break;
                 case 16:
                     var x = parseFloat(prompt("Ingresa la posición x (m): "));
-                    var t123 = parseFloat(prompt("Ingresa el tiempo t (s): "));
+                    var t = parseFloat(prompt("Ingresa el tiempo t (s): "));
                     var Axt = parseFloat(prompt("Ingresa la amplitud de la onda en posición x y tiempo t (m): "));
-                    var k123456 = parseFloat(prompt("Ingresa el número de onda (rad/m): "));
-                    var w1234567 = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
-                    var φ12 = parseFloat(prompt("Ingresa la fase inicial (rad): "));
-                    var A1234 = amplitud_ec_gral(x, t123, Axt, k123456, w1234567, φ12);
-                    mostrarResultado(`La amplitud (A) es ${A1234} m`);
+                    var k = parseFloat(prompt("Ingresa el número de onda (rad/m): "));
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
+                    var φ = parseFloat(prompt("Ingresa la fase inicial (rad): "));
+                    var A = amplitud_ec_gral(x, t, Axt, k, w, φ);
+                    mostrarResultado(`La amplitud (A) es ${A} m`);
                     break;
                 case 17:
-                    var A12345 = parseFloat(prompt("Ingresa la amplitud máxima (m): "));
-                    var k1234567 = parseFloat(prompt("Ingresa el número de onda (rad/m): "));
-                    var w12345678 = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
-                    var φ123 = parseFloat(prompt("Ingresa la fase inicial (rad): "));
-                    mostrarResultado(`y(x,t) = ${A12345}sin(${k1234567}x - ${w12345678}t + ${φ123})`);
+                    var A = parseFloat(prompt("Ingresa la amplitud máxima (m): "));
+                    var k = parseFloat(prompt("Ingresa el número de onda (rad/m): "));
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
+                    var φ = parseFloat(prompt("Ingresa la fase inicial (rad): "));
+                    mostrarResultado(`y(x,t) = ${A}sin(${k}x - ${w}t + ${φ})`);
                     break;
                 case 18:
-                    var A123456 = parseFloat(prompt("Ingresa la amplitud máxima (m): "));
-                    var w123456789 = parseFloat(prompt("Ingresa la frecuencia angular rad/s: "));
-                    mostrarResultado(`y(t) = ${A123456}sin(${w123456789}t)`);
+                    var A = parseFloat(prompt("Ingresa la amplitud máxima (m): "));
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular rad/s: "));
+                    mostrarResultado(`y(t) = ${A}sin(${w}t)`);
                     break;
                 case 19:
-                    var p12 = parseFloat(prompt("Ingresa la densidad de potencia (W/m2) "));
-                    var A1234567 = parseFloat(prompt("Ingresa la amplitud máxima (m): "));
-                    var v12345678901234 = parseFloat(prompt("Ingresa la velocidad de propagación (m/s) : "));
-                    var w1234567891 = parseFloat(prompt("Ingresa la frecuencia angular (rad/s):  "));
-                    var I1 = Intensidad(p12, w1234567891, A1234567, v12345);
-                    mostrarResultado(`La intensidad acústica es ${I1} W/m2`);
+                    var p = parseFloat(prompt("Ingresa la densidad de potencia (W/m2) "));
+                    var A = parseFloat(prompt("Ingresa la amplitud máxima (m): "));
+                    var v = parseFloat(prompt("Ingresa la velocidad de propagación (m/s) : "));
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular (rad/s):  "));
+                    var I = Intensidad(p, w, A, v);
+                    mostrarResultado(`La intensidad acústica es ${I} W/m2`);
                     break;
                 case 20:
-                    var d1 = parseFloat(prompt("Ingresa la distancia (m): "));
-                    var k12345678 = numero_de_onda_d(d1);
-                    mostrarResultado(`El número de onda es ${k12345678} rad/m`);
+                    var d = parseFloat(prompt("Ingresa la distancia (m): "));
+                    var k = numero_de_onda_d(d);
+                    mostrarResultado(`El número de onda es ${k} rad/m`);
                     break;
                 case 21:
-                    var Y1 = parseFloat(prompt("Ingresa el módulo de Young (Pa): "));
-                    var p123 = parseFloat(prompt("Ingresa la densidad (kg/m3): "));
-                    var v123456789012345 = velocidad_modulo(Y1, p123);
-                    mostrarResultado(`La velocidad de propagación de las ondas en el medio es ${v123456789012345} m/s`);
+                    var Y = parseFloat(prompt("Ingresa el módulo de Young (Pa): "));
+                    var p = parseFloat(prompt("Ingresa la densidad (kg/m3): "));
+                    var v = velocidad_modulo(Y, p);
+                    mostrarResultado(`La velocidad de propagación de las ondas en el medio es ${v} m/s`);
                     break;
                 case 22:
-                    var B1 = parseFloat(prompt("Ingresa la constante elástica del medio (Pa): "));
-                    var S1 = parseFloat(prompt("Ingresa la densidad superficial (kg/m2): "));
-                    var p1234 = parseFloat(prompt("Ingresa la presión (Pa): "));
-                    var v1234567 = velocidad_modulo_presion_volumen(B1, S1, p1234);
-                    mostrarResultado(`La velocidad de propagación de las ondas en el medio es ${v1234567} m/s`);
+                    var B = parseFloat(prompt("Ingresa la constante elástica del medio (Pa): "));
+                    var S = parseFloat(prompt("Ingresa la densidad superficial (kg/m2): "));
+                    var p = parseFloat(prompt("Ingresa la presión (Pa): "));
+                    var v = velocidad_modulo_presion_volumen(B, S, p);
+                    mostrarResultado(`La velocidad de propagación de las ondas en el medio es ${v} m/s`);
                     break;
                 case 23:
-                    var B12 = parseFloat(prompt("Ingresa la constante elástica del medio (Pa): "));
-                    var p12345 = parseFloat(prompt("Ingresa la presión (Pa): "));
-                    var v12345678 = velocidad_modulo_presion(B12, p12345);
-                    mostrarResultado(`La velocidad de propagación de las ondas en el medio es ${v12345678} m/s`);
+                    var B = parseFloat(prompt("Ingresa la constante elástica del medio (Pa): "));
+                    var p = parseFloat(prompt("Ingresa la presión (Pa): "));
+                    var v = velocidad_modulo_presion(B, p);
+                    mostrarResultado(`La velocidad de propagación de las ondas en el medio es ${v} m/s`);
                     break;
                 case 24:
-                    var Y12 = parseFloat(prompt("Ingresa el módulo de Young (Pa): "));
-                    var P1 = parseFloat(prompt("Ingresa la presión (Pa): "));
-                    var p123456789 = parseFloat(prompt("Ingresa la densidad (kg/m3): "));
-                    var v1234567890 = velocidad_modulo_presion_densidad(Y12, P1, p123456789);
-                    mostrarResultado(`La velocidad de propagación de las ondas en el medio es ${v1234567890} m/s`);
+                    var Y = parseFloat(prompt("Ingresa el módulo de Young (Pa): "));
+                    var P = parseFloat(prompt("Ingresa la presión (Pa): "));
+                    var p = parseFloat(prompt("Ingresa la densidad (kg/m3): "));
+                    var v = velocidad_modulo_presion_densidad(Y, P, p);
+                    mostrarResultado(`La velocidad de propagación de las ondas en el medio es ${v} m/s`);
                     break;
                 case 25:
-                    var Y123 = parseFloat(prompt("Ingresa el módulo de Young (Pa): "));
-                    var R1 = parseFloat(prompt("Ingresa la constante de los gases (J/(kg·K)): "));
-                    var t12345678 = parseFloat(prompt("Ingresa la temperatura (K): "));
-                    var m1 = parseFloat(prompt("Ingresa la masa molar del gas (kg/mol): "));
-                    var v12345678901 = velocidad_modulo_constante_gases(Y123, R1, t123456, m1);
-                    mostrarResultado(`La velocidad del sonido en el gas es ${v12345678901} m/s`);
+                    var Y = parseFloat(prompt("Ingresa el módulo de Young (Pa): "));
+                    var R = parseFloat(prompt("Ingresa la constante de los gases (J/(kg·K)): "));
+                    var t = parseFloat(prompt("Ingresa la temperatura (K): "));
+                    var m = parseFloat(prompt("Ingresa la masa molar del gas (kg/mol): "));
+                    var v = velocidad_modulo_constante_gases(Y, R, t, m);
+                    mostrarResultado(`La velocidad del sonido en el gas es ${v} m/s`);
                     break;
                 case 26:
-                    var f12345 = parseFloat(prompt("Ingresa la frecuencia (Hz): "));
-                    var λ123 = parseFloat(prompt("Ingresa la longitud de onda (m): "));
-                    var v123456789012 = velocidad_frecuencia(f12345, λ123);
-                    mostrarResultado(`La velocidad de propagación de las ondas es ${v123456789012} m/s`);
+                    var f = parseFloat(prompt("Ingresa la frecuencia (Hz): "));
+                    var λ = parseFloat(prompt("Ingresa la longitud de onda (m): "));
+                    var v = velocidad_frecuencia(f, λ);
+                    mostrarResultado(`La velocidad de propagación de las ondas es ${v} m/s`);
                     break;
                 case 27:
-                    var d12 = parseFloat(prompt("Ingresa la distancia recorrida (m): "));
-                    var t1234 = parseFloat(prompt("Ingresa el tiempo transcurrido (s): "));
-                    var v1234567890123 = velocidad_distancia(d12, t1234);
-                    mostrarResultado(`La velocidad media es ${v1234567890123} m/s`);
+                    var d = parseFloat(prompt("Ingresa la distancia recorrida (m): "));
+                    var t = parseFloat(prompt("Ingresa el tiempo transcurrido (s): "));
+                    var v = velocidad_distancia(d, t);
+                    mostrarResultado(`La velocidad media es ${v} m/s`);
                     break;
                 case 28:
-                    var d123 = parseFloat(prompt("Ingresa la distancia (m): "));
-                    var v12345 = parseFloat(prompt("Ingresa la velocidad media (m/s): "));
-                    var t12345 = tiempo(d123, v12345);
-                    mostrarResultado(`El tiempo transcurrido es ${t12345} s`);
+                    var d = parseFloat(prompt("Ingresa la distancia (m): "));
+                    var v = parseFloat(prompt("Ingresa la velocidad media (m/s): "));
+                    var t = tiempo(d, v);
+                    mostrarResultado(`El tiempo transcurrido es ${t} s`);
                     break;
                 case 29:
                     var v = parseFloat(prompt("Ingresa la velocidad (m/s): "));
                     var t = parseFloat(prompt("Ingresa el tiempo (s): "));
                     var d = distancia(v, t);
-                    mostrarResultado(`La distancia recorrida es ${d123456} m`);
+                    mostrarResultado(`La distancia recorrida es ${d} m`);
                     break;
                 case 30:
-                    var n1 = parseFloat(prompt("Ingresa el número de oscilaciones: "));
-                    var t1234567 = parseFloat(prompt("Ingresa el tiempo (s): "));
-                    var w123456789012345 = frecuencia_angular_oscilaciones(n1, t1234567);
-                    mostrarResultado(`La frecuencia angular es ${w123456789012345} rad/s`);
+                    var n = parseFloat(prompt("Ingresa el número de oscilaciones: "));
+                    var t = parseFloat(prompt("Ingresa el tiempo (s): "));
+                    var w = frecuencia_angular_oscilaciones(n, t);
+                    mostrarResultado(`La frecuencia angular es ${w} rad/s`);
                     break;
                 case 31:
-                    var p12345678 = parseFloat(prompt("Ingresa la potencia (W/m2): "));
-                    var w1234567890123456 = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
-                    var A123456789012345 = parseFloat(prompt("Ingresa la amplitud máxima (m): "));
-                    var k12345678901234567 = parseFloat(prompt("Ingresa el número de onda (rad/m): "));
-                    var I123 = Intensidad_numero_onda(p12345678, w1234567890123456, A123456789012345, k12345678901234567);
-                    mostrarResultado(`La intensidad acústica es ${I123} W/m2`);
+                    var p = parseFloat(prompt("Ingresa la potencia (W/m2): "));
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
+                    var A = parseFloat(prompt("Ingresa la amplitud máxima (m): "));
+                    var k = parseFloat(prompt("Ingresa el número de onda (rad/m): "));
+                    var I = Intensidad_numero_onda(p, w, A, k);
+                    mostrarResultado(`La intensidad acústica es ${I} W/m2`);
                     break;
                 default:
                     mostrarResultado("Elige una opción válida");
