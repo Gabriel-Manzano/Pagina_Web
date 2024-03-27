@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teorias de acústica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-bar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .top-bar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .top-bar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        #acustica {
+            cursor: pointer;
+        }
+
+        #acustica {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            padding: 50px 0;
+        }
+
+        #teorias {
+            background-color: #b6ffe7; /* Verde Aqua */
+            color: black;
+            text-align: center;
+            font-size: 36px;
+            padding: 15px 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <a href="Optica.html">Óptica</a>
+        <a href="Acustica.html">Acústica</a>
+        <a href="Fisica_moderna.html">Física Moderna</a>
+        <a href="Conversor.html">Conversor de Unidades</a>
+        <a href="Sobre_nosotros.html">Sobre Nosotros</a>
+        <a href="Calculadora.html">Calculadora</a>
+    </div>
+
+    <div id="acustica" onclick="redirigir('Acustica.html')">Acústica</div>
+    <div id="teorias">Teorías</div>
+    <div id="Historia_acustica" onclick="redirigir('/Temas_acustica/Historia_acustica.html')">Historia acústica</div>
+    <div id="Conceptos_basicos" onclick="redirigir('/Temas_acustica/Conceptos_basicos.html')">Conceptos básicos</div>
+    <div id="Sonido" onclick="redirigir('/Temas_acustica/Sonido.html')">Sonido</div>
+    <div id="Movimiento_ondulatorio" onclick="redirigir('/Temas_acustica/Movimiento_ondulatorio.html')">Movimiento ondulatorio</div>
+    <div id="Movimiento_armonico_simple" onclick="redirigir('/Temas_acustica/Movimiento_armonico_simple.html')">Movimiento armónico simple</div>
+    <div id="Movimiento_periodico" onclick="redirigir('/Temas_acustica/Movimiento_periodico.html')">Movimiento periódico</div>
+    <div id="Cuerpo_elastico" onclick="redirigir('/Temas_acustica/Cuerpo_elastico.html')">Cuerpo elástico</div>
+    <div id="Ley_de_hooke" onclick="redirigir('/Temas_acustica/Ley_de_hooke.html')">Ley de Hooke</div>
+    <div id="Esfuerzo" onclick="redirigir('/Temas_acustica/Esfuerzo.html')">Esfuerzo</div>
+    <div id="Deformacion" onclick="redirigir('/Temas_acustica/Deformacion.html')">Deformación</div>
+    <div id="Ley_inverso" onclick="redirigir('/Temas_acustica/Ley_inverso.html')">Ley inverso del cuadrado para la intensidad</div>
+    <div id="Vibracion" onclick="redirigir('/Temas_acustica/Vibracion.html')">Vibración en columnas de aire</div>
+    <div id="Energia" onclick="redirigir('/Temas_acustica/Energia.html')">Energía de movimiento ondulatorio</div>
+    <div id="Ondas" onclick="redirigir('/Temas_acustica/Ondas.html')">Ondas electromagnéticas</div>
+    <div id="Potencia" onclick="redirigir('/Temas_acustica/Potencia.html')">Potencia media de una onda senoidal</div>
+
+    <script>
+        function redirigir(ruta) {
+            window.location.href = ruta;
+        }
+    </script>
+</body>
+
+</html>
