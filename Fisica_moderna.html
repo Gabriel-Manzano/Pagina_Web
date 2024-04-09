@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fisica moderna</title>
+    <title>Física Moderna</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         .top-bar {
@@ -28,6 +30,45 @@
             background-color: #ddd;
             color: black;
         }
+        
+        #teorias,
+        #formulas,
+        #videos,
+        #ecuaciones {
+            cursor: pointer;
+        }
+
+        #fisica_moderna {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            padding: 67px 0;
+        }
+
+        #Teorias_fisica {
+            background-color: #b6ffe7; /* Verde Aqua */
+            color: black;
+            text-align: center;
+            font-size: 36px;
+            padding: 65px 0;
+        }
+
+        #Formulas_fisica {
+            background-color: #f8c18b; /* Color Mamey */
+            color: black;
+            text-align: center;
+            font-size: 36px;
+            padding: 65px 0;
+        }
+
+        #Videos_fisica {
+            background-color: #b6ffe7; /* Verde Aqua */
+            color: black;
+            text-align: center;
+            font-size: 36px;
+            padding: 65px 0;
+        }
     </style>
 </head>
 
@@ -40,6 +81,17 @@
         <a href="Sobre_nosotros.html">Sobre Nosotros</a>
         <a href="Calculadora.html">Calculadora</a>
     </div>
+
+    <div id="fisica_moderna">Física Moderna</div>
+    <div id="Teorias_fisica" onclick="redirigir('Teorias_fisica.html')">Teorías</div>
+    <div id="Formulas_fisica" onclick="redirigir('Formulas_fisica.html')">Fórmulas</div>
+    <div id="Videos_fisica" onclick="redirigir('Videos_fisica.html')">Videos</div>
+
+    <script>
+        function redirigir(ruta) {
+            window.location.href = ruta;
+        }
+    </script>
 </body>
 
 </html>
