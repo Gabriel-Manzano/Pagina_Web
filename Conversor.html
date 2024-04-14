@@ -54,12 +54,13 @@
         <option value="tiempo">Tiempo</option>
         <option value="velocidad">Velocidad</option>
         <option value="angulos">Ángulos</option>
+        <option value="form">Múltiplos y submúltiplos</option>
     </select><br>
 
     <!-- Contenedor para conversores -->
     <div id="conversores">
         <!-- Conversor de longitud -->
-        <div id="conversorLongitud" style="display:none;">
+        <div id="conversorLongitud">
             <h2>Conversor de Longitud</h2>
             <form id="conversorLongitudForm">
                 <label for="valorLongitud">Valor:</label>
@@ -314,67 +315,73 @@
             <div id="resultadoAngulos"></div>
         </div>
 
+        <!-- Conversor original -->
+        <div id="conversorForm" style="display:none;">
+            <h2>Conversor de múltiplos y submúltiplos</h2>
+            <form id="conversorForm">
+                <label for="valor">Valor:</label>
+                <input type="number" id="valor" name="valor" step="any" required><br>
+    
+                <label for="unidadInicial">Unidad inicial:</label>
+                <select id="unidadInicial" name="unidadInicial">
+                    <option value="yottaunidades">yottaunidades</option>
+                    <option value="zettaunidades">zettaunidades</option>
+                    <option value="exaunidades">exaunidades</option>
+                    <option value="petaunidades">petaunidades</option>
+                    <option value="teraunidades">teraunidades</option>
+                    <option value="gigaunidades">gigaunidades</option>
+                    <option value="megaunidades">megaunidades</option>
+                    <option value="kilounidades">kilounidades</option>
+                    <option value="hectounidades">hectounidades</option>
+                    <option value="decaunidades">decaunidades</option>
+                    <option value="unidad">unidad</option>
+                    <option value="deciunidades">deciunidades</option>
+                    <option value="centiunidades">centiunidades</option>
+                    <option value="miliunidades">miliunidades</option>
+                    <option value="microunidades">microunidades</option>
+                    <option value="nanounidades">nanounidades</option>
+                    <option value="picounidades">picounidades</option>
+                    <option value="femtounidades">femtounidades</option>
+                    <option value="attounidades">attounidades</option>
+                    <option value="zeptounidades">zeptounidades</option>
+                    <option value="yoctounidades">yoctounidades</option>
+                </select><br>
+    
+                <label for="unidadFinal">Unidad final:</label>
+                <select id="unidadFinal" name="unidadFinal">
+                    <option value="yottaunidades">yottaunidades</option>
+                    <option value="zettaunidades">zettaunidades</option>
+                    <option value="exaunidades">exaunidades</option>
+                    <option value="petaunidades">petaunidades</option>
+                    <option value="teraunidades">teraunidades</option>
+                    <option value="gigaunidades">gigaunidades</option>
+                    <option value="megaunidades">megaunidades</option>
+                    <option value="kilounidades">kilounidades</option>
+                    <option value="hectounidades">hectounidades</option>
+                    <option value="decaunidades">decaunidades</option>
+                    <option value="unidad">unidad</option>
+                    <option value="deciunidades">deciunidades</option>
+                    <option value="centiunidades">centiunidades</option>
+                    <option value="miliunidades">miliunidades</option>
+                    <option value="microunidades">microunidades</option>
+                    <option value="nanounidades">nanounidades</option>
+                    <option value="picounidades">picounidades</option>
+                    <option value="femtounidades">femtounidades</option>
+                    <option value="attounidades">attounidades</option>
+                    <option value="zeptounidades">zeptounidades</option>
+                    <option value="yoctounidades">yoctounidades</option>
+                </select><br>
+    
+                <button type="submit">Convertir</button>
+
+            </form>
+    
+            <div id="resultado"></div>
+
+        </div>
+    
+
     </div>
-    <!-- Conversor original -->
-    <h2>Conversor a múltipos y submúltiplos</h2>
-    <form id="conversorForm">
-        <label for="valor">Valor:</label>
-        <input type="number" id="valor" name="valor" step="any" required><br>
-
-        <label for="unidadInicial">Unidad inicial:</label>
-        <select id="unidadInicial" name="unidadInicial">
-            <option value="yottaunidades">yottaunidades</option>
-            <option value="zettaunidades">zettaunidades</option>
-            <option value="exaunidades">exaunidades</option>
-            <option value="petaunidades">petaunidades</option>
-            <option value="teraunidades">teraunidades</option>
-            <option value="gigaunidades">gigaunidades</option>
-            <option value="megaunidades">megaunidades</option>
-            <option value="kilounidades">kilounidades</option>
-            <option value="hectounidades">hectounidades</option>
-            <option value="decaunidades">decaunidades</option>
-            <option value="unidad">unidad</option>
-            <option value="deciunidades">deciunidades</option>
-            <option value="centiunidades">centiunidades</option>
-            <option value="miliunidades">miliunidades</option>
-            <option value="microunidades">microunidades</option>
-            <option value="nanounidades">nanounidades</option>
-            <option value="picounidades">picounidades</option>
-            <option value="femtounidades">femtounidades</option>
-            <option value="attounidades">attounidades</option>
-            <option value="zeptounidades">zeptounidades</option>
-            <option value="yoctounidades">yoctounidades</option>
-        </select><br>
-
-        <label for="unidadFinal">Unidad final:</label>
-        <select id="unidadFinal" name="unidadFinal">
-            <option value="yottaunidades">yottaunidades</option>
-            <option value="zettaunidades">zettaunidades</option>
-            <option value="exaunidades">exaunidades</option>
-            <option value="petaunidades">petaunidades</option>
-            <option value="teraunidades">teraunidades</option>
-            <option value="gigaunidades">gigaunidades</option>
-            <option value="megaunidades">megaunidades</option>
-            <option value="kilounidades">kilounidades</option>
-            <option value="hectounidades">hectounidades</option>
-            <option value="decaunidades">decaunidades</option>
-            <option value="unidad">unidad</option>
-            <option value="deciunidades">deciunidades</option>
-            <option value="centiunidades">centiunidades</option>
-            <option value="miliunidades">miliunidades</option>
-            <option value="microunidades">microunidades</option>
-            <option value="nanounidades">nanounidades</option>
-            <option value="picounidades">picounidades</option>
-            <option value="femtounidades">femtounidades</option>
-            <option value="attounidades">attounidades</option>
-            <option value="zeptounidades">zeptounidades</option>
-            <option value="yoctounidades">yoctounidades</option>
-        </select><br>
-
-        <button type="submit">Convertir</button>
-    </form>
-
-    <div id="resultado"></div>
 
     <script>
         // Función para convertir las unidades
