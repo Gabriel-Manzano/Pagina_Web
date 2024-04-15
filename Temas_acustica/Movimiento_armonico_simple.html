@@ -1,103 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-bs-theme="light" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movimiento armónico simple</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .top-bar {
-            background-color: #333;
-            overflow: hidden;
-        }
-
-        .top-bar a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        .top-bar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        #movimiento {
-            background-color: black;
-            color: white;
-            text-align: center;
-            font-size: 36px;
-            padding: 10px 0;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MAS</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/Articles-Cards-images.css">
+    <link rel="stylesheet" href="/assets/css/Customizable-Background--Overlay.css">
+    <link rel="stylesheet" href="/assets/css/Navbar-Right-Links-Dark-icons.css">
+   
 </head>
 
 <body>
-    <div class="top-bar">
-        <a href="\Optica.html">Óptica</a>
-        <a href="\Acustica.html">Acústica</a>
-        <a href="\Fisica_moderna.html">Física Moderna</a>
-        <a href="\Conversor.html">Conversor de Unidades</a>
-        <a href="\Sobre_nosotros.html">Sobre Nosotros</a>
-        <a href="\Calculadora.html">Calculadora</a>
-    </div>
-    <div id="movimiento">Movimiento armónico simple</div>
-    <div>
-        <h2>Movimiento Armónico Simple (MAS)</h2>
-        <p>El Movimiento Armónico Simple (MAS) es un tipo de movimiento periódico que se caracteriza por tener una
-            trayectoria rectilínea y una aceleración proporcional y opuesta a la posición. Este movimiento se encuentra
-            presente en numerosos fenómenos naturales y es fundamental en la física y la ingeniería.</p>
-        <h3>Definición y Características</h3>
-        <p>En el MAS, un objeto oscila en torno a una posición de equilibrio con una aceleración proporcional y opuesta
-            a su desplazamiento. Esto significa que la fuerza restauradora es proporcional al desplazamiento y actúa en
-            dirección opuesta al mismo.</p>
-        <h3>Fórmula y Cálculos</h3>
-        <p>La ecuación que describe matemáticamente el MAS es:</p>
-        <p>x(t) = A ⋅ cos(ωt + ϕ)</p>
-        <p>Donde:</p>
-        <ul>
-            <li>x(t) es la posición en función del tiempo.</li>
-            <li>A es la amplitud de la oscilación.</li>
-            <li>ω es la frecuencia angular.</li>
-            <li>t es el tiempo.</li>
-            <li>ϕ es la fase inicial.</li>
-        </ul>
-        <p>Según la Universidad Nacional del Litoral, "Controversias en el tratamiento del movimiento oscilatorio
-            armónico simple," la frecuencia angular ω se calcula como:</p>
-        <img src="C:\Users\980022886\Downloads\ImagenesFisica\Acustica\Imagen5.png" alt="Fórmula de frecuencia angular">
-        <p>Donde:</p>
-        <ul>
-            <li>f es la frecuencia.</li>
-            <li>k es la constante elástica del resorte.</li>
-            <li>m es la masa del objeto.</li>
-        </ul>
-        <h3>Funcionamiento</h3>
-        <p>En el MAS, el objeto oscila de un lado a otro alrededor de su posición de equilibrio, pasando por puntos de
-            máxima amplitud y puntos de reposo. La energía cinética y potencial se intercambian a medida que el objeto
-            se mueve, manteniendo la oscilación.</p>
-        <h3>Aplicaciones</h3>
-        <p>El MAS se aplica en sistemas de resortes, péndulos, circuitos eléctricos, vibraciones mecánicas, entre otros.
-            Según la Universidad del País Vasco, "Movimiento armónico simple y oscilador amortiguado," su estudio es
-            fundamental para comprender fenómenos oscilatorios en la naturaleza y en la tecnología.</p>
-        <p>En resumen, el Movimiento Armónico Simple es un concepto fundamental en la física que describe oscilaciones
-            periódicas en sistemas físicos, con una ecuación característica y aplicaciones prácticas en diversos campos
-            de la ciencia y la ingeniería.</p>
-    </div>
-
-    <script>
-        function redirigir(ruta) {
-            window.location.href = ruta;
-        }
-    </script>
-</body>
-
-</html>
+    <nav class="navbar navbar-expand-md bg-dark py-3" data-bs-theme="dark">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-bezier">
+                        <path fill-rule="evenodd" d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm10.5.5A1.5 1.5 0 0 1 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5 1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"></path>
+                        <path d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z"></path>
+                    </svg></span><span>Brand</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-5">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="\Optica.html">Optica</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="\Acustica.html">Acustica</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="\Fisica_moderna.html">Fisica Moderna</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="\Conversor.html">Conversor de Unidades</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="\Sobre_nosotros.html">Sobre nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="\Calculadora.html">Calculadora</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container py-4 py-xl-5">
+        <div style="background-image:url(&quot;/assets/img/Fondo_Acustica.jpg&quot;);height:500px;background-position:center;background-size:cover;background-repeat:no-repeat;">
+            <div class="d-flex justify-content-center align-items-center" style="height: inherit;min-height: initial;width: 100%;position: absolute;left: 0;background-color: rgba(30,41,99,0.53);">
+                <div class="d-flex align-items-center order-5" style="height:200px;">
+                    <div class="container">
+                        <h1 class="text-center" style="color:rgb(242,245,248);font-size:56px;font-weight:bold;font-family:Roboto, sans-serif;">MOVIMIENTO ARMONICO SIMPLE</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="text-break">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</p>

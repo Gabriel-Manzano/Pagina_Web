@@ -4,1033 +4,1096 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor</title>
-</head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Calculadora</title>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pagina Principal</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+
+            .top-bar {
+                background-color: #333;
+                overflow: hidden;
+            }
+
+            .top-bar a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            .top-bar a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+        </style>
+    </head>
 
 <body>
-    <h1>Conversor de Unidades</h1>
-
-    <!-- Selector para elegir entre longitud, volumen y masa -->
-    <label for="tipoConversor">Seleccione el tipo de conversión:</label>
-    <select id="tipoConversor">
-        <option value="longitud">Longitud</option>
-        <option value="masa">Masa</option>
-        <option value="volumen">Volumen</option>
-        <option value="presion">Presión</option>
-        <option value="temperatura">Temperatura</option>
-        <option value="tiempo">Tiempo</option>
-        <option value="velocidad">Velocidad</option>
-        <option value="angulos">Ángulos</option>
-    </select><br>
-
-    <!-- Contenedor para conversores -->
-    <div id="conversores">
-        <!-- Conversor de longitud -->
-        <div id="conversorLongitud" style="display:none;">
-            <h2>Conversor de Longitud</h2>
-            <form id="conversorLongitudForm">
-                <label for="valorLongitud">Valor:</label>
-                <input type="number" id="valorLongitud" name="valorLongitud" step="any" required><br>
-
-                <label for="unidadInicialLongitud">Unidad inicial:</label>
-                <select id="unidadInicialLongitud" name="unidadInicialLongitud">
-                    <option value="metros">metros</option>
-                    <option value="pulgadas">pulgadas</option>
-                    <option value="millas">millas</option>
-                    <option value="pies">pies</option>
-                    <option value="yardas">yardas</option>
-                    <option value="millas_nauticas">millas náuticas</option>
-                </select><br>
-
-                <label for="tipoConversionLongitud">Convertir a:</label>
-                <select id="tipoConversionLongitud" name="tipoConversionLongitud">
-                    <option value="metros">metros</option>
-                    <option value="pulgadas">pulgadas</option>
-                    <option value="millas">millas</option>
-                    <option value="pies">pies</option>
-                    <option value="yardas">yardas</option>
-                    <option value="millas_nauticas">millas náuticas</option>
-                </select><br>
-
-                <button type="submit">Convertir</button>
-            </form>
-
-            <div id="resultadoLongitud"></div>
-        </div>
-
-        <!-- Conversor de volumen -->
-        <div id="conversorVolumen" style="display:none;">
-            <h2>Conversor de Volumen</h2>
-            <form id="conversorVolumenForm">
-                <label for="valorVolumen">Valor:</label>
-                <input type="number" id="valorVolumen" name="valorVolumen" step="any" required><br>
-
-                <label for="unidadInicialVolumen">Unidad inicial:</label>
-                <select id="unidadInicialVolumen" name="unidadInicialVolumen">
-                    <option value="cm3">cm³</option>
-                    <option value="m3">m³</option>
-                    <option value="litros">litros</option>
-                    <option value="galones">galones</option>
-                    <option value="pulgadas3">pulgadas cúbicas</option>
-                    <option value="pies3">pies cúbicos</option>
-                </select><br>
-
-                <label for="tipoConversionVolumen">Convertir a:</label>
-                <select id="tipoConversionVolumen" name="tipoConversionVolumen">
-                    <option value="cm3">cm³</option>
-                    <option value="m3">m³</option>
-                    <option value="litros">litros</option>
-                    <option value="galones">galones</option>
-                    <option value="pulgadas3">pulgadas cúbicas</option>
-                    <option value="pies3">pies cúbicos</option>
-                </select><br>
-
-                <button type="submit">Convertir</button>
-            </form>
-
-            <div id="resultadoVolumen"></div>
-        </div>
-
-        <!-- Conversor de masa -->
-        <div id="conversorMasa" style="display:none;">
-            <h2>Conversor de Masa</h2>
-            <form id="conversorMasaForm">
-                <label for="valorMasa">Valor:</label>
-                <input type="number" id="valorMasa" name="valorMasa" step="any" required><br>
-
-                <label for="unidadInicialMasa">Unidad inicial:</label>
-                <select id="unidadInicialMasa" name="unidadInicialMasa">
-                    <option value="kilogramos">kilogramos</option>
-                    <option value="gramos">gramos</option>
-                    <option value="toneladas">toneladas</option>
-                    <option value="miligramos">miligramos</option>
-                    <option value="microgramos">microgramos</option>
-                    <option value="libras">libras</option>
-                    <option value="onzas">onzas</option>
-                </select><br>
-
-                <label for="tipoConversionMasa">Convertir a:</label>
-                <select id="tipoConversionMasa" name="tipoConversionMasa">
-                    <option value="kilogramos">kilogramos</option>
-                    <option value="gramos">gramos</option>
-                    <option value="toneladas">toneladas</option>
-                    <option value="miligramos">miligramos</option>
-                    <option value="microgramos">microgramos</option>
-                    <option value="libras">libras</option>
-                    <option value="onzas">onzas</option>
-                </select><br>
-
-                <button type="submit">Convertir</button>
-            </form>
-
-            <div id="resultadoMasa"></div>
-        </div>
-
-        <!-- Conversor de presión -->
-        <div id="conversorPresion" style="display:none;">
-            <h2>Conversor de Presion</h2>
-            <form id="conversorPresionForm">
-                <label for="valorPresion">Valor:</label>
-                <input type="number" id="valorPresion" name="valorPresion" step="any" required><br>
-
-                <label for="unidadInicialPresion">Unidad inicial:</label>
-                <select id="unidadInicialPresion" name="unidadInicialPresion">
-                    <option value="atmosferas">atmósferas</option>
-                    <option value="bar">bar</option>
-                    <option value="pascales">pascales</option>
-                </select><br>
-
-                <label for="tipoConversionPresion">Convertir a:</label>
-                <select id="tipoConversionPresion" name="tipoConversionPresion">
-                    <option value="atmosferas">atmósferas</option>
-                    <option value="bar">bar</option>
-                    <option value="pascales">pascales</option>
-                </select><br>
-
-                <button type="submit">Convertir</button>
-            </form>
-
-            <div id="resultadoPresion"></div>
-        </div>
-
-        <!-- Conversor de Temperatura -->
-        <div id="conversorTemperatura" style="display:none;">
-            <h2>Conversor de Temperatura</h2>
-            <form id="conversorTemperaturaForm">
-                <label for="valorTemperatura">Valor:</label>
-                <input type="number" id="valorTemperatura" name="valorTemperatura" step="any" required><br>
-
-                <label for="unidadInicialTemperatura">Unidad inicial:</label>
-                <select id="unidadInicialTemperatura" name="unidadInicialTemperatura">
-                    <option value="celsius">celsius</option>
-                    <option value="fahrenheit">fahrenheit</option>
-                    <option value="kelvin">kelvin</option>
-                </select><br>
-
-                <label for="tipoConversionTemperatura">Convertir a:</label>
-                <select id="tipoConversionTemperatura" name="tipoConversionTemperatura">
-                    <option value="celsius">celsius</option>
-                    <option value="fahrenheit">fahrenheit</option>
-                    <option value="kelvin">kelvin</option>
-                </select><br>
-
-                <button type="submit">Convertir</button>
-            </form>
-
-            <div id="resultadoTemperatura"></div>
-        </div>
-
-        <!-- Conversor de tiempo -->
-        <div id="conversorTiempo" style="display:none;">
-            <h2>Conversor de Tiempo</h2>
-            <form id="conversorTiempoForm">
-                <label for="valorTiempo">Valor:</label>
-                <input type="number" id="valorTiempo" name="valorTiempo" step="any" required><br>
-
-                <label for="unidadInicialTiempo">Unidad inicial:</label>
-                <select id="unidadInicialTiempo" name="unidadInicialTiempo">
-                    <option value="nanosegundos">nanosegundo</option>
-                    <option value="microsegundos">microsegundo</option>
-                    <option value="milisegundos">milisegundo</option>
-                    <option value="segundos">segundo</option>
-                    <option value="minutos">minuto</option>
-                    <option value="horas">hora</option>
-                    <option value="dias">día</option>
-                    <option value="semanas">semana</option>
-                    <option value="meses">mes</option>
-                    <option value="años">año</option>
-                    <option value="decadas">década</option>
-                    <option value="siglos">siglo</option>
-                </select><br>
-
-                <label for="tipoConversionTiempo">Convertir a:</label>
-                <select id="tipoConversionTiempo" name="tipoConversionTiempo">
-                    <option value="nanosegundos">nanosegundo</option>
-                    <option value="microsegundos">microsegundo</option>
-                    <option value="milisegundos">milisegundo</option>
-                    <option value="segundos">segundo</option>
-                    <option value="minutos">minuto</option>
-                    <option value="horas">hora</option>
-                    <option value="dias">día</option>
-                    <option value="semanas">semana</option>
-                    <option value="meses">mes</option>
-                    <option value="años">año</option>
-                    <option value="decadas">década</option>
-                    <option value="siglos">siglo</option>
-                </select><br>
-
-                <button type="submit">Convertir</button>
-            </form>
-
-            <div id="resultadoTiempo"></div>
-        </div>
-
-        <!-- Conversor de Velocidad -->
-        <div id="conversorVelocidad" style="display:none;">
-            <h2>Conversor de Velocidad</h2>
-            <form id="conversorVelocidadForm">
-                <label for="valorVelocidad">Valor:</label>
-                <input type="number" id="valorVelocidad" name="valorVelocidad" step="any" required><br>
-
-                <label for="unidadInicialVelocidad">Unidad inicial:</label>
-                <select id="unidadInicialVelocidad" name="unidadInicialVelocidad">
-                    <option value="milla">mi/h</option>
-                    <option value="pie">ft/s</option>
-                    <option value="metro">m/s</option>
-                    <option value="kilometro">km/h</option>
-                    <option value="nudo">nudo</option>
-                </select><br>
-
-                <label for="tipoConversionVelocidad">Convertir a:</label>
-                <select id="tipoConversionVelocidad" name="tipoConversionVelocidad">
-                    <option value="milla">mi/h</option>
-                    <option value="pie">ft/s</option>
-                    <option value="metro">m/s</option>
-                    <option value="kilometro">km/h</option>
-                    <option value="nudo">nudo</option>
-                </select><br>
-
-                <button type="submit">Convertir</button>
-            </form>
-
-            <div id="resultadoVelocidad"></div>
-        </div>
-
-        <!-- Conversor de Angulos -->
-        <div id="conversorAngulos" style="display:none;">
-            <h2>Conversor de Angulos</h2>
-            <form id="conversorAngulosForm">
-                <label for="valorAngulos">Valor:</label>
-                <input type="number" id="valorAngulos" name="valorAngulos" step="any" required><br>
-
-                <label for="unidadInicialAngulos">Unidad inicial:</label>
-                <select id="unidadInicialAngulos" name="unidadInicialAngulos">
-                    <option value="grados">grados</option>
-                    <option value="radianes">radianes</option>
-                </select><br>
-
-                <label for="tipoConversionAngulos">Convertir a:</label>
-                <select id="tipoConversionAngulos" name="tipoConversionAngulos">
-                    <option value="grados">grados</option>
-                    <option value="radianes">radianes</option>
-                </select><br>
-
-                <button type="submit">Convertir</button>
-            </form>
-
-            <div id="resultadoAngulos"></div>
-        </div>
-
+    <div class="top-bar">
+        <a href="Optica.html">Óptica</a>
+        <a href="Acustica.html">Acústica</a>
+        <a href="Fisica_moderna.html">Física Moderna</a>
+        <a href="Conversor.html">Conversor de Unidades</a>
+        <a href="Sobre_nosotros.html">Sobre Nosotros</a>
+        <a href="Calculadora.html">Calculadora</a>
     </div>
-    <!-- Conversor original -->
-    <h2>Conversor a múltipos y submúltiplos</h2>
-    <form id="conversorForm">
-        <label for="valor">Valor:</label>
-        <input type="number" id="valor" name="valor" step="any" required><br>
 
-        <label for="unidadInicial">Unidad inicial:</label>
-        <select id="unidadInicial" name="unidadInicial">
-            <option value="yottaunidades">yottaunidades</option>
-            <option value="zettaunidades">zettaunidades</option>
-            <option value="exaunidades">exaunidades</option>
-            <option value="petaunidades">petaunidades</option>
-            <option value="teraunidades">teraunidades</option>
-            <option value="gigaunidades">gigaunidades</option>
-            <option value="megaunidades">megaunidades</option>
-            <option value="kilounidades">kilounidades</option>
-            <option value="hectounidades">hectounidades</option>
-            <option value="decaunidades">decaunidades</option>
-            <option value="unidad">unidad</option>
-            <option value="deciunidades">deciunidades</option>
-            <option value="centiunidades">centiunidades</option>
-            <option value="miliunidades">miliunidades</option>
-            <option value="microunidades">microunidades</option>
-            <option value="nanounidades">nanounidades</option>
-            <option value="picounidades">picounidades</option>
-            <option value="femtounidades">femtounidades</option>
-            <option value="attounidades">attounidades</option>
-            <option value="zeptounidades">zeptounidades</option>
-            <option value="yoctounidades">yoctounidades</option>
-        </select><br>
+    <h1>Calculadoras</h1>
 
-        <label for="unidadFinal">Unidad final:</label>
-        <select id="unidadFinal" name="unidadFinal">
-            <option value="yottaunidades">yottaunidades</option>
-            <option value="zettaunidades">zettaunidades</option>
-            <option value="exaunidades">exaunidades</option>
-            <option value="petaunidades">petaunidades</option>
-            <option value="teraunidades">teraunidades</option>
-            <option value="gigaunidades">gigaunidades</option>
-            <option value="megaunidades">megaunidades</option>
-            <option value="kilounidades">kilounidades</option>
-            <option value="hectounidades">hectounidades</option>
-            <option value="decaunidades">decaunidades</option>
-            <option value="unidad">unidad</option>
-            <option value="deciunidades">deciunidades</option>
-            <option value="centiunidades">centiunidades</option>
-            <option value="miliunidades">miliunidades</option>
-            <option value="microunidades">microunidades</option>
-            <option value="nanounidades">nanounidades</option>
-            <option value="picounidades">picounidades</option>
-            <option value="femtounidades">femtounidades</option>
-            <option value="attounidades">attounidades</option>
-            <option value="zeptounidades">zeptounidades</option>
-            <option value="yoctounidades">yoctounidades</option>
-        </select><br>
+    <!-- Selector para elegir entre calculadoras -->
+    <label for="tipoCalculadora">Seleccione el tipo de calculadora:</label>
+    <select id="tipoCalculadora">
+        <option value="Acustica">Acústica</option>
+        <option value="Optica">Óptica</option>
+        <option value="Fisica">Física Moderna</option>
+    </select><br>
+    <div id="calculadoras">
+        <div id="calculadoraAcustica">
+            <h1>Calculadora</h1>
+            <label for="opcion">Selecciona la propiedad que deseas calcular:</label>
+            <select id="opcion">
+                <option value="1">Número de onda (k)</option>
+                <option value="2">Frecuencia Angular (w)</option>
+                <option value="3">Velocidad (v)</option>
+                <option value="4">Amplitud Onda Estacionaria (Asw)</option>
+                <option value="5">Amplitud (A)</option>
+                <option value="6">Frecuencia Angular a partir de Frecuencia (w)</option>
+                <option value="7">Frecuencia a partir de Frecuencia Angular (f)</option>
+                <option value="8">Longitud de Onda (λ)</option>
+                <option value="8.1">Velocidad (v)</option>
+                <option value="9">Periodo (T)</option>
+                <option value="10">Número de onda a partir de Longitud de Onda (k)</option>
+                <option value="11">Velocidad Angular (vθ)</option>
+                <option value="12">Fase Inicial (φ)</option>
+                <option value="13">Velocidad Angular a partir de Periodo (ω)</option>
+                <option value="14">Frecuencia a partir de Velocidad y Longitud de Onda (f)</option>
+                <option value="15">Amplitud de Onda en Posición y Tiempo (Axt)</option>
+                <option value="16">Amplitud a partir de Posición, Tiempo y Amplitud de Onda en Posición y Tiempo (A)
+                </option>
+                <option value="17">Ecuación de Onda (y)</option>
+                <option value="18">Ecuación de Onda (y) con Amplitud y Frecuencia Angular</option>
+                <option value="19">Intensidad Acústica a partir de Potencia, Frecuencia Angular, Amplitud y Velocidad de
+                    Propagación (I)</option>
+                <option value="20">Número de Onda a partir de Distancia entre Fuentes (k)</option>
+                <option value="21">Velocidad de Propagación de Ondas Longitudinales en un Medio Elástico (v)</option>
+                <option value="22">Velocidad de Propagación de Ondas Transversales en un Medio Elástico (v)</option>
+                <option value="23">Velocidad de Propagación de Ondas Longitudinales en un Fluido, usando la constante
+                    elástica del medio (v)</option>
+                <option value="24">Velocidad de Propagación de Ondas Longitudinales en un Fluido (v)</option>
+                <option value="25">Velocidad del Sonido en Gases Ideales (v)</option>
+                <option value="26">Velocidad de Propagación de Ondas en una Cuerda (v)</option>
+                <option value="27">Velocidad Media a partir de Distancia y Tiempo (v)</option>
+                <option value="28">Tiempo a partir de Distancia y Velocidad Media (t)</option>
+                <option value="29">Distancia a partir de Velocidad y Tiempo (d)</option>
+                <option value="30">Frecuencia Angular a partir de Número de Oscilaciones y Tiempo (w)</option>
+                <option value="31">Intensidad Acústica a partir de Potencia, Frecuencia Angular, Amplitud y Número de
+                    Onda (I)</option>
+            </select>
 
-        <button type="submit">Convertir</button>
-    </form>
+            <div id="Formularios_Acustica">
+                <div id="Acustica_1">
+                    <form id="Acustica_1_Form">
+                        <label for="1valorfrecuenciaangular">Ingresa la frecuencia angular (rad/s): </label>
+                        <input type="number" id="1valorfrecuenciaangular" name="1valorfrecuenciaangular" step="any"
+                            required><br>
+                        <label for="1valorvelocidad">Ingresa la velocidad (m/s): </label>
+                        <input type="number" id="1valorvelocidad" name="1valorvelocidad" step="any" required><br>
 
-    <div id="resultado"></div>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica"></div>
+                </div>
+                <div id="Acustica_2" style="display: none;">
+                    <form id="Acustica_2_Form">
+                        <label for="2valornumonda">Ingresa el número de onda (rad/m): </label>
+                        <input type="number" id="2valornumonda" name="2valornumonda" step="any" required><br>
+                        <label for="2valorvelocidad">Ingresa la velocidad (m/s): </label>
+                        <input type="number" id="2valorvelocidad" name="2valorvelocidad" step="any" required><br>
 
-    <script>
-        // Función para convertir las unidades
-        function convertirFrecuencia(valor, unidadInicial, unidadFinal) {
-            const unidades = {
-                'yottaunidades': 1e24,
-                'zettaunidades': 1e21,
-                'exaunidades': 1e18,
-                'petaunidades': 1e15,
-                'teraunidades': 1e12,
-                'gigaunidades': 1e9,
-                'megaunidades': 1e6,
-                'kilounidades': 1e3,
-                'hectounidades': 1e2,
-                'decaunidades': 1e1,
-                'unidad': 1,
-                'deciunidades': 1e-1,
-                'centiunidades': 1e-2,
-                'miliunidades': 1e-3,
-                'microunidades': 1e-6,
-                'nanounidades': 1e-9,
-                'picounidades': 1e-12,
-                'femtounidades': 1e-15,
-                'attounidades': 1e-18,
-                'zeptounidades': 1e-21,
-                'yoctounidades': 1e-24,
-            };
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_2"></div>
+                </div>
+                <div id="Acustica_3" style="display: none;">
+                    <form id="Acustica_3_Form">
+                        <label for="3valorfrecuangu">Ingresa la frecuencia angular (rad/s): </label>
+                        <input type="number" id="3valorfrecuangu" name="3valorfrecuangu" step="any" required><br>
+                        <label for="3valornumonda">Ingresa el número de onda (rad/m): </label>
+                        <input type="number" id="3valornumonda" name="3valornumonda" step="any" required><br>
 
-            const factorInicial = unidades[unidadInicial];
-            const factorFinal = unidades[unidadFinal];
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_3"></div>
+                </div>
+                <div id="Acustica_4" style="display: none;">
+                    <form id="Acustica_4_Form">
+                        <label for="4valoramp">Ingresa la amplitud (m): </label>
+                        <input type="number" id="4valoramp" name="4valoramp" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_4"></div>
+                </div>
+                <div id="Acustica_5" style="display: none;">
+                    <form id="Acustica_5_Form">
+                        <label for="5valoramp">Ingresa la amplitud de la onda estacionaria (m): </label>
+                        <input type="number" id="5valoramp" name="5valoramp" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_5"></div>
+                </div>
+                <div id="Acustica_6" style="display: none;">
+                    <form id="Acustica_6_Form">
+                        <label for="6valorfre">Ingresa la frecuencia (Hz): </label>
+                        <input type="number" id="6valorfre" name="6valorfre" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_6"></div>
+                </div>
+                <div id="Acustica_7" style="display: none;">
+                    <form id="Acustica_7_Form">
+                        <label for="7valorfre">Ingresa la frecuencia angular (rad/s): </label>
+                        <input type="number" id="7valorfre" name="7valorfre" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_7"></div>
+                </div>
+                <div id="Acustica_8" style="display: none;">
+                    <form id="Acustica_8_Form">
+                        <label for="8valorvel">Ingresa la velocidad (m/s): </label>
+                        <input type="number" id="8valorvel" name="8valorvel" step="any" required><br>
+                        <label for="8valorfre">Ingresa la frecuencia (Hz): </label>
+                        <input type="number" id="8valorfre" name="8valorfe" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_8"></div>
+                </div>
+                <div id="Acustica_8.1" style="display: none;">
+                    <form id="Acustica_8.1_Form">
+                        <label for="8.1valorlon">Ingresa la longitud de onda (m): </label>
+                        <input type="number" id="8.1valorlon" name="8.1valorlon" step="any" required><br>
+                        <label for="8.1valorfre">Ingresa la frecuencia (Hz): </label>
+                        <input type="number" id="8.1valorfre" name="8.1valorfe" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_8.1"></div>
+                </div>
+                <div id="Acustica_9" style="display: none;">
+                    <form id="Acustica_9_Form">
+                        <label for="9valorfre">Ingresa la frecuencia (Hz): </label>
+                        <input type="number" id="9valorfre" name="9valorfre" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_9"></div>
+                </div>
+                <div id="Acustica_10" style="display: none;">
+                    <form id="Acustica_10_Form">
+                        <label for="10valorlon">Ingresa la longitud de onda (m): </label>
+                        <input type="number" id="10valorlon" name="10valorlon" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_10"></div>
+                </div>
+                <div id="Acustica_11" style="display: none;">
+                    <form id="Acustica_11_Form">
+                        <label for="11valortie">Ingresa el tiempo (s): </label>
+                        <input type="number" id="11valortie" name="11valortie" step="any" required><br>
+                        <label for="11valorpos">Ingresa el la posición angular (rad): </label>
+                        <input type="number" id="11valorpos" name="11valorpos" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_11"></div>
+                </div>
+                <div id="Acustica_12" style="display: none;">
+                    <form id="Acustica_12_Form">
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_12"></div>
+                </div>
+                <div id="Acustica_13" style="display: none;">
+                    <form id="Acustica_13_Form">
+                        <label for="13valorper">Ingresa el periodo (s): </label>
+                        <input type="number" id="13valorper" name="13valorper" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_13"></div>
+                </div>
+                <div id="Acustica_14" style="display: none;">
+                    <form id="Acustica_14_Form">
+                        <label for="14valorvel">Ingresa la velocidad (m/s): </label>
+                        <input type="number" id="14valorvel" name="14valorvel" step="any" required><br>
+                        <label for="14valorlon">Ingresa la longitud de onda (m): </label>
+                        <input type="number" id="14valorlon" name="14valorlon" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_14"></div>
+                </div>
+                <div id="Acustica_15" style="display: none;">
+                    <form id="Acustica_15_Form">
+                        <label for="15valorpos">Ingresa la posición x (m): </label>
+                        <input type="number" id="15valorpos" name="15valorpos" step="any" required><br>
+                        <label for="15valortie">Ingresa el tiempo t (s): </label>
+                        <input type="number" id="15valortie" name="15valortie" step="any" required><br>
+                        <label for="15valoramp">Ingresa la amplitud máxima (m): </label>
+                        <input type="number" id="15valoramp" name="15valoramp" step="any" required><br>
+                        <label for="15valornum">Ingresa el número de onda (rad/m): </label>
+                        <input type="number" id="15valornum" name="15valornum" step="any" required><br>
+                        <label for="15valorfre">Ingresa la frecuencia angular (rad/s): </label>
+                        <input type="number" id="15valorfre" name="15valorfre" step="any" required><br>
+                        <label for="15valorfas">Ingresa la fase inicial (rad): </label>
+                        <input type="number" id="15valorfas" name="15valorfas" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_15"></div>
+                </div>
+                <div id="Acustica_16" style="display: none;">
+                    <form id="Acustica_16_Form">
+                        <label for="16valorpos">Ingresa la posición x (m): </label>
+                        <input type="number" id="16valorpos" name="16valorpos" step="any" required><br>
+                        <label for="16valortie">Ingresa el tiempo t (s): </label>
+                        <input type="number" id="16valortie" name="16valortie" step="any" required><br>
+                        <label for="16valoramp">Ingresa la amplitud de la onda en posición x y tiempo t (m): </label>
+                        <input type="number" id="16valoramp" name="16valoramp" step="any" required><br>
+                        <label for="16valornum">Ingresa el número de onda (rad/m): </label>
+                        <input type="number" id="16valornum" name="16valornum" step="any" required><br>
+                        <label for="16valorfre">Ingresa la frecuencia angular (rad/s): </label>
+                        <input type="number" id="16valorfre" name="16valorfre" step="any" required><br>
+                        <label for="16valorfas">Ingresa la fase inicial (rad): </label>
+                        <input type="number" id="16valorfas" name="16valorfas" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_16"></div>
+                </div>
+                <div id="Acustica_17" style="display: none;">
+                    <form id="Acustica_17_Form">
+                        <label for="17valoramp">Ingresa la amplitud máxima (m): </label>
+                        <input type="number" id="17valoramp" name="17valoramp" step="any" required><br>
+                        <label for="17valornum">Ingresa el número de onda (rad/m): </label>
+                        <input type="number" id="17valornum" name="17valornum" step="any" required><br>
+                        <label for="17valorfre">Ingresa la frecuencia angular (rad/s): </label>
+                        <input type="number" id="17valorfre" name="17valorfre" step="any" required><br>
+                        <label for="17valorfas">Ingresa la fase inicial (rad): </label>
+                        <input type="number" id="17valorfas" name="17valorfas" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_17"></div>
+                </div>
+                <div id="Acustica_18" style="display: none;">
+                    <form id="Acustica_18_Form">
+                        <label for="18valoramp">Ingresa la amplitud máxima (m): </label>
+                        <input type="number" id="18valoramp" name="18valoramp" step="any" required><br>
+                        <label for="18valorfre">Ingresa la frecuencia angular (rad/s): </label>
+                        <input type="number" id="18valorfre" name="18valorfre" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_18"></div>
+                </div>
+                <div id="Acustica_19" style="display: none;">
+                    <form id="Acustica_19_Form">
+                        <label for="19valorpot">Ingresa la densidad de potencia (W/m2): </label>
+                        <input type="number" id="19valorpot" name="19valorpot" step="any" required><br>
+                        <label for="19valoramp">Ingresa la amplitud máxima (m): </label>
+                        <input type="number" id="19valoramp" name="19valoramp" step="any" required><br>
+                        <label for="19valorvel">Ingresa la velocidad de propagación (m/s) : </label>
+                        <input type="number" id="19valorvel" name="19valorvel" step="any" required><br>
+                        <label for="19valorfre">Ingresa la frecuencia angular (rad/s): </label>
+                        <input type="number" id="19valorfre" name="19valorfre" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_19"></div>
+                </div>
+                <div id="Acustica_20" style="display: none;">
+                    <form id="Acustica_20_Form">
+                        <label for="20valordis">Ingresa la distancia (m): </label>
+                        <input type="number" id="20valordis" name="20valordis" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_20"></div>
+                </div>
+                <div id="Acustica_21" style="display: none;">
+                    <form id="Acustica_21_Form">
+                        <label for="21valoryou">Ingresa el módulo de Young (Pa): </label>
+                        <input type="number" id="21valoryou" name="21valoryou" step="any" required><br>
+                        <label for="21valorden">Ingresa la densidad (kg/m3): </label>
+                        <input type="number" id="21valorden" name="21valorden" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_21"></div>
+                </div>
+                <div id="Acustica_22" style="display: none;">
+                    <form id="Acustica_22_Form">
+                        <label for="22valorcon">Ingresa la constante elástica del medio (Pa): </label>
+                        <input type="number" id="22valorcon" name="22valorcon" step="any" required><br>
+                        <label for="22valorden">Ingresa la densidad superficial (kg/m2): </label>
+                        <input type="number" id="22valorden" name="22valorden" step="any" required><br>
+                        <label for="22valorpre">Ingresa la presión (Pa): </label>
+                        <input type="number" id="22valorpre" name="22valorpre" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_22"></div>
+                </div>
+                <div id="Acustica_23" style="display: none;">
+                    <form id="Acustica_23_Form">
+                        <label for="23valorcon">Ingresa la constante elástica del medio (Pa): </label>
+                        <input type="number" id="23valorcon" name="23valorcon" step="any" required><br>
+                        <label for="23valorpre">Ingresa la presión (Pa): </label>
+                        <input type="number" id="23valorpre" name="23valorpre" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_23"></div>
+                </div>
+                <div id="Acustica_24" style="display: none;">
+                    <form id="Acustica_24_Form">
+                        <label for="24valoryou">Ingresa el módulo de Young (Pa): </label>
+                        <input type="number" id="24valoryou" name="24valoryou" step="any" required><br>
+                        <label for="24valorpre">Ingresa la presión (Pa): </label>
+                        <input type="number" id="24valorpre" name="24valorpre" step="any" required><br>
+                        <label for="24valorden">Ingresa la densidad (kg/m3): </label>
+                        <input type="number" id="24valorden" name="24valorden" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_24"></div>
+                </div>
+                <div id="Acustica_25" style="display: none;">
+                    <form id="Acustica_25_Form">
+                        <label for="25valoryou">Ingresa el módulo de Young (Pa): </label>
+                        <input type="number" id="25valoryou" name="25valoryou" step="any" required><br>
+                        <label for="25valorcon">Ingresa la constante de los gases (J/(kg·K)): </label>
+                        <input type="number" id="25valorcon" name="25valorcon" step="any" required><br>
+                        <label for="25valortem">Ingresa la temperatura (K): </label>
+                        <input type="number" id="25valortem" name="25valortem" step="any" required><br>
+                        <label for="25valormas">Ingresa la masa molar del gas (kg/mol): </label>
+                        <input type="number" id="25valormas" name="25valormas" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_25"></div>
+                </div>
+                <div id="Acustica_26" style="display: none;">
+                    <form id="Acustica_26_Form">
+                        <label for="26valorfre">Ingresa la frecuencia (Hz): </label>
+                        <input type="number" id="26valorfre" name="26valorfre" step="any" required><br>
+                        <label for="26valorlon">Ingresa la longitud de onda (m): </label>
+                        <input type="number" id="26valorlon" name="26valorlon" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_26"></div>
+                </div>
+                <div id="Acustica_27" style="display: none;">
+                    <form id="Acustica_27_Form">
+                        <label for="27valordis">Ingresa la distancia recorrida (m): </label>
+                        <input type="number" id="27valordis" name="27valordis" step="any" required><br>
+                        <label for="27valortie">Ingresa el tiempo transcurrido (s): </label>
+                        <input type="number" id="27valortie" name="27valortie" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_27"></div>
+                </div>
+                <div id="Acustica_28" style="display: none;">
+                    <form id="Acustica_28_Form">
+                        <label for="28valordis">Ingresa la distancia (m): </label>
+                        <input type="number" id="28valordis" name="28valordis" step="any" required><br>
+                        <label for="28valorvel">Ingresa la velocidad media (m/s): </label>
+                        <input type="number" id="28valorvel" name="28valorvel" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_28"></div>
+                </div>
+                <div id="Acustica_29" style="display: none;">
+                    <form id="Acustica_29_Form">
+                        <label for="29valorvel">Ingresa la velocidad (m/s): </label>
+                        <input type="number" id="29valorvel" name="29valorvel" step="any" required><br>
+                        <label for="29valortie">Ingresa el tiempo (s): </label>
+                        <input type="number" id="29valortie" name="29valortie" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_29"></div>
+                </div>
+                <div id="Acustica_30" style="display: none;">
+                    <form id="Acustica_30_Form">
+                        <label for="30valornum">Ingresa el número de oscilaciones: </label>
+                        <input type="number" id="30valornum" name="30valornum" step="any" required><br>
+                        <label for="30valortie">Ingresa el tiempo (s): </label>
+                        <input type="number" id="30valortie" name="30valortie" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_30"></div>
+                </div>
+                <div id="Acustica_31" style="display: none;">
+                    <form id="Acustica_31_Form">
+                        <label for="31valorpot">Ingresa la potencia (W/m2): </label>
+                        <input type="number" id="31valorpot" name="31valorpot" step="any" required><br>
+                        <label for="31valorfre">Ingresa la frecuencia angular (rad/s): </label>
+                        <input type="number" id="31valorfre" name="31valorfre" step="any" required><br>
+                        <label for="31valoramp">Ingresa la amplitud máxima (m): </label>
+                        <input type="number" id="31valoramp" name="31valoramp" step="any" required><br>
+                        <label for="31valornum">Ingresa el número de onda (rad/m): </label>
+                        <input type="number" id="31valornum" name="31valornum" step="any" required><br>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Acustica_31"></div>
+                </div>
 
-            if (factorInicial && factorFinal) {
-                return valor * (factorInicial / factorFinal);
-            } else {
-                return 'Unidad no soportada';
-            }
-        }
+                <div id="calculadoraOptica" style="display:none;"></div>
 
-        // Función para convertir longitud
-        function convertirLongitud(valor, unidadInicial, tipoConversion) {
-            const conversiones = {
-                'metros': {
-                    'metros': 1,
-                    'pulgadas': 39.3701,
-                    'millas': 0.000621371,
-                    'pies': 3.28084,
-                    'yardas': 1.09361,
-                    'millas_nauticas': 0.000539957
-                },
-                'pulgadas': {
-                    'metros': 0.0254,
-                    'pulgadas': 1,
-                    'millas': 1.5783e-5,
-                    'pies': 0.0833333,
-                    'yardas': 0.0277778,
-                    'millas_nauticas': 1.3715e-5
-                },
-                'millas': {
-                    'metros': 1609.34,
-                    'pulgadas': 63360,
-                    'millas': 1,
-                    'pies': 5280,
-                    'yardas': 1760,
-                    'millas_nauticas': 0.868976
-                },
-                'pies': {
-                    'metros': 0.3048,
-                    'pulgadas': 12,
-                    'millas': 0.000189394,
-                    'pies': 1,
-                    'yardas': 0.333333,
-                    'millas_nauticas': 0.000164579
-                },
-                'yardas': {
-                    'metros': 0.9144,
-                    'pulgadas': 36,
-                    'millas': 0.000568182,
-                    'pies': 3,
-                    'yardas': 1,
-                    'millas_nauticas': 0.000493737
-                },
-                'millas_nauticas': {
-                    'metros': 1852,
-                    'pulgadas': 72913.4,
-                    'millas': 1.15078,
-                    'pies': 6076.12,
-                    'yardas': 2025.37,
-                    'millas_nauticas': 1
-                }
-            };
+                <div id="calculadoraFisica" style="display:none;"></div>
 
-            if (unidadInicial in conversiones && tipoConversion in conversiones[unidadInicial]) {
-                return valor * conversiones[unidadInicial][tipoConversion];
-            } else {
-                return 'Conversión no soportada';
-            }
-        }
-
-        // Función para convertir volumen
-        function convertirVolumen(valor, unidadInicial, tipoConversion) {
-            const conversiones = {
-                'cm3': {
-                    'cm3': 1,
-                    'm3': 1e-6,
-                    'litros': 0.001,
-                    'galones': 0.000264172,
-                    'pulgadas3': 0.0610237,
-                    'pies3': 3.53147e-5
-                },
-                'm3': {
-                    'cm3': 1e6,
-                    'm3': 1,
-                    'litros': 1000,
-                    'galones': 264.172,
-                    'pulgadas3': 61023.7,
-                    'pies3': 35.3147
-                },
-                'litros': {
-                    'cm3': 1000,
-                    'm3': 0.001,
-                    'litros': 1,
-                    'galones': 0.264172,
-                    'pulgadas3': 61.0237,
-                    'pies3': 0.0353147
-                },
-                'galones': {
-                    'cm3': 3785.41,
-                    'm3': 0.00378541,
-                    'litros': 3.78541,
-                    'galones': 1,
-                    'pulgadas3': 231,
-                    'pies3': 0.133681
-                },
-                'pulgadas3': {
-                    'cm3': 16.3871,
-                    'm3': 1.63871e-5,
-                    'litros': 0.0163871,
-                    'galones': 0.004329,
-                    'pulgadas3': 1,
-                    'pies3': 0.000578704
-                },
-                'pies3': {
-                    'cm3': 28316.8,
-                    'm3': 0.0283168,
-                    'litros': 28.3168,
-                    'galones': 7.48052,
-                    'pulgadas3': 1728,
-                    'pies3': 1
-                }
-            };
-
-            if (unidadInicial in conversiones && tipoConversion in conversiones[unidadInicial]) {
-                return valor * conversiones[unidadInicial][tipoConversion];
-            } else {
-                return 'Conversión no soportada';
-            }
-        }
-
-        // Función para convertir masa
-        function convertirMasa(valor, unidadInicial, tipoConversion) {
-            const conversiones = {
-                'kilogramos': {
-                    'kilogramos': 1,
-                    'gramos': 1000,
-                    'toneladas': 0.001,
-                    'miligramos': 1e+6,
-                    'microgramos': 1e+9,
-                    'libras': 2.20462,
-                    'onzas': 35.274
-                },
-                'gramos': {
-                    'kilogramos': 0.001,
-                    'gramos': 1,
-                    'toneladas': 1e-6,
-                    'miligramos': 1000,
-                    'microgramos': 1e+6,
-                    'libras': 0.00220462,
-                    'onzas': 0.035274
-                },
-                'toneladas': {
-                    'kilogramos': 1000,
-                    'gramos': 1e+6,
-                    'toneladas': 1,
-                    'miligramos': 1e+9,
-                    'microgramos': 1e+12,
-                    'libras': 2204.62,
-                    'onzas': 35274
-                },
-                'miligramos': {
-                    'kilogramos': 1e-6,
-                    'gramos': 0.001,
-                    'toneladas': 1e-9,
-                    'miligramos': 1,
-                    'microgramos': 1000,
-                    'libras': 2.20462e-6,
-                    'onzas': 3.5274e-5
-                },
-                'microgramos': {
-                    'kilogramos': 1e-9,
-                    'gramos': 1e-6,
-                    'toneladas': 1e-12,
-                    'miligramos': 0.001,
-                    'microgramos': 1,
-                    'libras': 2.20462e-9,
-                    'onzas': 3.5274e-8
-                },
-                'libras': {
-                    'kilogramos': 0.453592,
-                    'gramos': 453.592,
-                    'toneladas': 0.000453592,
-                    'miligramos': 453592,
-                    'microgramos': 4.536e+8,
-                    'libras': 1,
-                    'onzas': 16
-                },
-                'onzas': {
-                    'kilogramos': 0.0283495,
-                    'gramos': 28.3495,
-                    'toneladas': 2.835e-5,
-                    'miligramos': 28349.5,
-                    'microgramos': 2.835e+7,
-                    'libras': 0.0625,
-                    'onzas': 1
-                }
-            };
-
-            if (unidadInicial in conversiones && tipoConversion in conversiones[unidadInicial]) {
-                return valor * conversiones[unidadInicial][tipoConversion];
-            } else {
-                return 'Conversión no soportada';
-            }
-        }
-
-        // Función para convertir presión
-        function convertirPresion(valor, unidadInicial, tipoConversion) {
-            const conversiones = {
-                'atmosferas': {
-                    'atmosferas': 1,
-                    'bar': 1.01325,
-                    'pascales': 101325
-                },
-                'bar': {
-                    'atmosferas': 0.986923,
-                    'bar': 1,
-                    'pascales': 100000
-                },
-                'pascales': {
-                    'atmosferas': 9.8692e-6,
-                    'bar': 1e-5,
-                    'pascales': 1
-                }
-            };
-
-            if (unidadInicial in conversiones && tipoConversion in conversiones[unidadInicial]) {
-                return valor * conversiones[unidadInicial][tipoConversion];
-            } else {
-                return 'Conversión no soportada';
-            }
-        }
-
-        // Función para convertir temperatura
-        function convertirTemperatura(valor, unidadInicial, tipoConversion) {
-            const conversiones = {
-                'celsius': {
-                    'celsius': 1,
-                    'fahrenheit': 33.8,
-                    'kelvin': 274.15
-                },
-                'fahrenheit': {
-                    'celsius': -17.2222,
-                    'fahrenheit': 1,
-                    'kelvin': 255.928
-                },
-                'kelvin': {
-                    'celsius': -272.15,
-                    'fahrenheit': -457.87,
-                    'kelvin': 1
-                }
-            };
-
-            if (unidadInicial in conversiones && tipoConversion in conversiones[unidadInicial]) {
-                return valor * conversiones[unidadInicial][tipoConversion];
-            } else {
-                return 'Conversión no soportada';
-            }
-        }
-
-        // Función para convertir tiempo
-        function convertirTiempo(valor, unidadInicial, tipoConversion) {
-            const conversiones = {
-                'segundos': {
-                    'segundos': 1,
-                    'milisegundos': 1000,
-                    'nanosegundos': 1e+9,
-                    'microsegundos': 1e+6,
-                    'dias': 1 / 86400,
-                    'semanas': 1 / 604800,
-                    'siglos': 1 / 3155695200,
-                    'meses': 1 / 2629746,
-                    'años': 1 / 31556952,
-                    'minutos': 1 / 60,
-                    'horas': 1 / 3600,
-                    'decadas': 1 / 315569520
-                },
-                'milisegundos': {
-                    'segundos': 0.001,
-                    'milisegundos': 1,
-                    'nanosegundos': 1e+6,
-                    'microsegundos': 1000,
-                    'dias': 1.1574e-8,
-                    'semanas': 1.6534e-9,
-                    'siglos': 3.1689e-14,
-                    'meses': 3.8026e-10,
-                    'años': 3.1689e-11,
-                    'minutos': 1.6667e-5,
-                    'horas': 2.7778e-7,
-                    'decadas': 3.1689e-12
-                },
-                'nanosegundos': {
-                    'segundos': 1e-9,
-                    'milisegundos': 1e-6,
-                    'nanosegundos': 1,
-                    'microsegundos': 0.001,
-                    'dias': 1.1574e-14,
-                    'semanas': 1.6534e-15,
-                    'siglos': 3.1689e-20,
-                    'meses': 3.8026e-16,
-                    'años': 3.1689e-17,
-                    'minutos': 1.6667e-11,
-                    'horas': 2.7778e-13,
-                    'decadas': 3.1689e-18
-                },
-                'microsegundos': {
-                    'segundos': 1e-6,
-                    'milisegundos': 0.001,
-                    'nanosegundos': 1000,
-                    'microsegundos': 1,
-                    'dias': 1.1574e-11,
-                    'semanas': 1.6534e-12,
-                    'siglos': 3.1689e-17,
-                    'meses': 3.8026e-13,
-                    'años': 3.1689e-14,
-                    'minutos': 1.6667e-8,
-                    'horas': 2.7778e-10,
-                    'decadas': 3.1689e-15
-                },
-                'dias': {
-                    'segundos': 86400,
-                    'milisegundos': 86400000,
-                    'nanosegundos': 8.64e+13,
-                    'microsegundos': 8.64e+10,
-                    'dias': 1,
-                    'semanas': 0.142857,
-                    'siglos': 3.17098e-7,
-                    'meses': 0.0328549,
-                    'años': 0.00273973,
-                    'minutos': 1440,
-                    'horas': 24,
-                    'decadas': 3.17098e-5
-                },
-                'semanas': {
-                    'segundos': 604800,
-                    'milisegundos': 604800000,
-                    'nanosegundos': 6.048e+14,
-                    'microsegundos': 6.048e+11,
-                    'dias': 7,
-                    'semanas': 1,
-                    'siglos': 1.67414e-6,
-                    'meses': 0.229984,
-                    'años': 0.0191781,
-                    'minutos': 10080,
-                    'horas': 168,
-                    'decadas': 1.67414e-4
-                },
-                'siglos': {
-                    'segundos': 3155695200,
-                    'milisegundos': 3155695200000,
-                    'nanosegundos': 3.1557e+21,
-                    'microsegundos': 3.1557e+18,
-                    'dias': 31556952,
-                    'semanas': 4492421.6,
-                    'siglos': 1,
-                    'meses': 1305.84,
-                    'años': 108.82,
-                    'minutos': 525948766,
-                    'horas': 8765812.76,
-                    'decadas': 10
-                },
-                'meses': {
-                    'segundos': 2629746,
-                    'milisegundos': 2629746000,
-                    'nanosegundos': 2.6297e+18,
-                    'microsegundos': 2.6297e+15,
-                    'dias': 30.4368,
-                    'semanas': 4.34812,
-                    'siglos': 0.000765228,
-                    'meses': 1,
-                    'años': 0.0833333,
-                    'minutos': 43829.1,
-                    'horas': 730.484,
-                    'decadas': 8.68862e-5
-                },
-                'años': {
-                    'segundos': 31556952,
-                    'milisegundos': 31556952000,
-                    'nanosegundos': 3.1557e+16,
-                    'microsegundos': 3.1557e+13,
-                    'dias': 365.242,
-                    'semanas': 52.1775,
-                    'siglos': 0.00943087,
-                    'meses': 12,
-                    'años': 1,
-                    'minutos': 525948.766,
-                    'horas': 8765.81,
-                    'decadas': 0.000943087
-                },
-                'minutos': {
-                    'segundos': 60,
-                    'milisegundos': 60000,
-                    'nanosegundos': 60000000000,
-                    'microsegundos': 60000000,
-                    'dias': 0.000694444,
-                    'semanas': 0.0000992063,
-                    'siglos': 1.90371e-10,
-                    'meses': 0.0000242592,
-                    'años': 0.0000019026,
-                    'minutos': 1,
-                    'horas': 0.0166667,
-                    'decadas': 1.90371e-8
-                },
-                'horas': {
-                    'segundos': 3600,
-                    'milisegundos': 3600000,
-                    'nanosegundos': 3.6e+12,
-                    'microsegundos': 3.6e+9,
-                    'dias': 0.0416667,
-                    'semanas': 0.00595238,
-                    'siglos': 1.14103e-9,
-                    'meses': 0.00136986,
-                    'años': 0.000114155,
-                    'minutos': 60,
-                    'horas': 1,
-                    'decadas': 1.14103e-7
-                },
-                'decadas': {
-                    'segundos': 315569520,
-                    'milisegundos': 315569520000,
-                    'nanosegundos': 3.1557e+18,
-                    'microsegundos': 3.1557e+15,
-                    'dias': 3652.42,
-                    'semanas': 521.775,
-                    'siglos': 0.0943087,
-                    'meses': 120,
-                    'años': 10,
-                    'minutos': 5259487.66,
-                    'horas': 87658.1,
-                    'decadas': 1
-                }
-            };
-
-            if (unidadInicial in conversiones && tipoConversion in conversiones[unidadInicial]) {
-                return valor * conversiones[unidadInicial][tipoConversion];
-            } else {
-                return 'Conversión no soportada';
-            }
-        }
-
-        // Función para convertir temperatura
-        function convertirVelocidad(valor, unidadInicial, tipoConversion) {
-            const conversiones = {
-                'milla': {
-                    'milla': 1,
-                    'pie': 1.46667,
-                    'metro': 0.44704,
-                    'kilometro': 1.60934,
-                    'nudo': 0.868976
-                },
-                'pie': {
-                    'milla': 0.681818,
-                    'pie': 1,
-                    'metro': 0.3048,
-                    'kilometro': 1.09728,
-                    'nudo': 0.592484
-                },
-                'metro': {
-                    'milla': 2.23694,
-                    'pie': 3.28084,
-                    'metro': 1,
-                    'kilometro': 3.6,
-                    'nudo': 1.94384
-                },
-                'kilometro': {
-                    'milla': 0.621371,
-                    'pie': 0.911344,
-                    'metro': 0.277778,
-                    'kilometro': 1,
-                    'nudo': 0.539957
-                },
-                'nudo': {
-                    'milla': 1.15078,
-                    'pie': 1.68781,
-                    'metro': 0.514444,
-                    'kilometro': 1.852,
-                    'nudo': 1
-                }
-            };
-
-            if (unidadInicial in conversiones && tipoConversion in conversiones[unidadInicial]) {
-                return valor * conversiones[unidadInicial][tipoConversion];
-            } else {
-                return 'Conversión no soportada';
-            }
-        }
-
-        // Función para convertir angulos
-        function convertirAngulos(valor, unidadInicial, tipoConversion) {
-            const conversiones = {
-                'grados': {
-                    'grados': 1,
-                    'radianes': Math.PI / 180
-                },
-                'radianes': {
-                    'grados': 180 / Math.PI,
-                    'radianes': 1
-                }
-            };
-            if (unidadInicial in conversiones && tipoConversion in conversiones[unidadInicial]) {
-                return valor * conversiones[unidadInicial][tipoConversion];
-            } else {
-                return 'Conversión no soportada';
-            }
-        }
-
-        // Función para manejar el envío del formulario del conversor de longitud
-        document.getElementById('conversorLongitudForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evitar que se envíe el formulario
-
-            // Obtener los valores del formulario
-            const valor = parseFloat(document.getElementById('valorLongitud').value);
-            const unidadInicial = document.getElementById('unidadInicialLongitud').value;
-            const tipoConversion = document.getElementById('tipoConversionLongitud').value;
-
-            // Realizar la conversión correspondiente
-            const resultado = convertirLongitud(valor, unidadInicial, tipoConversion);
-
-            // Mostrar el resultado
-            document.getElementById('resultadoLongitud').textContent = `${valor} ${unidadInicial} son aproximadamente ${resultado} ${tipoConversion}`;
-        });
-
-        // Función para manejar el envío del formulario del conversor de volumen
-        document.getElementById('conversorVolumenForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evitar que se envíe el formulario
-
-            // Obtener los valores del formulario
-            const valor = parseFloat(document.getElementById('valorVolumen').value);
-            const unidadInicial = document.getElementById('unidadInicialVolumen').value;
-            const tipoConversion = document.getElementById('tipoConversionVolumen').value;
-
-            // Realizar la conversión correspondiente
-            const resultado = convertirVolumen(valor, unidadInicial, tipoConversion);
-
-            // Mostrar el resultado
-            document.getElementById('resultadoVolumen').textContent = `${valor} ${unidadInicial} son aproximadamente ${resultado} ${tipoConversion}`;
-        });
-
-        // Función para manejar el envío del formulario del conversor de masa
-        document.getElementById('conversorMasaForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evitar que se envíe el formulario
-
-            // Obtener los valores del formulario
-            const valor = parseFloat(document.getElementById('valorMasa').value);
-            const unidadInicial = document.getElementById('unidadInicialMasa').value;
-            const tipoConversion = document.getElementById('tipoConversionMasa').value;
-
-            // Realizar la conversión correspondiente
-            const resultado = convertirMasa(valor, unidadInicial, tipoConversion);
-
-            // Mostrar el resultado
-            document.getElementById('resultadoMasa').textContent = `${valor} ${unidadInicial} son aproximadamente ${resultado} ${tipoConversion}`;
-        });
-
-        // Función para manejar el envío del formulario del conversor de presion
-        document.getElementById('conversorPresionForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evitar que se envíe el formulario
-
-            // Obtener los valores del formulario
-            const valor = parseFloat(document.getElementById('valorPresion').value);
-            const unidadInicial = document.getElementById('unidadInicialPresion').value;
-            const tipoConversion = document.getElementById('tipoConversionPresion').value;
-
-            // Realizar la conversión correspondiente
-            const resultado = convertirPresion(valor, unidadInicial, tipoConversion);
-
-            // Mostrar el resultado
-            document.getElementById('resultadoPresion').textContent = `${valor} ${unidadInicial} son aproximadamente ${resultado} ${tipoConversion}`;
-        });
-
-        // Función para manejar el envío del formulario del conversor de Temperatura
-        document.getElementById('conversorTemperaturaForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evitar que se envíe el formulario
-
-            // Obtener los valores del formulario
-            const valor = parseFloat(document.getElementById('valorTemperatura').value);
-            const unidadInicial = document.getElementById('unidadInicialTemperatura').value;
-            const tipoConversion = document.getElementById('tipoConversionTemperatura').value;
-
-            // Realizar la conversión correspondiente
-            const resultado = convertirTemperatura(valor, unidadInicial, tipoConversion);
-
-            // Mostrar el resultado
-            document.getElementById('resultadoTemperatura').textContent = `${valor} ${unidadInicial} son aproximadamente ${resultado} ${tipoConversion}`;
-        });
-
-        // Función para manejar el envío del formulario del conversor de Tiempo
-        document.getElementById('conversorTiempoForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evitar que se envíe el formulario
-
-            // Obtener los valores del formulario
-            const valor = parseFloat(document.getElementById('valorTiempo').value);
-            const unidadInicial = document.getElementById('unidadInicialTiempo').value;
-            const tipoConversion = document.getElementById('tipoConversionTiempo').value;
-
-            // Realizar la conversión correspondiente
-            const resultado = convertirTiempo(valor, unidadInicial, tipoConversion);
-
-            // Mostrar el resultado
-            document.getElementById('resultadoTiempo').textContent = `${valor} ${unidadInicial} son aproximadamente ${resultado} ${tipoConversion}`;
-        });
-
-        // Función para manejar el envío del formulario del conversor de Velocidad
-        document.getElementById('conversorVelocidadForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evitar que se envíe el formulario
-
-            // Obtener los valores del formulario
-            const valor = parseFloat(document.getElementById('valorVelocidad').value);
-            const unidadInicial = document.getElementById('unidadInicialVelocidad').value;
-            const tipoConversion = document.getElementById('tipoConversionVelocidad').value;
-
-            // Realizar la conversión correspondiente
-            const resultado = convertirVelocidad(valor, unidadInicial, tipoConversion);
-
-            // Mostrar el resultado
-            document.getElementById('resultadoVelocidad').textContent = `El resultado de la conversión es de: ${resultado}`;
-        });
-
-        // Función para manejar el envío del formulario del conversor de Angulos
-        document.getElementById('conversorAngulosForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evitar que se envíe el formulario
-
-            // Obtener los valores del formulario
-            const valor = parseFloat(document.getElementById('valorAngulos').value);
-            const unidadInicial = document.getElementById('unidadInicialAngulos').value;
-            const tipoConversion = document.getElementById('tipoConversionAngulos').value;
-
-            // Realizar la conversión correspondiente
-            const resultado = convertirAngulos(valor, unidadInicial, tipoConversion);
-
-            // Mostrar el resultado
-            document.getElementById('resultadoAngulos').textContent = `${valor} ${unidadInicial} son aproximadamente ${resultado} ${tipoConversion}`;
-        });
-
-        // Función para manejar el envío del formulario del conversor original
-        document.getElementById('conversorForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evitar que se envíe el formulario
-
-            // Obtener los valores del formulario
-            const valor = parseFloat(document.getElementById('valor').value);
-            const unidadInicial = document.getElementById('unidadInicial').value;
-            const unidadFinal = document.getElementById('unidadFinal').value;
-
-            // Realizar la conversión correspondiente
-            const resultado = convertirFrecuencia(valor, unidadInicial, unidadFinal);
-
-            // Mostrar el resultado
-            document.getElementById('resultado').textContent = `${valor} ${unidadInicial} son aproximadamente ${resultado} ${unidadFinal}`;
-        });
-
-        // Mostrar el conversor correspondiente según la selección del usuario
-        document.getElementById('tipoConversor').addEventListener('change', function () {
-            // Ocultar todos los conversores
-            document.querySelectorAll('#conversores > div').forEach(function (conversor) {
-                conversor.style.display = 'none';
-            });
-
-            // Mostrar el conversor seleccionado
-            const tipoConversor = this.value;
-            document.getElementById(`conversor${tipoConversor.charAt(0).toUpperCase() + tipoConversor.slice(1)}`).style.display = 'block';
-        });
-    </script>
+            </div>
+        </div>
+    </div>
 </body>
+<script defer>
+    
+    function k_numero_de_onda(w, v) {
+            const k = w / v;
+            return k;
+        }
+
+    function k_numero_de_onda_λ(λ) {
+        const k = 2 * Math.PI / λ;
+        return k;
+    }
+
+    function w_frecuencia_angular(k, v) {
+            const w = v * k;
+            return w;
+        }
+
+    function v_velocidad(w, k) {
+            const v = w / k;
+            return v;
+        }
+
+    function amplitud_onda_estacionaria(A) {
+            const Asw = 2 * A;
+            return Asw;
+        }
+
+    function amplitud(Asw) {
+        const A = Asw / 2;
+        return A;
+    }
+
+    function frecuencia_angular(f) {
+        const w = 2 * Math.PI * f;
+        return w;
+    }
+    
+    function frecuencia(w) {
+        const f = w / (2 * Math.PI);
+        return f;
+    }
+    
+    function longitud_onda(v, f) {
+        const λ = v / f;
+        return λ;
+    }
+    
+    function velocidad(λ, f) {
+        const v = λ * f;
+        return v;
+    }
+    
+    function frecuencia_longitud(v, λ) {
+        const f = v / λ;
+        return f;
+    }
+    
+    function periodo(f) {
+        const T = 1 / f;
+        return T;
+    }
+    
+    function velocidad_angular(t, θ) {
+        const vθ = θ / t;
+        return vθ;
+    }
+    
+    function fase_inicial() {
+        const φ = Math.PI / 2;
+        return φ;
+    }
+
+    function velocidad_angular_periodo(T) {
+        const ω = (2 * Math.PI) / T;
+        return ω;
+    }
+    
+    function amplitud_xt(x, t, A, k, w, φ) {
+        const Axt = A * Math.sin(k * x - w * t + φ);
+        return Axt;
+    }
+    
+    function amplitud_ec_gral(x, t, Axt, k, w, φ) {
+        const A = Axt / Math.sin(k * x - w * t + φ);
+        return A;
+    }
+    
+    function Intensidad(p, w, A, v) {
+        const I = (p * w ** 2 * A ** 2 * v) / 2;
+        return I;
+    }
+
+    function numero_de_onda_d(d) {
+        const k = Math.PI / d;
+        return d;
+    }
+
+    function velocidad_modulo(Y, p) {
+        const v = Math.sqrt(Y / p);
+        return v;
+    }
+
+    function velocidad_modulo_presion_volumen(B, S, p) {
+        const v = Math.sqrt((B * (3 / 4) * S) / p);
+        return v;
+    }
+
+    function velocidad_modulo_presion(B, p) {
+        const v = Math.sqrt(B / p);
+        return v;
+    }
+    
+    function velocidad_modulo_presion_densidad(Y, P, p) {
+        const v = Math.sqrt((Y * P) / p);
+        return v;
+    }
+    
+    function velocidad_modulo_constante_gases(Y, R, t, m) {
+        const v = Math.sqrt((Y * R * t) / m);
+        return v;
+    }
+
+    function velocidad_frecuencia(f, λ) {
+        const v = f * λ;
+        return v;
+    }
+
+    function velocidad_distancia(d, t) {
+        const v = d / t;
+        return v;
+    }
+
+    function tiempo(d, v) {
+        const t = d / v;
+        return t;
+    }
+
+    function distancia(v, t) {
+        const d = v * t;
+        return d;
+    }
+
+    function frecuencia_angular_oscilaciones(n, t) {
+        const w = (2 * Math.PI * n) / t;
+        return w;
+    }
+
+    function Intensidad_numero_onda(p, w, A, k) {
+        const I = (p * w ** 2 * A ** 2 * k ** 2) / 2;
+        return I;
+    }
+
+    function mostrarResultado(mensaje) {
+        document.getElementById('resultado').innerText = mensaje;
+    }
+
+    // Mostrar la calculadora correspondiente según la selección del usuario
+    document.getElementById('tipoCalculadora').addEventListener('change', function () {
+        // Ocultar todas las calculadoras
+        document.querySelectorAll('#calculadoras > div').forEach(function (calculadora) {
+            calculadora.style.display = 'none';
+        });
+
+        // Mostrar la calculadora seleccionada
+        const tipoCalculadora = this.value;
+        document.getElementById(`calculadora${tipoCalculadora.charAt(0).toUpperCase() + tipoCalculadora.slice(1)}`).style.display = 'block';
+    });
+
+    // Mostrar el formulario correcto para cada fórumla
+    document.getElementById('opcion').addEventListener('change', function () {
+        // Ocultar todos los formularios
+        document.querySelectorAll('#Formularios_Acustica > div').forEach(function (formulario) {
+            formulario.style.display = 'none';
+        });
+
+        // Mostrar el formulario seleccionado
+        const opcion = this.value;
+        document.getElementById(`Acustica_${opcion.charAt(0).toUpperCase() + opcion.slice(1)}`).style.display = 'block';
+    });
+
+    // Función para manejar el envío del formulario1
+    document.getElementById('Acustica_1_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const w = parseFloat(document.getElementById('1valorfrecuenciaangular').value);
+        const v = parseFloat(document.getElementById('1valorvelocidad').value);
+
+        // Realizar la conversión correspondiente
+        const k = k_numero_de_onda(w, v);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica').textContent = `El número de onda (k) es ${k} rad/m`;
+    });
+
+    // Función para manejar el envío del formulario2
+    document.getElementById('Acustica_2_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const k = parseFloat(document.getElementById('2valornumonda').value);
+        const v = parseFloat(document.getElementById('2valorvelocidad').value);
+
+        // Realizar la conversión correspondiente
+        const w = w_frecuencia_angular(k, v);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_2').textContent = `La frecuencia angular (w) es ${w} rad/s`;
+    });
+
+    // Función para manejar el envío del formulario3
+    document.getElementById('Acustica_3_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const w = parseFloat(document.getElementById('3valorfrecuangu').value);
+        const k = parseFloat(document.getElementById('3valornumonda').value);
+
+        // Realizar la conversión correspondiente
+        const v = v_velocidad(w, k);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_3').textContent = `La velocidad (v) es ${v} m/s`;
+    });
+
+    // Función para manejar el envío del formulario4
+    document.getElementById('Acustica_4_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const A = parseFloat(document.getElementById('4valoramp').value);
+
+        // Realizar la conversión correspondiente
+        const Asw = amplitud_onda_estacionaria(A);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_4').textContent = `La amplitud de la onda estacionaria (Asw) es ${Asw} m`;
+    });
+
+    // Función para manejar el envío del formulario5
+    document.getElementById('Acustica_5_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const Asw = parseFloat(document.getElementById('5valoramp').value);
+
+        // Realizar la conversión correspondiente
+        const A = amplitud(Asw);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_5').textContent = `La amplitud (A) es ${A} m`;
+    });
+
+    // Función para manejar el envío del formulario6
+    document.getElementById('Acustica_6_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const f = parseFloat(document.getElementById('6valorfre').value);
+
+        // Realizar la conversión correspondiente
+        const w = frecuencia_angular(f);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_6').textContent = `La frecuencia angular (w) es ${w} rad/s`;
+    });
+
+    // Función para manejar el envío del formulario7
+    document.getElementById('Acustica_7_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario7
+        const w = parseFloat(document.getElementById('7valorfre').value);
+
+        // Realizar la conversión correspondiente
+        const f = frecuencia(w);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_7').textContent = `La frecuencia (f) es ${f} Hz`;
+    });
+
+    // Función para manejar el envío del formulario8
+    document.getElementById('Acustica_8_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario7
+        const v = parseFloat(document.getElementById('8valorvel').value);
+        const f = parseFloat(document.getElementById('8valorfre').value);
+
+        // Realizar la conversión correspondiente
+        const λ = longitud_onda(v, f);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_8').textContent = `La longitud de onda (λ) es ${λ} m`;
+    });
+
+    // Función para manejar el envío del formulario8.1
+    document.getElementById('Acustica_8.1_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const λ = parseFloat(document.getElementById('8.1valorlon').value);
+        const f = parseFloat(document.getElementById('8.1valorfre').value);
+
+        // Realizar la conversión correspondiente
+        const v = velocidad(λ, f);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_8.1').textContent = `La velocidad (v) es ${v} m/s`;
+    });
+
+    // Función para manejar el envío del formulario9
+    document.getElementById('Acustica_9_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const f = parseFloat(document.getElementById('9valorfre').value);
+
+        // Realizar la conversión correspondiente
+        const T = periodo(f)
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_9').textContent = `El periodo (T) es ${T} s`;
+    });
+
+    // Función para manejar el envío del formulario10
+    document.getElementById('Acustica_10_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const λ = parseFloat(document.getElementById('10valorlon').value);
+
+        // Realizar la conversión correspondiente
+        const k = k_numero_de_onda_λ(λ)
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_10').textContent = `El número de onda (k) es ${k} rad/m`;
+    });
+
+    // Función para manejar el envío del formulario11
+    document.getElementById('Acustica_11_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const t = parseFloat(document.getElementById('11valortie').value);
+        const θ = parseFloat(document.getElementById('11valorpos').value);
+
+        // Realizar la conversión correspondiente
+        const vθ = velocidad_angular(t, θ)
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_11').textContent = `La velocidad angular (vθ) es ${vθ} rad/s`;
+    });
+
+    // Función para manejar el envío del formulario12
+    document.getElementById('Acustica_12_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Realizar la conversión correspondiente
+        const φ = fase_inicial()
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_12').textContent = `La fase inicial (φ) es ${φ} rad`;
+    });
+
+    // Función para manejar el envío del formulario13
+    document.getElementById('Acustica_13_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const T = parseFloat(document.getElementById('13valorper').value);
+
+        // Realizar la conversión correspondiente
+        const ω = velocidad_angular_periodo(T)
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_13').textContent = `La velocidad angular (ω) es ${ω} rad/s`;
+    });
+
+    // Función para manejar el envío del formulario14
+    document.getElementById('Acustica_14_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const v = parseFloat(document.getElementById('14valorvel').value);
+        const λ = parseFloat(document.getElementById('14valorlon').value);
+
+        // Realizar la conversión correspondiente
+        const f = frecuencia_longitud(v, λ)
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_14').textContent = `La frecuencia (f) es ${f} Hz`;
+    });
+
+    // Función para manejar el envío del formulario15
+    document.getElementById('Acustica_15_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const x = parseFloat(document.getElementById('15valorpos').value);
+        const t = parseFloat(document.getElementById('15valortie').value);
+        const A = parseFloat(document.getElementById('15valoramp').value);
+        const k = parseFloat(document.getElementById('15valornum').value);
+        const w = parseFloat(document.getElementById('15valorfre').value);
+        const φ = parseFloat(document.getElementById('15valorfas').value);
+
+        // Realizar la conversión correspondiente
+        const Axt = amplitud_xt(x, t, A, k, w, φ);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_15').textContent = `La amplitud de la onda en posición x y tiempo t es ${Axt} m`;
+    });
+
+    // Función para manejar el envío del formulario16
+    document.getElementById('Acustica_16_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const x = parseFloat(document.getElementById('16valorpos').value);
+        const t = parseFloat(document.getElementById('16valortie').value);
+        const Axt = parseFloat(document.getElementById('16valoramp').value);
+        const k = parseFloat(document.getElementById('16valornum').value);
+        const w = parseFloat(document.getElementById('16valorfre').value);
+        const φ = parseFloat(document.getElementById('16valorfas').value);
+
+        // Realizar la conversión correspondiente
+        const A = amplitud_ec_gral(x, t, Axt, k, w, φ);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_16').textContent = `La amplitud (A) es ${A} m`;
+    });
+
+    // Función para manejar el envío del formulario17
+    document.getElementById('Acustica_17_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const A = parseFloat(document.getElementById('17valoramp').value);
+        const k = parseFloat(document.getElementById('17valornum').value);
+        const w = parseFloat(document.getElementById('17valorfre').value);
+        const φ = parseFloat(document.getElementById('17valorfas').value);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_17').textContent = `La ecuación de la onda ingresada es: y(x,t) = ${A}sin(${k}x - ${w}t + ${φ})`;
+    });
+
+    // Función para manejar el envío del formulario18
+    document.getElementById('Acustica_18_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const A = parseFloat(document.getElementById('18valoramp').value);
+        const w = parseFloat(document.getElementById('18valorfre').value);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_18').textContent = `La ecuación de la onda ingresada es: y(t) = ${A}sin(${w}t)`;
+    });
+
+    // Función para manejar el envío del formulario19
+    document.getElementById('Acustica_19_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const p = parseFloat(document.getElementById('19valorpot').value);
+        const w = parseFloat(document.getElementById('19valorfre').value);
+        const A = parseFloat(document.getElementById('19valoramp').value);
+        const v = parseFloat(document.getElementById('19valorvel').value);
+
+        // Realizar la conversión correspondiente
+        const I = Intensidad(p, w, A, v);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_19').textContent = `La intensidad acústica es ${I} W/m2`;
+    });
+
+    // Función para manejar el envío del formulario20
+    document.getElementById('Acustica_20_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const d = parseFloat(document.getElementById('20valordis').value);
+
+        // Realizar la conversión correspondiente
+        const k = numero_de_onda_d(d)
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_20').textContent = `El número de onda es ${k} rad/m`;
+    });
+
+    // Función para manejar el envío del formulario21
+    document.getElementById('Acustica_21_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const Y = parseFloat(document.getElementById('21valoryou').value);
+        const p = parseFloat(document.getElementById('21valorden').value);
+
+        // Realizar la conversión correspondiente
+        const v = velocidad_modulo(Y, p);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_21').textContent = `La velocidad de propagación de las ondas en el medio es: ${v} m/s`;
+    });
+
+    // Función para manejar el envío del formulario22
+    document.getElementById('Acustica_22_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const B = parseFloat(document.getElementById('22valorcon').value);
+        const S = parseFloat(document.getElementById('22valorden').value);
+        const p = parseFloat(document.getElementById('22valorpre').value);
+
+        // Realizar la conversión correspondiente
+        const v = velocidad_modulo_presion_volumen(B, S, p);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_22').textContent = `La velocidad de propagación de las ondas en el medio es ${v} m/s`;
+    });
+
+    // Función para manejar el envío del formulario23
+    document.getElementById('Acustica_23_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const B = parseFloat(document.getElementById('23valorcon').value);
+        const p = parseFloat(document.getElementById('23valorpre').value);
+
+        // Realizar la conversión correspondiente
+        const v = velocidad_modulo_presion(B, p);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_23').textContent = `La velocidad de propagación de las ondas en el medio es ${v} m/s`;
+    });
+
+    // Función para manejar el envío del formulario24
+    document.getElementById('Acustica_24_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const Y = parseFloat(document.getElementById('24valoryou').value);
+        const P = parseFloat(document.getElementById('24valorpre').value);
+        const p = parseFloat(document.getElementById('24valorden').value);
+
+        // Realizar la conversión correspondiente
+        const v = velocidad_modulo_presion_densidad(Y, P, p)
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_24').textContent = `La velocidad de propagación de las ondas en el medio es ${v} m/s`;
+    });
+
+    // Función para manejar el envío del formulario25
+    document.getElementById('Acustica_25_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const Y = parseFloat(document.getElementById('25valoryou').value);
+        const R = parseFloat(document.getElementById('25valorcon').value);
+        const t = parseFloat(document.getElementById('25valortem').value);
+        const m = parseFloat(document.getElementById('25valormas').value);
+
+        // Realizar la conversión correspondiente
+        const v = velocidad_modulo_constante_gases(Y, R, t, m)
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_25').textContent = `La velocidad del sonido en el gas es ${v} m/s`;
+    });
+
+    // Función para manejar el envío del formulario26
+    document.getElementById('Acustica_26_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const f = parseFloat(document.getElementById('26valorfre').value);
+        const λ = parseFloat(document.getElementById('26valorlon').value);
+
+        // Realizar la conversión correspondiente
+        const v = velocidad_frecuencia(f, λ);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_26').textContent = `La velocidad de propagación de las ondas es ${v} m/s`;
+    });
+
+    // Función para manejar el envío del formulario28
+    document.getElementById('Acustica_28_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const d = parseFloat(document.getElementById('28valordis').value);
+        const v = parseFloat(document.getElementById('28valorvel').value);
+
+        // Realizar la conversión correspondiente
+        const t = tiempo(d, v);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_28').textContent = `El tiempo transcurrido es ${t} s`;
+    });
+
+    // Función para manejar el envío del formulario29
+    document.getElementById('Acustica_29_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const v = parseFloat(document.getElementById('29valorvel').value);
+        const t = parseFloat(document.getElementById('29valortie').value);
+
+        // Realizar la conversión correspondiente
+        const d = distancia(v, t);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_29').textContent = `La distancia recorrida es ${d} m`;
+    });
+
+    // Función para manejar el envío del formulario30
+    document.getElementById('Acustica_30_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const n = parseFloat(document.getElementById('30valornum').value);
+        const t = parseFloat(document.getElementById('30valortie').value);
+
+        // Realizar la conversión correspondiente
+        const w = frecuencia_angular_oscilaciones(n, t);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_30').textContent = `La frecuencia angular es ${w} rad/s`;
+    });
+
+    // Función para manejar el envío del formulario31
+    document.getElementById('Acustica_31_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const p = parseFloat(document.getElementById('31valorpot').value);
+        const w = parseFloat(document.getElementById('31valorfre').value);
+        const A = parseFloat(document.getElementById('31valoramp').value);
+        const k = parseFloat(document.getElementById('31valornum').value);
+
+        // Realizar la conversión correspondiente
+        const I = Intensidad_numero_onda(p, w, A, k);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Acustica_31').textContent = `La intensidad acústica es ${I} W/m2`;
+    });
+</script>
+</head>
 
 </html>
