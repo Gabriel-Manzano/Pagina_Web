@@ -449,24 +449,25 @@
                 <option value="1">Distancia del objeto (p)</option>
                 <option value="2">Distancia de la imagen (q)</option>
                 <option value="3">Distancia focal de una lente delgada (f)</option>
-
-
-                <option value="4">Aumento de una lente ()</option>
-                <option value="5">Amplitud (A)</option>
-                <option value="6">Frecuencia Angular a partir de Frecuencia (w)</option>
-                <option value="7">Frecuencia a partir de Frecuencia Angular (f)</option>
-                <option value="8">Longitud de Onda (λ)</option>
-                <option value="8.1">Velocidad (v)</option>
-                <option value="9">Periodo (T)</option>
-                <option value="10">Número de onda a partir de Longitud de Onda (k)</option>
-                <option value="11">Velocidad Angular (vθ)</option>
-                <option value="12">Fase Inicial (φ)</option>
-                <option value="13">Velocidad Angular a partir de Periodo (ω)</option>
-                <option value="14">Frecuencia a partir de Velocidad y Longitud de Onda (f)</option>
-                <option value="15">Amplitud de Onda en Posición y Tiempo (Axt)</option>
-                <option value="16">Amplitud a partir de Posición, Tiempo y Amplitud de Onda en Posición y Tiempo (A)
-                </option>
-                <option value="17">Ecuación de Onda (y)</option>
+                <option value="4">Aumento de una lente (m)</option>
+                <option value="5">Aumento de una lente (m) a partir de la distancia imagen y objeto (q,p)</option>
+                <option value="6">Tamaño de la imagen (hi)</option>
+                <option value="7">Tamaño de la imagen (hi) a partir de la distancia imagen y objeto (q,p)</option>
+                <option value="8">Tamaño del objeto (ho)</option>
+                <option value="9">Tamaño del objeto (ho) a partir de la distancia imagen y objeto (q,p)</option>
+                <option value="10">Distancia del objeto (p) a partir del amento de un lente (m)</option>
+                <option value="11">Distancia del objeto (p) a partir del tamaño de imagen y el tamaño objeto (hi, ho)</option>
+                <option value="12">Distancia de la imagen (q) a partir del aumento de un lente (m)</option>
+                <option value="13">Distancia de la imagen (q) a partir del tamaño de imagen y el tamaño objeto (hi, ho)</option>
+                <option value="14">Índice de refracción de un medio (n1)</option>
+                <option value="15">Índice de refracción de un medio (n2)</option>
+                <option value="16">Ángulo de incidencia (θ1)</option>
+                <option value="17">Ángulo de refracción (θ2)</option>
+                <option value="18">Ecuacuón de Maxwell - Ley de Faraday (∇E)</option>
+                <option value="19">Ecuacuón de Maxwell - Ley de Ampére (∇B)</option>
+                <option value="20">Ecuacuón de Maxwell - Flujo de campo magnético (∇B)</option>
+                <option value="21">Ecuacuón de Maxwell - Ley de Gauss (∇E)</option>
+                <option value="22">Ecuación de la Onda</option>
             </select>
 
             <div id="Formularios_Optica">
@@ -503,18 +504,500 @@
                     </form>
                     <div id="resultado_Optica3"></div>
                 </div>
+                <div id="Optica_4" style="display: none;">
+                    <form id="Optica_4_Form">
+                        <label for="4valorimg">Ingresa la altura de la imagen (h1): </label>
+                        <input type="number" id="4valorimg" name="4valorimg" step="any" required><br>
+                        <label for="4valorobj">Ingresa la altura del objeto (ho): </label>
+                        <input type="number" id="4valorobj" name="4valorobj" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica4"></div>
+                </div>
+                <div id="Optica_5" style="display: none;">
+                    <form id="Optica_5_Form">
+                        <label for="5valorimg">Ingresa la distancia de la imagen (q): </label>
+                        <input type="number" id="5valorimg" name="5valorimg" step="any" required><br>
+                        <label for="5valorobj">Ingresa la distancia del objeto (p): </label>
+                        <input type="number" id="5valorobj" name="5valorobj" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica5"></div>
+                </div>
+                <div id="Optica_6" style="display: none;">
+                    <form id="Optica_6_Form">
+                        <label for="6valoraum">Ingresa el amento de la imagen (m): </label>
+                        <input type="number" id="6valoraum" name="6valoraum" step="any" required><br>
+                        <label for="6valorobj">Ingresa el tamaño del objeto (m): </label>
+                        <input type="number" id="6valorobj" name="6valorobj" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica6"></div>
+                </div>
+                <div id="Optica_7" style="display: none;">
+                    <form id="Optica_7_Form">
+                        <label for="7valordis">Ingresa la distancia de la imagen (q): </label>
+                        <input type="number" id="7valordis" name="7valordis" step="any" required><br>
+                        <label for="7valorobj">Ingresa el tamaño del objeto (ho): </label>
+                        <input type="number" id="7valorobj" name="7valorobj" step="any" required><br>
+                        <label for="7valordio">Ingresa la distancia del objeto (p): </label>
+                        <input type="number" id="7valordio" name="7valordio" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica7"></div>
+                </div>
+                <div id="Optica_8" style="display: none;">
+                    <form id="Optica_8_Form">
+                        <label for="8valordis">Ingresa el aumento de la imagen (m): </label>
+                        <input type="number" id="8valormag" name="8valormag" step="any" required><br>
+                        <label for="8valorimg">Ingresa el tamaño de la imagen (hi): </label>
+                        <input type="number" id="8valorimg" name="8valorimg" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica8"></div>
+                </div>
+                <div id="Optica_9" style="display: none;">
+                    <form id="Optica_9_Form">
+                        <label for="9valordis">Ingresa la distancia de la imagen (q): </label>
+                        <input type="number" id="9valordis" name="9valordis" step="any" required><br>
+                        <label for="9valorimg">Ingresa el tamaño de la imagen (hi): </label>
+                        <input type="number" id="9valorimg" name="9valorimg" step="any" required><br>
+                        <label for="9valordio">Ingresa la distancia del objeto (p): </label>
+                        <input type="number" id="9valordio" name="9valordio" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica9"></div>
+                </div>
+                <div id="Optica_10" style="display: none;">
+                    <form id="Optica_10_Form">
+                        <label for="10valoraum">Ingresa el aumento de la imagen (m): </label>
+                        <input type="number" id="10valoraum" name="10valoraum" step="any" required><br>
+                        <label for="10valorimg">Ingresa la distancia de la imagen (q): </label>
+                        <input type="number" id="10valorimg" name="10valorimg" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica10"></div>
+                </div>
+                <div id="Optica_11" style="display: none;">
+                    <form id="Optica_11_Form">
+                        <label for="11valortam">Ingresa el tamaño de la imagen (hi): </label>
+                        <input type="number" id="11valortam" name="11valortam" step="any" required><br>
+                        <label for="11valorimg">Ingresa la distancia de la imagen (q): </label>
+                        <input type="number" id="11valorimg" name="11valorimg" step="any" required><br>
+                        <label for="11valorobj">Ingresa el tamñao del objeto (ho): </label>
+                        <input type="number" id="11valorobj" name="11valorobj" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica11"></div>
+                </div>
+                <div id="Optica_12" style="display: none;">
+                    <form id="Optica_12_Form">
+                        <label for="12valoraum">Ingresa el aumento de la imagen (m): </label>
+                        <input type="number" id="12valoraum" name="12valoraum" step="any" required><br>
+                        <label for="12valorobj">Ingresa la distancia del objeto (p): </label>
+                        <input type="number" id="12valorobj" name="12valorobj" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica12"></div>
+                </div>
+                <div id="Optica_13" style="display: none;">
+                    <form id="Optica_13_Form">
+                        <label for="13valordis">Ingresa la distancia del objeto (p): </label>
+                        <input type="number" id="13valordis" name="13valordis" step="any" required><br>
+                        <label for="13valorimg">Ingresa el tamaño de la imagen (hi): </label>
+                        <input type="number" id="13valorimg" name="13valorimg" step="any" required><br>
+                        <label for="13valorobj">Ingresa el tamaño del objeto (ho): </label>
+                        <input type="number" id="13valorobj" name="13valorobj" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica13"></div>
+                </div>
+                <div id="Optica_14" style="display: none;">
+                    <form id="Optica_14_Form">
+                        <label for="14valorref">Ingresa el ínidce de refracción del segundo medio (n2): </label>
+                        <input type="number" id="14valorref" name="14valorref" step="any" required><br>
+                        <label for="14valorpri">Ingresa el ángulo de incidencia del medio (θ1): </label>
+                        <input type="number" id="14valorpri" name="14valorpri" step="any" required><br>
+                        <label for="14valorseg">Ingresa el ángulo de refracción del medio (θ2): </label>
+                        <input type="number" id="14valorseg" name="14valorseg" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica14"></div>
+                </div>
+                <div id="Optica_15" style="display: none;">
+                    <form id="Optica_15_Form">
+                        <label for="15valorref">Ingresa el ínidce de refracción del primer medio (n1): </label>
+                        <input type="number" id="15valorref" name="15valorref" step="any" required><br>
+                        <label for="15valorseg">Ingresa el ángulo de refracción del medio (θ2): </label>
+                        <input type="number" id="15valorseg" name="15valorseg" step="any" required><br>
+                        <label for="15valorpri">Ingresa el ángulo de incidencia del medio (θ1): </label>
+                        <input type="number" id="15valorpri" name="15valorpri" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica15"></div>
+                </div>
+                <div id="Optica_16" style="display: none;">
+                    <form id="Optica_16_Form">
+                        <label for="16valorref">Ingresa el ínidce de refracción del primer medio (n1): </label>
+                        <input type="number" id="16valorref" name="16valorref" step="any" required><br>
+                        <label for="16valormed">Ingresa el ínidce de refracción del segundo medio (n2): </label>
+                        <input type="number" id="16valormed" name="16valormed" step="any" required><br>
+                        <label for="16valorseg">Ingresa el ángulo de refracción del medio (θ2): </label>
+                        <input type="number" id="16valorseg" name="16valorseg" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica16"></div>
+                </div>
+                <div id="Optica_17" style="display: none;">
+                    <form id="Optica_17_Form">
+                        <label for="17valorref">Ingresa el ínidce de refracción del primer medio (n1): </label>
+                        <input type="number" id="17valorref" name="17valorref" step="any" required><br>
+                        <label for="17valormed">Ingresa el ínidce de refracción del segundo medio (n2): </label>
+                        <input type="number" id="17valormed" name="17valormed" step="any" required><br>
+                        <label for="17valorpri">Ingresa el ángulo de incidencia del medio (θ1): </label>
+                        <input type="number" id="17valorpri" name="17valorpri" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica17"></div>
+                </div>
+                <div id="Optica_18" style="display: none;">
+                    <form id="Optica_18_Form">
+                        <label for="18valormag">Ingresa la derivada parcial del campo magnético (B): </label>
+                        <input type="number" id="18valormag" name="18valormag" step="any" required><br>
+                        <label for="18valortie">Ingresa la derivada parcial del tiempo (t): </label>
+                        <input type="number" id="18valortie" name="18valortie" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica18"></div>
+                </div>
+                <div id="Optica_19" style="display: none;">
+                    <form id="Optica_19_Form">
+                        <label for="19valorper">Ingresa la permeabilidad magnética del medio (𝜇): </label>
+                        <input type="number" id="19valorper" name="19valorper" step="any" required><br>
+                        <label for="19valorflu">Ingresa el flujo magnético (∅): </label>
+                        <input type="number" id="19valorflu" name="19valorflu" step="any" required><br>
+                        <label for="19valorden">Ingresa la densidad de corriente eléctrica (J): </label>
+                        <input type="number" id="19valorden" name="19valorden" step="any" required><br>
+                        <label for="19valorele">Ingresa la permitividad eléctrica del medio (𝜖): </label>
+                        <input type="number" id="19valorele" name="19valorele" step="any" required><br>
+                        <label for="19valorcam">Ingresa la derivada parcial del campo eléctrico (E): </label>
+                        <input type="number" id="19valorcam" name="19valorcam" step="any" required><br>
+                        <label for="19valortie">Ingresa la derivada parcial del tiempo (t): </label>
+                        <input type="number" id="19valortie" name="19valortie" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica19"></div>
+                </div>
+                <div id="Optica_20" style="display: none;">
+                    <form id="Optica_20_Form">
+                        <label for="20valorflu">Ingresa el flujo magnético (∅): </label>
+                        <input type="number" id="20valorflu" name="20valorflu" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica20"></div>
+                </div>
+                <div id="Optica_21" style="display: none;">
+                    <form id="Optica_21_Form">
+                        <label for="21valorcar">Ingresa la densidad de carga eléctrica (p): </label>
+                        <input type="number" id="21valorcar" name="21valorcar" step="any" required><br>
+                        <label for="21valorflu">Ingresa el flujo magnético (∅): </label>
+                        <input type="number" id="21valorflu" name="21valorflu" step="any" required><br>
+                        <label for="21valorele">Ingresa la permitividad eléctrica del medio (𝜖): </label>
+                        <input type="number" id="21valorele" name="21valorele" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica21"></div>
+                </div>
+                <div id="Optica_22" style="display: none;">
+                    <form id="Optica_22_Form">
+                        <label for="22valorpot">Ingresa el potencial electromagnético (Ψ): </label>
+                        <input type="number" id="22valorpot" name="22valorpot" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Optica22"></div>
+                </div>
             </div>
         </div>
 
         <div id="calculadoraFisica" style="display:none;">
+            <h1>Calculadora</h1>
+            <label for="opcion_f">Selecciona la propiedad que deseas calcular:</label>
+            <select id="opcion_f">
+                <option value="1">Longitud de onda (λ)</option>
+                <option value="2">Momento de la partícula (p)</option>
+                <option value="3">Principio de Incertidumbre de Heisenberg</option>
+                <option value="4">Energía (E)</option>
+                <option value="5">Masa (m)</option>
+                <option value="6">Radio del núcleo (R)</option>
+                <option value="7">Número de masa (A)</option>
+                <option value="8">Voltaje (V)</option>
+                <option value="9">Intensidad de corriente (I)</option>
+                <option value="10">Resistencia eléctrica (R)</option>
+            </select>
+
+            <div id="Formularios_Fisica">
+                <div id="Fisica_1">
+                    <form id="Fisica_1_Form">
+                        <label for="1valormom">Ingresa el momento de la partícula (p): </label>
+                        <input type="number" id="1valormom" name="1valormom" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Fisica1"></div>
+                </div>
+                <div id="Fisica_2" style="display: none;">
+                    <form id="Fisica_2_Form">
+                        <label for="2valorlon">Ingresa la longitud de onda (λ): </label>
+                        <input type="number" id="2valorlon" name="2valorlon" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Fisica2"></div>
+                </div>
+                <div id="Fisica_3" style="display: none;">
+                    <form id="Fisica_3_Form">
+                        <label for="3valorpos">Ingresa la incertidumbre en la posición (Δx): </label>
+                        <input type="number" id="3valorpos" name="3valorpos" step="any" required><br>
+                        <label for="3valormom">Ingresa la incertidumbre en el momento (Δp): </label>
+                        <input type="number" id="3valormom" name="3valormom" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Fisica3"></div>
+                </div>
+                <div id="Fisica_4" style="display: none;">
+                    <form id="Fisica_4_Form">
+                        <label for="4valormas">Ingresa la masa (m): </label>
+                        <input type="number" id="4valormas" name="4valormas" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Fisica4"></div>
+                </div>
+                <div id="Fisica_5" style="display: none;">
+                    <form id="Fisica_5_Form">
+                        <label for="5valorene">Ingresa la energía (E): </label>
+                        <input type="number" id="5valorene" name="5valorene" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Fisica5"></div>
+                </div>
+                <div id="Fisica_6" style="display: none;">
+                    <form id="Fisica_6_Form">
+                        <label for="6valornum">Ingresa el número de masa (A): </label>
+                        <input type="number" id="6valornum" name="6valornum" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Fisica6"></div>
+                </div>
+                <div id="Fisica_7" style="display: none;">
+                    <form id="Fisica_7_Form">
+                        <label for="7valorrad">Ingresa el radio del núcleo (R): </label>
+                        <input type="number" id="7valorrad" name="7valorrad" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Fisica7"></div>
+                </div>
+                <div id="Fisica_8" style="display: none;">
+                    <form id="Fisica_8_Form">
+                        <label for="8valorint">Ingresa la intensidad de corriente eléctrica (I): </label>
+                        <input type="number" id="8valorint" name="8valorint" step="any" required><br>
+                        <label for="8valorres">Ingresa la resistencia eléctrica (R): </label>
+                        <input type="number" id="8valorres" name="8valorres" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Fisica8"></div>
+                </div>
+                <div id="Fisica_9" style="display: none;">
+                    <form id="Fisica_9_Form">
+                        <label for="9valorvol">Ingresa el voltaje (V): </label>
+                        <input type="number" id="9valorvol" name="9valorvol" step="any" required><br>
+                        <label for="9valorres">Ingresa la resistencia eléctrica (R): </label>
+                        <input type="number" id="9valorres" name="9valorres" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Fisica9"></div>
+                </div>
+                <div id="Fisica_10" style="display: none;">
+                    <form id="Fisica_10_Form">
+                        <label for="10valorvol">Ingresa el voltaje (V): </label>
+                        <input type="number" id="10valorvol" name="10valorvol" step="any" required><br>
+                        <label for="10valorint">Ingresa la intensidad de corriente eléctrica (I): </label>
+                        <input type="number" id="10valorint" name="10valorint" step="any" required><br>
+
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div id="resultado_Fisica10"></div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
 <script defer>
+    
 
     function distancia_objeto(q, f) {
         const p = 1 / ((1 / f) - (1 / q))
         return p;
+    }
+
+    function resistencia(V,I){
+        const R = V/I
+        return R;
+    }
+
+    function intensidad_corriente(V,R){
+        const I = V/R
+        return I;
+    }
+
+    function voltaje(I,R){
+        const V = I*R
+        return V;
+    }
+
+    function numero_masa(R){
+        const A = Math.pow((R/(1.42e-15)),3)
+        return A;
+    }
+
+    function radio_nucleo(A){
+        const R = (1.42e-15)*(Math.pow(A,1/3))
+        return R;
+    }
+
+    function masa(E){
+        const m = E/(Math.pow(3e8,2))
+        return m;
+    }
+
+    function energia(m){
+        const E = m*(Math.pow(3e8,2))
+        return E;
+    }
+
+    function momento_particula(λ){
+        const p = λ/(6.63e-34)
+        return p;
+    }
+
+    function longitud_onda_plank(p){
+        const λ = p*(6.63e-34)
+        return λ;
+    }
+
+    function gauss(p,o,𝜖){
+        const E = p/(o*𝜖)
+        return E;
+    }
+
+    function magnetico(o){
+        const B = o
+        return B;
+    }
+
+    function ampere(𝜇,o,J,𝜖,E,t){
+        const B = 𝜇*o*J + ((𝜖*o*E)/t)
+        return B;
+    }
+
+    function faraday(B,t){
+        const E = B/t
+        return E;
+    }
+
+    function angulo_refraccion(n1,n2,θ1){
+        const θ2 = Math.asin((n1*Math.sin(θ1))/n2)
+        return θ2;
+    }
+
+    function angulo_incidencia(n1,n2,θ2){
+        const θ1 = Math.asin((n2*Math.sin(θ2))/n1)
+        return θ1;
+    }
+
+    function indice_refraccion_2(n1, θ2, θ1){
+        const n2 = (n1 * Math.sin(θ1))/Math.sin(θ2)
+        return n2;
+    }
+
+    function indice_refraccion_1(n2, θ1, θ2){
+        const n1 = (n2 * Math.sin(θ2))/Math.sin(θ1)
+        return n1;
+    }
+
+    function distancia_imagen_tamaños(p,hi,ho){
+        const q = (-hi*p)/ho
+        return q;
+    }
+
+    function distancia_imagen_magnificacion(m,p){
+        const q = -m*p
+        return q;
+    }
+
+    function distancia_objeto_tamaños(hi,q,ho){
+        const p = (-ho*q)/hi
+        return p;
+    }
+
+    function distancia_objeto_magnificacion(m,q){
+        const p = -q/m
+        return p;
+    }
+
+    function tamaño_objeto_distancias(q,hi,p){
+        const ho = (-hi*p)/q
+        return ho;
+    }
+
+    function tamaño_objeto(m,hi){
+        const ho = hi/m
+        return ho;
+    }
+
+    function tamaño_imagen_distancias(q,ho,p){
+        const hi = (-q*ho)/p
+        return hi;
+    }
+
+    function tamaño_imagen(m,ho){
+        const hi = m*ho
+        return hi
+    }
+
+    function maginifiacion_distancias(q,p){
+        const m = -(q/p)
+        return m;
+    }
+
+    function maginifiacion(hi, ho){
+        const m = hi/ho
+        return m;
     }
 
     function distancia_imagen(p,f){
@@ -715,6 +1198,18 @@
         // Mostrar el formulario seleccionado
         const opcion_o = this.value;
         document.getElementById(`Optica_${opcion_o.charAt(0).toUpperCase() + opcion_o.slice(1)}`).style.display = 'block';
+    });
+
+    // Mostrar el formulario correcto para cada fórumla Fisica
+    document.getElementById('opcion_f').addEventListener('change', function () {
+        // Ocultar todos los formularios
+        document.querySelectorAll('#Formularios_Fisica > div').forEach(function (formulario) {
+            formulario.style.display = 'none';
+        });
+
+        // Mostrar el formulario seleccionado
+        const opcion_f = this.value;
+        document.getElementById(`Fisica_${opcion_f.charAt(0).toUpperCase() + opcion_f.slice(1)}`).style.display = 'block';
     });
 
     // Función para manejar el envío del formulario1
@@ -1191,7 +1686,7 @@
         const f = parseFloat(document.getElementById('1valorfoc').value);
 
         // Realizar la conversión correspondiente
-        const p = distancia_objeto(q, f)
+        const p = distancia_objeto(q, f);
 
         // Mostrar el resultado
         document.getElementById('resultado_Optica1').textContent = `La distacia del objeto es de: ${p} m`;
@@ -1221,10 +1716,445 @@
         const p = parseFloat(document.getElementById('3valordis').value);
 
         // Realizar la conversión correspondiente
-        const f = distancia_focal(q,p)
+        const f = distancia_focal(q,p);
 
         // Mostrar el resultado
         document.getElementById('resultado_Optica3').textContent = `La distacia focal es de: ${f} m`;
+    });
+
+    // Función para manejar el envío del formulario4
+    document.getElementById('Optica_4_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const hi = parseFloat(document.getElementById('4valorimg').value);
+        const ho = parseFloat(document.getElementById('4valorobj').value);
+
+        // Realizar la conversión correspondiente
+        const m = maginifiacion(hi,ho);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica4').textContent = `La maginficación de la imagen es de: ${m}`;
+    });
+
+    // Función para manejar el envío del formulario5
+    document.getElementById('Optica_5_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const q = parseFloat(document.getElementById('5valorimg').value);
+        const p = parseFloat(document.getElementById('5valorobj').value);
+
+        // Realizar la conversión correspondiente
+        const m = maginifiacion_distancias(q,p);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica5').textContent = `La maginficación de la imagen es de: ${m}`;
+    });
+
+    // Función para manejar el envío del formulario6
+    document.getElementById('Optica_6_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const m = parseFloat(document.getElementById('6valoraum').value);
+        const ho = parseFloat(document.getElementById('6valorobj').value);
+
+        // Realizar la conversión correspondiente
+        const hi = tamaño_imagen(m,ho);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica6').textContent = `El tamaño de la imagen es de: ${hi} m`;
+    });
+
+    // Función para manejar el envío del formulario7
+    document.getElementById('Optica_7_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const q = parseFloat(document.getElementById('7valordis').value);
+        const ho = parseFloat(document.getElementById('7valorobj').value);
+        const p = parseFloat(document.getElementById('7valordio').value);
+
+        // Realizar la conversión correspondiente
+        const hi = tamaño_imagen_distancias(q,ho,p);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica7').textContent = `El tamaño de la imagen es de: ${hi} m`;
+    });
+
+    // Función para manejar el envío del formulario8
+    document.getElementById('Optica_8_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const m = parseFloat(document.getElementById('8valormag').value);
+        const hi = parseFloat(document.getElementById('8valorimg').value);
+
+        // Realizar la conversión correspondiente
+        const ho = tamaño_objeto(m,hi);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica8').textContent = `El tamaño del objeto es de: ${ho} m`;
+    });
+
+    // Función para manejar el envío del formulario9
+    document.getElementById('Optica_9_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const q = parseFloat(document.getElementById('9valordis').value);
+        const hi = parseFloat(document.getElementById('9valorimg').value);
+        const p = parseFloat(document.getElementById('9valordio').value);
+
+        // Realizar la conversión correspondiente
+        const ho = tamaño_objeto_distancias(q,hi,p);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica9').textContent = `El tamaño del objeto es de: ${ho} m`;
+    });
+
+    // Función para manejar el envío del formulario10
+    document.getElementById('Optica_10_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const m = parseFloat(document.getElementById('10valoraum').value);
+        const q = parseFloat(document.getElementById('10valorimg').value);
+
+        // Realizar la conversión correspondiente
+        const p = distancia_objeto_magnificacion(m,q);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica10').textContent = `La distancia del objeto es de: ${p} m`;
+    });
+
+    // Función para manejar el envío del formulario11
+    document.getElementById('Optica_11_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const hi = parseFloat(document.getElementById('11valortam').value);
+        const q = parseFloat(document.getElementById('11valorimg').value);
+        const ho = parseFloat(document.getElementById('11valorobj').value);
+
+        // Realizar la conversión correspondiente
+        const p = distancia_objeto_tamaños(hi,q,ho);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica11').textContent = `La distancia del objeto es de: ${p} m`;
+    });
+
+    // Función para manejar el envío del formulario12
+    document.getElementById('Optica_12_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const m = parseFloat(document.getElementById('12valoraum').value);
+        const p = parseFloat(document.getElementById('12valorobj').value);
+
+        // Realizar la conversión correspondiente
+        const q = distancia_imagen_magnificacion(m,p);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica12').textContent = `La distancia de la imagen es de: ${q} m`;
+    });
+
+
+    // Función para manejar el envío del formulario13
+    document.getElementById('Optica_13_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const p = parseFloat(document.getElementById('13valordis').value);
+        const hi = parseFloat(document.getElementById('13valorimg').value);
+        const ho = parseFloat(document.getElementById('13valorobj').value);
+
+        // Realizar la conversión correspondiente
+        const q = distancia_imagen_tamaños(p,hi,ho)
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica13').textContent = `La distancia de la imagen es de: ${q} m`;
+    });
+
+    // Función para manejar el envío del formulario14
+    document.getElementById('Optica_14_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const n2 = parseFloat(document.getElementById('14valorref').value);
+        const θ1 = parseFloat(document.getElementById('14valorpri').value);
+        const θ2 = parseFloat(document.getElementById('14valorseg').value);
+
+        // Realizar la conversión correspondiente
+        const n1 = indice_refraccion_1(n2,θ1,θ2);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica14').textContent = `El índice de refracción en el medio es de: ${n1}`;
+    });
+
+    // Función para manejar el envío del formulario15
+    document.getElementById('Optica_15_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const n1 = parseFloat(document.getElementById('15valorref').value);
+        const θ2 = parseFloat(document.getElementById('15valorseg').value);
+        const θ1 = parseFloat(document.getElementById('15valorpri').value);
+
+        // Realizar la conversión correspondiente
+        const n2 = indice_refraccion_2(n1,θ2,θ1);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica15').textContent = `El índice de refracción en el medio es de: ${n2}`;
+    });
+
+    // Función para manejar el envío del formulario16
+    document.getElementById('Optica_16_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const n1 = parseFloat(document.getElementById('16valorref').value);
+        const n2 = parseFloat(document.getElementById('16valormed').value);
+        const θ2 = parseFloat(document.getElementById('16valorseg').value);
+
+        // Realizar la conversión correspondiente
+        const θ1 = angulo_incidencia(n1,n2,θ2);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica16').textContent = `El ángulo de incidencia en el medio es de: ${θ1} rad`;
+    });
+
+    // Función para manejar el envío del formulario17
+    document.getElementById('Optica_17_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const n1 = parseFloat(document.getElementById('17valorref').value);
+        const n2 = parseFloat(document.getElementById('17valormed').value);
+        const θ1 = parseFloat(document.getElementById('17valorpri').value);
+
+        // Realizar la conversión correspondiente
+        const θ2 = angulo_refraccion(n1,n2,θ1);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica17').textContent = `El ángulo de refracción en el medio es de: ${θ2} rad`;
+    });
+
+    // Función para manejar el envío del formulario18
+    document.getElementById('Optica_18_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const B = parseFloat(document.getElementById('18valormag').value);
+        const t = parseFloat(document.getElementById('18valortie').value);
+
+        // Realizar la conversión correspondiente
+        const E = faraday(B,t);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica18').textContent = `La divergencia del campo eléctrico 'E' medido en V/m es de (∇E): ${E}`;
+    });
+
+    // Función para manejar el envío del formulario19
+    document.getElementById('Optica_19_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const 𝜇 = parseFloat(document.getElementById('19valorper').value);
+        const o = parseFloat(document.getElementById('19valorflu').value);
+        const J = parseFloat(document.getElementById('19valorden').value);
+        const 𝜖 = parseFloat(document.getElementById('19valorele').value);
+        const E = parseFloat(document.getElementById('19valorcam').value);
+        const t = parseFloat(document.getElementById('19valortie').value);
+
+        // Realizar la conversión correspondiente
+        const B = ampere(𝜇,o,J,𝜖,E,t);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica19').textContent = `El gradiente del campo magnético campo magnético 'B' medido en T/m es de (∇B): ${B}`;
+    });
+
+    // Función para manejar el envío del formulario20
+    document.getElementById('Optica_20_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const o = parseFloat(document.getElementById('20valorflu').value);
+
+        // Realizar la conversión correspondiente
+        const B = magnetico(o);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica20').textContent = `El gradiente del campo magnético campo magnético 'B' medido en T/m es de (∇B): ${B}`;
+    });
+
+    // Función para manejar el envío del formulario21
+    document.getElementById('Optica_21_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const o = parseFloat(document.getElementById('21valorflu').value);
+        const 𝜖 = parseFloat(document.getElementById('21valorele').value);
+        const p = parseFloat(document.getElementById('21valorcar').value);
+
+        // Realizar la conversión correspondiente
+        const E = gauss(p,o,𝜖);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica21').textContent = `El gradiente del campo eléctrico 'E' medido en V/m es de (∇E): ${E}`;
+    });
+
+    // Función para manejar el envío del formulario22
+    document.getElementById('Optica_22_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const Ψ = parseFloat(document.getElementById('22valorpot').value);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Optica22').textContent = `La ecuación de la onda es: ∂^2*${Ψ}/(∂${Ψ}^2 - c^2*∇^2*${Ψ}) = 0`;
+    });
+
+    // Función para manejar el envío del formulario1
+    document.getElementById('Fisica_1_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const p = parseFloat(document.getElementById('1valormom').value);
+
+        // Realizar la conversión correspondiente
+        const λ = longitud_onda_plank(p);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Fisica1').textContent = `La longitud de onda es de: ${λ} m`;
+    });
+
+    // Función para manejar el envío del formulario2
+    document.getElementById('Fisica_2_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const λ = parseFloat(document.getElementById('2valorlon').value);
+
+        // Realizar la conversión correspondiente
+        const p = momento_particula(λ);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Fisica2').textContent = `El momento de la partícula es de: ${p} kg*m/s`;
+    });
+
+    // Función para manejar el envío del formulario3
+    document.getElementById('Fisica_3_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const x = parseFloat(document.getElementById('3valorpos').value);
+        const p = parseFloat(document.getElementById('3valormom').value);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Fisica3').textContent = `El principio de incertidumbre de Heisenberg es: Δ${x} * Δ${p} ≥ 4* π * 6.63*10⁻³⁴`;
+    });
+
+    // Función para manejar el envío del formulario4
+    document.getElementById('Fisica_4_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const m = parseFloat(document.getElementById('4valormas').value);
+
+        // Realizar la conversión correspondiente
+        const E = energia(m);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Fisica4').textContent = `La enegía es de: ${E} J`;
+    });
+
+    // Función para manejar el envío del formulario5
+    document.getElementById('Fisica_5_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const E = parseFloat(document.getElementById('5valorene').value);
+
+        // Realizar la conversión correspondiente
+        const m = masa(E);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Fisica5').textContent = `La masa es de: ${m} kg`;
+    });
+
+    // Función para manejar el envío del formulario6
+    document.getElementById('Fisica_6_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const A = parseFloat(document.getElementById('6valornum').value);
+
+        // Realizar la conversión correspondiente
+        const R = radio_nucleo(A);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Fisica6').textContent = `El radio del núcleo es de: ${R} m`;
+    });
+
+    // Función para manejar el envío del formulario7
+    document.getElementById('Fisica_7_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const R = parseFloat(document.getElementById('7valorrad').value);
+
+        // Realizar la conversión correspondiente
+        const A = numero_masa(R);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Fisica7').textContent = `El número de masa es de: ${A}`;
+    });
+
+    // Función para manejar el envío del formulario8
+    document.getElementById('Fisica_8_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const I = parseFloat(document.getElementById('8valorint').value);
+        const R = parseFloat(document.getElementById('8valorres').value);
+
+        // Realizar la conversión correspondiente
+        const V = voltaje(I,R);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Fisica8').textContent = `El voltaje es de: ${V} V`;
+    });
+
+    // Función para manejar el envío del formulario9
+    document.getElementById('Fisica_9_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const V = parseFloat(document.getElementById('9valorvol').value);
+        const R = parseFloat(document.getElementById('9valorres').value);
+
+        // Realizar la conversión correspondiente
+        const I = intensidad_corriente(V,R);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Fisica9').textContent = `La intensidad de corriente eléctrica es de: ${I} A`;
+    });
+
+    // Función para manejar el envío del formulario10
+    document.getElementById('Fisica_10_Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los valores del formulario
+        const V = parseFloat(document.getElementById('10valorvol').value);
+        const I = parseFloat(document.getElementById('10valorint').value);
+
+        // Realizar la conversión correspondiente
+        const R = resistencia(V,I);
+
+        // Mostrar el resultado
+        document.getElementById('resultado_Fisica10').textContent = `La resistencia eléctrica es de: ${R} Ω`;
     });
 </script>
 </head>
