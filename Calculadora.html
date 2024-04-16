@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Calculadora</title>
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +14,12 @@
             body {
                 font-family: Arial, sans-serif;
             }
-
+    
             .top-bar {
                 background-color: #333;
                 overflow: hidden;
             }
-
+    
             .top-bar a {
                 float: left;
                 display: block;
@@ -29,1071 +28,433 @@
                 padding: 14px 16px;
                 text-decoration: none;
             }
-
+    
             .top-bar a:hover {
                 background-color: #ddd;
                 color: black;
             }
         </style>
     </head>
-
-<body>
-    <div class="top-bar">
-        <a href="Optica.html">Óptica</a>
-        <a href="Acustica.html">Acústica</a>
-        <a href="Fisica_moderna.html">Física Moderna</a>
-        <a href="Conversor.html">Conversor de Unidades</a>
-        <a href="Sobre_nosotros.html">Sobre Nosotros</a>
-        <a href="Calculadora.html">Calculadora</a>
-    </div>
-
-    <h1>Calculadoras</h1>
-
-    <!-- Selector para elegir entre calculadoras -->
-    <label for="tipoCalculadora">Seleccione el tipo de calculadora:</label>
-    <select id="tipoCalculadora">
-        <option value="Acustica">Acústica</option>
-        <option value="Optica">Óptica</option>
-        <option value="Fisica">Física Moderna</option>
-    </select><br>
-    <div id="calculadoras">
-        <div id="calculadoraAcustica">
-            <h1>Calculadora</h1>
-            <label for="opcion">Selecciona la propiedad que deseas calcular:</label>
-            <select id="opcion">
-                <option value="1">Número de onda (k)</option>
-                <option value="2">Frecuencia Angular (w)</option>
-                <option value="3">Velocidad (v)</option>
-                <option value="4">Amplitud Onda Estacionaria (Asw)</option>
-                <option value="5">Amplitud (A)</option>
-                <option value="6">Frecuencia Angular a partir de Frecuencia (w)</option>
-                <option value="7">Frecuencia a partir de Frecuencia Angular (f)</option>
-                <option value="8">Longitud de Onda (λ)</option>
-                <option value="8.1">Velocidad (v)</option>
-                <option value="9">Periodo (T)</option>
-                <option value="10">Número de onda a partir de Longitud de Onda (k)</option>
-                <option value="11">Velocidad Angular (vθ)</option>
-                <option value="12">Fase Inicial (φ)</option>
-                <option value="13">Velocidad Angular a partir de Periodo (ω)</option>
-                <option value="14">Frecuencia a partir de Velocidad y Longitud de Onda (f)</option>
-                <option value="15">Amplitud de Onda en Posición y Tiempo (Axt)</option>
-                <option value="16">Amplitud a partir de Posición, Tiempo y Amplitud de Onda en Posición y Tiempo (A)
-                </option>
-                <option value="17">Ecuación de Onda (y)</option>
-                <option value="18">Ecuación de Onda (y) con Amplitud y Frecuencia Angular</option>
-                <option value="19">Intensidad Acústica a partir de Potencia, Frecuencia Angular, Amplitud y Velocidad de
-                    Propagación (I)</option>
-                <option value="20">Número de Onda a partir de Distancia entre Fuentes (k)</option>
-                <option value="21">Velocidad de Propagación de Ondas Longitudinales en un Medio Elástico (v)</option>
-                <option value="22">Velocidad de Propagación de Ondas Transversales en un Medio Elástico (v)</option>
-                <option value="23">Velocidad de Propagación de Ondas Longitudinales en un Fluido, usando la constante
-                    elástica del medio (v)</option>
-                <option value="24">Velocidad de Propagación de Ondas Longitudinales en un Fluido (v)</option>
-                <option value="25">Velocidad del Sonido en Gases Ideales (v)</option>
-                <option value="26">Velocidad de Propagación de Ondas en una Cuerda (v)</option>
-                <option value="27">Velocidad Media a partir de Distancia y Tiempo (v)</option>
-                <option value="28">Tiempo a partir de Distancia y Velocidad Media (t)</option>
-                <option value="29">Distancia a partir de Velocidad y Tiempo (d)</option>
-                <option value="30">Frecuencia Angular a partir de Número de Oscilaciones y Tiempo (w)</option>
-                <option value="31">Intensidad Acústica a partir de Potencia, Frecuencia Angular, Amplitud y Número de
-                    Onda (I)</option>
-            </select>
-
-            <div id="Formularios_Acustica">
-                <div id="Acustica_1">
-                    <form id="Acustica_1_Form">
-                        <label for="1valorfrecuenciaangular">Ingresa la frecuencia angular (rad/s): </label>
-                        <input type="number" id="1valorfrecuenciaangular" name="1valorfrecuenciaangular" step="any"
-                            required><br>
-                        <label for="1valorvelocidad">Ingresa la velocidad (m/s): </label>
-                        <input type="number" id="1valorvelocidad" name="1valorvelocidad" step="any" required><br>
-
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica"></div>
-                </div>
-                <div id="Acustica_2" style="display: none;">
-                    <form id="Acustica_2_Form">
-                        <label for="2valornumonda">Ingresa el número de onda (rad/m): </label>
-                        <input type="number" id="2valornumonda" name="2valornumonda" step="any" required><br>
-                        <label for="2valorvelocidad">Ingresa la velocidad (m/s): </label>
-                        <input type="number" id="2valorvelocidad" name="2valorvelocidad" step="any" required><br>
-
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_2"></div>
-                </div>
-                <div id="Acustica_3" style="display: none;">
-                    <form id="Acustica_3_Form">
-                        <label for="3valorfrecuangu">Ingresa la frecuencia angular (rad/s): </label>
-                        <input type="number" id="3valorfrecuangu" name="3valorfrecuangu" step="any" required><br>
-                        <label for="3valornumonda">Ingresa el número de onda (rad/m): </label>
-                        <input type="number" id="3valornumonda" name="3valornumonda" step="any" required><br>
-
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_3"></div>
-                </div>
-                <div id="Acustica_4" style="display: none;">
-                    <form id="Acustica_4_Form">
-                        <label for="4valoramp">Ingresa la amplitud (m): </label>
-                        <input type="number" id="4valoramp" name="4valoramp" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_4"></div>
-                </div>
-                <div id="Acustica_5" style="display: none;">
-                    <form id="Acustica_5_Form">
-                        <label for="5valoramp">Ingresa la amplitud de la onda estacionaria (m): </label>
-                        <input type="number" id="5valoramp" name="5valoramp" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_5"></div>
-                </div>
-                <div id="Acustica_6" style="display: none;">
-                    <form id="Acustica_6_Form">
-                        <label for="6valorfre">Ingresa la frecuencia (Hz): </label>
-                        <input type="number" id="6valorfre" name="6valorfre" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_6"></div>
-                </div>
-                <div id="Acustica_7" style="display: none;">
-                    <form id="Acustica_7_Form">
-                        <label for="7valorfre">Ingresa la frecuencia angular (rad/s): </label>
-                        <input type="number" id="7valorfre" name="7valorfre" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_7"></div>
-                </div>
-                <div id="Acustica_8" style="display: none;">
-                    <form id="Acustica_8_Form">
-                        <label for="8valorvel">Ingresa la velocidad (m/s): </label>
-                        <input type="number" id="8valorvel" name="8valorvel" step="any" required><br>
-                        <label for="8valorfre">Ingresa la frecuencia (Hz): </label>
-                        <input type="number" id="8valorfre" name="8valorfe" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_8"></div>
-                </div>
-                <div id="Acustica_8.1" style="display: none;">
-                    <form id="Acustica_8.1_Form">
-                        <label for="8.1valorlon">Ingresa la longitud de onda (m): </label>
-                        <input type="number" id="8.1valorlon" name="8.1valorlon" step="any" required><br>
-                        <label for="8.1valorfre">Ingresa la frecuencia (Hz): </label>
-                        <input type="number" id="8.1valorfre" name="8.1valorfe" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_8.1"></div>
-                </div>
-                <div id="Acustica_9" style="display: none;">
-                    <form id="Acustica_9_Form">
-                        <label for="9valorfre">Ingresa la frecuencia (Hz): </label>
-                        <input type="number" id="9valorfre" name="9valorfre" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_9"></div>
-                </div>
-                <div id="Acustica_10" style="display: none;">
-                    <form id="Acustica_10_Form">
-                        <label for="10valorlon">Ingresa la longitud de onda (m): </label>
-                        <input type="number" id="10valorlon" name="10valorlon" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_10"></div>
-                </div>
-                <div id="Acustica_11" style="display: none;">
-                    <form id="Acustica_11_Form">
-                        <label for="11valortie">Ingresa el tiempo (s): </label>
-                        <input type="number" id="11valortie" name="11valortie" step="any" required><br>
-                        <label for="11valorpos">Ingresa el la posición angular (rad): </label>
-                        <input type="number" id="11valorpos" name="11valorpos" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_11"></div>
-                </div>
-                <div id="Acustica_12" style="display: none;">
-                    <form id="Acustica_12_Form">
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_12"></div>
-                </div>
-                <div id="Acustica_13" style="display: none;">
-                    <form id="Acustica_13_Form">
-                        <label for="13valorper">Ingresa el periodo (s): </label>
-                        <input type="number" id="13valorper" name="13valorper" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_13"></div>
-                </div>
-                <div id="Acustica_14" style="display: none;">
-                    <form id="Acustica_14_Form">
-                        <label for="14valorvel">Ingresa la velocidad (m/s): </label>
-                        <input type="number" id="14valorvel" name="14valorvel" step="any" required><br>
-                        <label for="14valorlon">Ingresa la longitud de onda (m): </label>
-                        <input type="number" id="14valorlon" name="14valorlon" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_14"></div>
-                </div>
-                <div id="Acustica_15" style="display: none;">
-                    <form id="Acustica_15_Form">
-                        <label for="15valorpos">Ingresa la posición x (m): </label>
-                        <input type="number" id="15valorpos" name="15valorpos" step="any" required><br>
-                        <label for="15valortie">Ingresa el tiempo t (s): </label>
-                        <input type="number" id="15valortie" name="15valortie" step="any" required><br>
-                        <label for="15valoramp">Ingresa la amplitud máxima (m): </label>
-                        <input type="number" id="15valoramp" name="15valoramp" step="any" required><br>
-                        <label for="15valornum">Ingresa el número de onda (rad/m): </label>
-                        <input type="number" id="15valornum" name="15valornum" step="any" required><br>
-                        <label for="15valorfre">Ingresa la frecuencia angular (rad/s): </label>
-                        <input type="number" id="15valorfre" name="15valorfre" step="any" required><br>
-                        <label for="15valorfas">Ingresa la fase inicial (rad): </label>
-                        <input type="number" id="15valorfas" name="15valorfas" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_15"></div>
-                </div>
-                <div id="Acustica_16" style="display: none;">
-                    <form id="Acustica_16_Form">
-                        <label for="16valorpos">Ingresa la posición x (m): </label>
-                        <input type="number" id="16valorpos" name="16valorpos" step="any" required><br>
-                        <label for="16valortie">Ingresa el tiempo t (s): </label>
-                        <input type="number" id="16valortie" name="16valortie" step="any" required><br>
-                        <label for="16valoramp">Ingresa la amplitud de la onda en posición x y tiempo t (m): </label>
-                        <input type="number" id="16valoramp" name="16valoramp" step="any" required><br>
-                        <label for="16valornum">Ingresa el número de onda (rad/m): </label>
-                        <input type="number" id="16valornum" name="16valornum" step="any" required><br>
-                        <label for="16valorfre">Ingresa la frecuencia angular (rad/s): </label>
-                        <input type="number" id="16valorfre" name="16valorfre" step="any" required><br>
-                        <label for="16valorfas">Ingresa la fase inicial (rad): </label>
-                        <input type="number" id="16valorfas" name="16valorfas" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_16"></div>
-                </div>
-                <div id="Acustica_17" style="display: none;">
-                    <form id="Acustica_17_Form">
-                        <label for="17valoramp">Ingresa la amplitud máxima (m): </label>
-                        <input type="number" id="17valoramp" name="17valoramp" step="any" required><br>
-                        <label for="17valornum">Ingresa el número de onda (rad/m): </label>
-                        <input type="number" id="17valornum" name="17valornum" step="any" required><br>
-                        <label for="17valorfre">Ingresa la frecuencia angular (rad/s): </label>
-                        <input type="number" id="17valorfre" name="17valorfre" step="any" required><br>
-                        <label for="17valorfas">Ingresa la fase inicial (rad): </label>
-                        <input type="number" id="17valorfas" name="17valorfas" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_17"></div>
-                </div>
-                <div id="Acustica_18" style="display: none;">
-                    <form id="Acustica_18_Form">
-                        <label for="18valoramp">Ingresa la amplitud máxima (m): </label>
-                        <input type="number" id="18valoramp" name="18valoramp" step="any" required><br>
-                        <label for="18valorfre">Ingresa la frecuencia angular (rad/s): </label>
-                        <input type="number" id="18valorfre" name="18valorfre" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_18"></div>
-                </div>
-                <div id="Acustica_19" style="display: none;">
-                    <form id="Acustica_19_Form">
-                        <label for="19valorpot">Ingresa la densidad de potencia (W/m2): </label>
-                        <input type="number" id="19valorpot" name="19valorpot" step="any" required><br>
-                        <label for="19valoramp">Ingresa la amplitud máxima (m): </label>
-                        <input type="number" id="19valoramp" name="19valoramp" step="any" required><br>
-                        <label for="19valorvel">Ingresa la velocidad de propagación (m/s) : </label>
-                        <input type="number" id="19valorvel" name="19valorvel" step="any" required><br>
-                        <label for="19valorfre">Ingresa la frecuencia angular (rad/s): </label>
-                        <input type="number" id="19valorfre" name="19valorfre" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_19"></div>
-                </div>
-                <div id="Acustica_20" style="display: none;">
-                    <form id="Acustica_20_Form">
-                        <label for="20valordis">Ingresa la distancia (m): </label>
-                        <input type="number" id="20valordis" name="20valordis" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_20"></div>
-                </div>
-                <div id="Acustica_21" style="display: none;">
-                    <form id="Acustica_21_Form">
-                        <label for="21valoryou">Ingresa el módulo de Young (Pa): </label>
-                        <input type="number" id="21valoryou" name="21valoryou" step="any" required><br>
-                        <label for="21valorden">Ingresa la densidad (kg/m3): </label>
-                        <input type="number" id="21valorden" name="21valorden" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_21"></div>
-                </div>
-                <div id="Acustica_22" style="display: none;">
-                    <form id="Acustica_22_Form">
-                        <label for="22valorcon">Ingresa la constante elástica del medio (Pa): </label>
-                        <input type="number" id="22valorcon" name="22valorcon" step="any" required><br>
-                        <label for="22valorden">Ingresa la densidad superficial (kg/m2): </label>
-                        <input type="number" id="22valorden" name="22valorden" step="any" required><br>
-                        <label for="22valorpre">Ingresa la presión (Pa): </label>
-                        <input type="number" id="22valorpre" name="22valorpre" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_22"></div>
-                </div>
-                <div id="Acustica_23" style="display: none;">
-                    <form id="Acustica_23_Form">
-                        <label for="23valorcon">Ingresa la constante elástica del medio (Pa): </label>
-                        <input type="number" id="23valorcon" name="23valorcon" step="any" required><br>
-                        <label for="23valorpre">Ingresa la presión (Pa): </label>
-                        <input type="number" id="23valorpre" name="23valorpre" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_23"></div>
-                </div>
-                <div id="Acustica_24" style="display: none;">
-                    <form id="Acustica_24_Form">
-                        <label for="24valoryou">Ingresa el módulo de Young (Pa): </label>
-                        <input type="number" id="24valoryou" name="24valoryou" step="any" required><br>
-                        <label for="24valorpre">Ingresa la presión (Pa): </label>
-                        <input type="number" id="24valorpre" name="24valorpre" step="any" required><br>
-                        <label for="24valorden">Ingresa la densidad (kg/m3): </label>
-                        <input type="number" id="24valorden" name="24valorden" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_24"></div>
-                </div>
-                <div id="Acustica_25" style="display: none;">
-                    <form id="Acustica_25_Form">
-                        <label for="25valoryou">Ingresa el módulo de Young (Pa): </label>
-                        <input type="number" id="25valoryou" name="25valoryou" step="any" required><br>
-                        <label for="25valorcon">Ingresa la constante de los gases (J/(kg·K)): </label>
-                        <input type="number" id="25valorcon" name="25valorcon" step="any" required><br>
-                        <label for="25valortem">Ingresa la temperatura (K): </label>
-                        <input type="number" id="25valortem" name="25valortem" step="any" required><br>
-                        <label for="25valormas">Ingresa la masa molar del gas (kg/mol): </label>
-                        <input type="number" id="25valormas" name="25valormas" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_25"></div>
-                </div>
-                <div id="Acustica_26" style="display: none;">
-                    <form id="Acustica_26_Form">
-                        <label for="26valorfre">Ingresa la frecuencia (Hz): </label>
-                        <input type="number" id="26valorfre" name="26valorfre" step="any" required><br>
-                        <label for="26valorlon">Ingresa la longitud de onda (m): </label>
-                        <input type="number" id="26valorlon" name="26valorlon" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_26"></div>
-                </div>
-                <div id="Acustica_27" style="display: none;">
-                    <form id="Acustica_27_Form">
-                        <label for="27valordis">Ingresa la distancia recorrida (m): </label>
-                        <input type="number" id="27valordis" name="27valordis" step="any" required><br>
-                        <label for="27valortie">Ingresa el tiempo transcurrido (s): </label>
-                        <input type="number" id="27valortie" name="27valortie" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_27"></div>
-                </div>
-                <div id="Acustica_28" style="display: none;">
-                    <form id="Acustica_28_Form">
-                        <label for="28valordis">Ingresa la distancia (m): </label>
-                        <input type="number" id="28valordis" name="28valordis" step="any" required><br>
-                        <label for="28valorvel">Ingresa la velocidad media (m/s): </label>
-                        <input type="number" id="28valorvel" name="28valorvel" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_28"></div>
-                </div>
-                <div id="Acustica_29" style="display: none;">
-                    <form id="Acustica_29_Form">
-                        <label for="29valorvel">Ingresa la velocidad (m/s): </label>
-                        <input type="number" id="29valorvel" name="29valorvel" step="any" required><br>
-                        <label for="29valortie">Ingresa el tiempo (s): </label>
-                        <input type="number" id="29valortie" name="29valortie" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_29"></div>
-                </div>
-                <div id="Acustica_30" style="display: none;">
-                    <form id="Acustica_30_Form">
-                        <label for="30valornum">Ingresa el número de oscilaciones: </label>
-                        <input type="number" id="30valornum" name="30valornum" step="any" required><br>
-                        <label for="30valortie">Ingresa el tiempo (s): </label>
-                        <input type="number" id="30valortie" name="30valortie" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_30"></div>
-                </div>
-                <div id="Acustica_31" style="display: none;">
-                    <form id="Acustica_31_Form">
-                        <label for="31valorpot">Ingresa la potencia (W/m2): </label>
-                        <input type="number" id="31valorpot" name="31valorpot" step="any" required><br>
-                        <label for="31valorfre">Ingresa la frecuencia angular (rad/s): </label>
-                        <input type="number" id="31valorfre" name="31valorfre" step="any" required><br>
-                        <label for="31valoramp">Ingresa la amplitud máxima (m): </label>
-                        <input type="number" id="31valoramp" name="31valoramp" step="any" required><br>
-                        <label for="31valornum">Ingresa el número de onda (rad/m): </label>
-                        <input type="number" id="31valornum" name="31valornum" step="any" required><br>
-                        <button type="submit">Calcular</button>
-                    </form>
-                    <div id="resultado_Acustica_31"></div>
-                </div>
-
-                <div id="calculadoraOptica" style="display:none;"></div>
-
-                <div id="calculadoraFisica" style="display:none;"></div>
-
-            </div>
+    <body>
+        <div class="top-bar">
+            <a href="Optica.html">Óptica</a>
+            <a href="Acustica.html">Acústica</a>
+            <a href="Fisica_moderna.html">Física Moderna</a>
+            <a href="Conversor.html">Conversor de Unidades</a>
+            <a href="Sobre_nosotros.html">Sobre Nosotros</a>
+            <a href="Calculadora.html">Calculadora</a>
         </div>
-    </div>
-</body>
-<script defer>
-    
-    function k_numero_de_onda(w, v) {
+    </body>
+    <script defer>
+        function k_numero_de_onda(w, v) {
             const k = w / v;
             return k;
         }
 
-    function k_numero_de_onda_λ(λ) {
-        const k = 2 * Math.PI / λ;
-        return k;
-    }
+        function k_numero_de_onda_λ(λ) {
+            const k = 2 * Math.PI / λ;
+            return k;
+        }
 
-    function w_frecuencia_angular(k, v) {
+        function w_frecuencia_angular(k, v) {
             const w = v * k;
             return w;
         }
 
-    function v_velocidad(w, k) {
+        function v_velocidad(w, k) {
             const v = w / k;
             return v;
         }
 
-    function amplitud_onda_estacionaria(A) {
+        function amplitud_onda_estacionaria(A) {
             const Asw = 2 * A;
             return Asw;
         }
 
-    function amplitud(Asw) {
-        const A = Asw / 2;
-        return A;
-    }
-
-    function frecuencia_angular(f) {
-        const w = 2 * Math.PI * f;
-        return w;
-    }
-    
-    function frecuencia(w) {
-        const f = w / (2 * Math.PI);
-        return f;
-    }
-    
-    function longitud_onda(v, f) {
-        const λ = v / f;
-        return λ;
-    }
-    
-    function velocidad(λ, f) {
-        const v = λ * f;
-        return v;
-    }
-    
-    function frecuencia_longitud(v, λ) {
-        const f = v / λ;
-        return f;
-    }
-    
-    function periodo(f) {
-        const T = 1 / f;
-        return T;
-    }
-    
-    function velocidad_angular(t, θ) {
-        const vθ = θ / t;
-        return vθ;
-    }
-    
-    function fase_inicial() {
-        const φ = Math.PI / 2;
-        return φ;
-    }
-
-    function velocidad_angular_periodo(T) {
-        const ω = (2 * Math.PI) / T;
-        return ω;
-    }
-    
-    function amplitud_xt(x, t, A, k, w, φ) {
-        const Axt = A * Math.sin(k * x - w * t + φ);
-        return Axt;
-    }
-    
-    function amplitud_ec_gral(x, t, Axt, k, w, φ) {
-        const A = Axt / Math.sin(k * x - w * t + φ);
-        return A;
-    }
-    
-    function Intensidad(p, w, A, v) {
-        const I = (p * w ** 2 * A ** 2 * v) / 2;
-        return I;
-    }
-
-    function numero_de_onda_d(d) {
-        const k = Math.PI / d;
-        return d;
-    }
-
-    function velocidad_modulo(Y, p) {
-        const v = Math.sqrt(Y / p);
-        return v;
-    }
-
-    function velocidad_modulo_presion_volumen(B, S, p) {
-        const v = Math.sqrt((B * (3 / 4) * S) / p);
-        return v;
-    }
-
-    function velocidad_modulo_presion(B, p) {
-        const v = Math.sqrt(B / p);
-        return v;
-    }
-    
-    function velocidad_modulo_presion_densidad(Y, P, p) {
-        const v = Math.sqrt((Y * P) / p);
-        return v;
-    }
-    
-    function velocidad_modulo_constante_gases(Y, R, t, m) {
-        const v = Math.sqrt((Y * R * t) / m);
-        return v;
-    }
-
-    function velocidad_frecuencia(f, λ) {
-        const v = f * λ;
-        return v;
-    }
-
-    function velocidad_distancia(d, t) {
-        const v = d / t;
-        return v;
-    }
-
-    function tiempo(d, v) {
-        const t = d / v;
-        return t;
-    }
-
-    function distancia(v, t) {
-        const d = v * t;
-        return d;
-    }
-
-    function frecuencia_angular_oscilaciones(n, t) {
-        const w = (2 * Math.PI * n) / t;
-        return w;
-    }
-
-    function Intensidad_numero_onda(p, w, A, k) {
-        const I = (p * w ** 2 * A ** 2 * k ** 2) / 2;
-        return I;
-    }
-
-    function mostrarResultado(mensaje) {
-        document.getElementById('resultado').innerText = mensaje;
-    }
-
-    // Mostrar la calculadora correspondiente según la selección del usuario
-    document.getElementById('tipoCalculadora').addEventListener('change', function () {
-        // Ocultar todas las calculadoras
-        document.querySelectorAll('#calculadoras > div').forEach(function (calculadora) {
-            calculadora.style.display = 'none';
-        });
-
-        // Mostrar la calculadora seleccionada
-        const tipoCalculadora = this.value;
-        document.getElementById(`calculadora${tipoCalculadora.charAt(0).toUpperCase() + tipoCalculadora.slice(1)}`).style.display = 'block';
-    });
-
-    // Mostrar el formulario correcto para cada fórumla
-    document.getElementById('opcion').addEventListener('change', function () {
-        // Ocultar todos los formularios
-        document.querySelectorAll('#Formularios_Acustica > div').forEach(function (formulario) {
-            formulario.style.display = 'none';
-        });
-
-        // Mostrar el formulario seleccionado
-        const opcion = this.value;
-        document.getElementById(`Acustica_${opcion.charAt(0).toUpperCase() + opcion.slice(1)}`).style.display = 'block';
-    });
-
-    // Función para manejar el envío del formulario1
-    document.getElementById('Acustica_1_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const w = parseFloat(document.getElementById('1valorfrecuenciaangular').value);
-        const v = parseFloat(document.getElementById('1valorvelocidad').value);
-
-        // Realizar la conversión correspondiente
-        const k = k_numero_de_onda(w, v);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica').textContent = `El número de onda (k) es ${k} rad/m`;
-    });
-
-    // Función para manejar el envío del formulario2
-    document.getElementById('Acustica_2_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const k = parseFloat(document.getElementById('2valornumonda').value);
-        const v = parseFloat(document.getElementById('2valorvelocidad').value);
-
-        // Realizar la conversión correspondiente
-        const w = w_frecuencia_angular(k, v);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_2').textContent = `La frecuencia angular (w) es ${w} rad/s`;
-    });
-
-    // Función para manejar el envío del formulario3
-    document.getElementById('Acustica_3_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const w = parseFloat(document.getElementById('3valorfrecuangu').value);
-        const k = parseFloat(document.getElementById('3valornumonda').value);
-
-        // Realizar la conversión correspondiente
-        const v = v_velocidad(w, k);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_3').textContent = `La velocidad (v) es ${v} m/s`;
-    });
-
-    // Función para manejar el envío del formulario4
-    document.getElementById('Acustica_4_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const A = parseFloat(document.getElementById('4valoramp').value);
-
-        // Realizar la conversión correspondiente
-        const Asw = amplitud_onda_estacionaria(A);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_4').textContent = `La amplitud de la onda estacionaria (Asw) es ${Asw} m`;
-    });
-
-    // Función para manejar el envío del formulario5
-    document.getElementById('Acustica_5_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const Asw = parseFloat(document.getElementById('5valoramp').value);
-
-        // Realizar la conversión correspondiente
-        const A = amplitud(Asw);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_5').textContent = `La amplitud (A) es ${A} m`;
-    });
-
-    // Función para manejar el envío del formulario6
-    document.getElementById('Acustica_6_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const f = parseFloat(document.getElementById('6valorfre').value);
-
-        // Realizar la conversión correspondiente
-        const w = frecuencia_angular(f);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_6').textContent = `La frecuencia angular (w) es ${w} rad/s`;
-    });
-
-    // Función para manejar el envío del formulario7
-    document.getElementById('Acustica_7_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario7
-        const w = parseFloat(document.getElementById('7valorfre').value);
-
-        // Realizar la conversión correspondiente
-        const f = frecuencia(w);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_7').textContent = `La frecuencia (f) es ${f} Hz`;
-    });
-
-    // Función para manejar el envío del formulario8
-    document.getElementById('Acustica_8_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario7
-        const v = parseFloat(document.getElementById('8valorvel').value);
-        const f = parseFloat(document.getElementById('8valorfre').value);
-
-        // Realizar la conversión correspondiente
-        const λ = longitud_onda(v, f);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_8').textContent = `La longitud de onda (λ) es ${λ} m`;
-    });
-
-    // Función para manejar el envío del formulario8.1
-    document.getElementById('Acustica_8.1_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const λ = parseFloat(document.getElementById('8.1valorlon').value);
-        const f = parseFloat(document.getElementById('8.1valorfre').value);
-
-        // Realizar la conversión correspondiente
-        const v = velocidad(λ, f);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_8.1').textContent = `La velocidad (v) es ${v} m/s`;
-    });
-
-    // Función para manejar el envío del formulario9
-    document.getElementById('Acustica_9_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const f = parseFloat(document.getElementById('9valorfre').value);
-
-        // Realizar la conversión correspondiente
-        const T = periodo(f)
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_9').textContent = `El periodo (T) es ${T} s`;
-    });
-
-    // Función para manejar el envío del formulario10
-    document.getElementById('Acustica_10_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const λ = parseFloat(document.getElementById('10valorlon').value);
-
-        // Realizar la conversión correspondiente
-        const k = k_numero_de_onda_λ(λ)
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_10').textContent = `El número de onda (k) es ${k} rad/m`;
-    });
-
-    // Función para manejar el envío del formulario11
-    document.getElementById('Acustica_11_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const t = parseFloat(document.getElementById('11valortie').value);
-        const θ = parseFloat(document.getElementById('11valorpos').value);
-
-        // Realizar la conversión correspondiente
-        const vθ = velocidad_angular(t, θ)
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_11').textContent = `La velocidad angular (vθ) es ${vθ} rad/s`;
-    });
-
-    // Función para manejar el envío del formulario12
-    document.getElementById('Acustica_12_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Realizar la conversión correspondiente
-        const φ = fase_inicial()
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_12').textContent = `La fase inicial (φ) es ${φ} rad`;
-    });
-
-    // Función para manejar el envío del formulario13
-    document.getElementById('Acustica_13_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const T = parseFloat(document.getElementById('13valorper').value);
-
-        // Realizar la conversión correspondiente
-        const ω = velocidad_angular_periodo(T)
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_13').textContent = `La velocidad angular (ω) es ${ω} rad/s`;
-    });
-
-    // Función para manejar el envío del formulario14
-    document.getElementById('Acustica_14_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const v = parseFloat(document.getElementById('14valorvel').value);
-        const λ = parseFloat(document.getElementById('14valorlon').value);
-
-        // Realizar la conversión correspondiente
-        const f = frecuencia_longitud(v, λ)
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_14').textContent = `La frecuencia (f) es ${f} Hz`;
-    });
-
-    // Función para manejar el envío del formulario15
-    document.getElementById('Acustica_15_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const x = parseFloat(document.getElementById('15valorpos').value);
-        const t = parseFloat(document.getElementById('15valortie').value);
-        const A = parseFloat(document.getElementById('15valoramp').value);
-        const k = parseFloat(document.getElementById('15valornum').value);
-        const w = parseFloat(document.getElementById('15valorfre').value);
-        const φ = parseFloat(document.getElementById('15valorfas').value);
-
-        // Realizar la conversión correspondiente
-        const Axt = amplitud_xt(x, t, A, k, w, φ);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_15').textContent = `La amplitud de la onda en posición x y tiempo t es ${Axt} m`;
-    });
-
-    // Función para manejar el envío del formulario16
-    document.getElementById('Acustica_16_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const x = parseFloat(document.getElementById('16valorpos').value);
-        const t = parseFloat(document.getElementById('16valortie').value);
-        const Axt = parseFloat(document.getElementById('16valoramp').value);
-        const k = parseFloat(document.getElementById('16valornum').value);
-        const w = parseFloat(document.getElementById('16valorfre').value);
-        const φ = parseFloat(document.getElementById('16valorfas').value);
-
-        // Realizar la conversión correspondiente
-        const A = amplitud_ec_gral(x, t, Axt, k, w, φ);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_16').textContent = `La amplitud (A) es ${A} m`;
-    });
-
-    // Función para manejar el envío del formulario17
-    document.getElementById('Acustica_17_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const A = parseFloat(document.getElementById('17valoramp').value);
-        const k = parseFloat(document.getElementById('17valornum').value);
-        const w = parseFloat(document.getElementById('17valorfre').value);
-        const φ = parseFloat(document.getElementById('17valorfas').value);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_17').textContent = `La ecuación de la onda ingresada es: y(x,t) = ${A}sin(${k}x - ${w}t + ${φ})`;
-    });
-
-    // Función para manejar el envío del formulario18
-    document.getElementById('Acustica_18_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const A = parseFloat(document.getElementById('18valoramp').value);
-        const w = parseFloat(document.getElementById('18valorfre').value);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_18').textContent = `La ecuación de la onda ingresada es: y(t) = ${A}sin(${w}t)`;
-    });
-
-    // Función para manejar el envío del formulario19
-    document.getElementById('Acustica_19_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const p = parseFloat(document.getElementById('19valorpot').value);
-        const w = parseFloat(document.getElementById('19valorfre').value);
-        const A = parseFloat(document.getElementById('19valoramp').value);
-        const v = parseFloat(document.getElementById('19valorvel').value);
-
-        // Realizar la conversión correspondiente
-        const I = Intensidad(p, w, A, v);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_19').textContent = `La intensidad acústica es ${I} W/m2`;
-    });
-
-    // Función para manejar el envío del formulario20
-    document.getElementById('Acustica_20_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const d = parseFloat(document.getElementById('20valordis').value);
-
-        // Realizar la conversión correspondiente
-        const k = numero_de_onda_d(d)
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_20').textContent = `El número de onda es ${k} rad/m`;
-    });
-
-    // Función para manejar el envío del formulario21
-    document.getElementById('Acustica_21_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const Y = parseFloat(document.getElementById('21valoryou').value);
-        const p = parseFloat(document.getElementById('21valorden').value);
-
-        // Realizar la conversión correspondiente
-        const v = velocidad_modulo(Y, p);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_21').textContent = `La velocidad de propagación de las ondas en el medio es: ${v} m/s`;
-    });
-
-    // Función para manejar el envío del formulario22
-    document.getElementById('Acustica_22_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const B = parseFloat(document.getElementById('22valorcon').value);
-        const S = parseFloat(document.getElementById('22valorden').value);
-        const p = parseFloat(document.getElementById('22valorpre').value);
-
-        // Realizar la conversión correspondiente
-        const v = velocidad_modulo_presion_volumen(B, S, p);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_22').textContent = `La velocidad de propagación de las ondas en el medio es ${v} m/s`;
-    });
-
-    // Función para manejar el envío del formulario23
-    document.getElementById('Acustica_23_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const B = parseFloat(document.getElementById('23valorcon').value);
-        const p = parseFloat(document.getElementById('23valorpre').value);
-
-        // Realizar la conversión correspondiente
-        const v = velocidad_modulo_presion(B, p);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_23').textContent = `La velocidad de propagación de las ondas en el medio es ${v} m/s`;
-    });
-
-    // Función para manejar el envío del formulario24
-    document.getElementById('Acustica_24_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const Y = parseFloat(document.getElementById('24valoryou').value);
-        const P = parseFloat(document.getElementById('24valorpre').value);
-        const p = parseFloat(document.getElementById('24valorden').value);
-
-        // Realizar la conversión correspondiente
-        const v = velocidad_modulo_presion_densidad(Y, P, p)
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_24').textContent = `La velocidad de propagación de las ondas en el medio es ${v} m/s`;
-    });
-
-    // Función para manejar el envío del formulario25
-    document.getElementById('Acustica_25_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const Y = parseFloat(document.getElementById('25valoryou').value);
-        const R = parseFloat(document.getElementById('25valorcon').value);
-        const t = parseFloat(document.getElementById('25valortem').value);
-        const m = parseFloat(document.getElementById('25valormas').value);
-
-        // Realizar la conversión correspondiente
-        const v = velocidad_modulo_constante_gases(Y, R, t, m)
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_25').textContent = `La velocidad del sonido en el gas es ${v} m/s`;
-    });
-
-    // Función para manejar el envío del formulario26
-    document.getElementById('Acustica_26_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const f = parseFloat(document.getElementById('26valorfre').value);
-        const λ = parseFloat(document.getElementById('26valorlon').value);
-
-        // Realizar la conversión correspondiente
-        const v = velocidad_frecuencia(f, λ);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_26').textContent = `La velocidad de propagación de las ondas es ${v} m/s`;
-    });
-
-    // Función para manejar el envío del formulario28
-    document.getElementById('Acustica_28_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const d = parseFloat(document.getElementById('28valordis').value);
-        const v = parseFloat(document.getElementById('28valorvel').value);
-
-        // Realizar la conversión correspondiente
-        const t = tiempo(d, v);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_28').textContent = `El tiempo transcurrido es ${t} s`;
-    });
-
-    // Función para manejar el envío del formulario29
-    document.getElementById('Acustica_29_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const v = parseFloat(document.getElementById('29valorvel').value);
-        const t = parseFloat(document.getElementById('29valortie').value);
-
-        // Realizar la conversión correspondiente
-        const d = distancia(v, t);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_29').textContent = `La distancia recorrida es ${d} m`;
-    });
-
-    // Función para manejar el envío del formulario30
-    document.getElementById('Acustica_30_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const n = parseFloat(document.getElementById('30valornum').value);
-        const t = parseFloat(document.getElementById('30valortie').value);
-
-        // Realizar la conversión correspondiente
-        const w = frecuencia_angular_oscilaciones(n, t);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_30').textContent = `La frecuencia angular es ${w} rad/s`;
-    });
-
-    // Función para manejar el envío del formulario31
-    document.getElementById('Acustica_31_Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Obtener los valores del formulario
-        const p = parseFloat(document.getElementById('31valorpot').value);
-        const w = parseFloat(document.getElementById('31valorfre').value);
-        const A = parseFloat(document.getElementById('31valoramp').value);
-        const k = parseFloat(document.getElementById('31valornum').value);
-
-        // Realizar la conversión correspondiente
-        const I = Intensidad_numero_onda(p, w, A, k);
-
-        // Mostrar el resultado
-        document.getElementById('resultado_Acustica_31').textContent = `La intensidad acústica es ${I} W/m2`;
-    });
-</script>
+        function amplitud(Asw) {
+            const A = Asw / 2;
+            return A;
+        }
+
+        function frecuencia_angular(f) {
+            const w = 2 * Math.PI * f;
+            return w;
+        }
+
+        function frecuencia(w) {
+            const f = w / (2 * Math.PI);
+            return f;
+        }
+
+        function longitud_onda(v, f) {
+            const λ = v / f;
+            return λ;
+        }
+
+        function velocidad(λ, f) {
+            const v = λ * f;
+            return v;
+        }
+
+        function frecuencia_longitud(v, λ) {
+            const f = v / λ;
+            return f;
+        }
+
+        function periodo(f) {
+            const p = 1 / f;
+            return p;
+        }
+
+        function velocidad_angular(t, θ) {
+            const vθ = θ / t;
+            return vθ;
+        }
+
+        function fase_inicial() {
+            const φ = Math.PI / 2;
+            return φ;
+        }
+
+        function velocidad_angular_periodo(T) {
+            const ω = (2 * Math.PI) / T;
+            return ω;
+        }
+
+        function amplitud_xt(x, t, A, k, w, φ) {
+            const Axt = A * Math.sin(k * x - w * t + φ);
+            return Axt;
+        }
+
+        function amplitud_ec_gral(x, t, Axt, k, w, φ) {
+            const A = Axt / Math.sin(k * x - w * t + φ);
+            return A;
+        }
+
+        function Intensidad(p, w, A, v) {
+            const I = (p * w ** 2 * A ** 2 * v) / 2;
+            return I;
+        }
+
+        function numero_de_onda_d(d) {
+            const k = Math.PI / d;
+            return d;
+        }
+
+        function velocidad_modulo(Y, p) {
+            const v = Math.sqrt(Y / p);
+            return v;
+        }
+
+        function velocidad_modulo_presion_volumen(B, S, p) {
+            const v = Math.sqrt((B * (3 / 4) * S) / p);
+            return v;
+        }
+
+        function velocidad_modulo_presion(B, p) {
+            const v = Math.sqrt(B / p);
+            return v;
+        }
+
+        function velocidad_modulo_presion_densidad(Y, P, p) {
+            const v = Math.sqrt((Y * P) / p);
+            return v;
+        }
+
+        function velocidad_modulo_constante_gases(Y, R, t, m) {
+            const v = Math.sqrt((Y * R * t) / m);
+            return v;
+        }
+
+        function velocidad_frecuencia(f, λ) {
+            const v = f * λ;
+            return v;
+        }
+
+        function velocidad_distancia(d, t) {
+            const v = d / t;
+            return v;
+        }
+
+        function tiempo(d, v) {
+            const t = d / v;
+            return t;
+        }
+
+        function distancia(v, t) {
+            const d = v * t;
+            return d;
+        }
+
+        function frecuencia_angular_oscilaciones(n, t) {
+            const w = (2 * Math.PI * n) / t;
+            return w;
+        }
+
+        function Intensidad_numero_onda(p, w, A, k) {
+            const I = (p * w ** 2 * A ** 2 * k ** 2) / 2;
+            return I;
+        }
+
+        function mostrarResultado(mensaje) {
+            document.getElementById('resultado').innerText = mensaje;
+        }
+
+        function calcular() {
+            var opcion = parseInt(document.getElementById('opcion').value);
+
+            switch (opcion) {
+                case 1:
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
+                    var v = parseFloat(prompt("Ingresa la velocidad (m/s): "));
+                    var k = k_numero_de_onda(w, v);
+                    mostrarResultado(`El número de onda (k) es ${k} rad/m`);
+                    break;
+                case 2:
+                    var k = parseFloat(prompt("Ingresa el número de onda (rad/m): "));
+                    var v = parseFloat(prompt("Ingresa la velocidad (m/s): "));
+                    var w = w_frecuencia_angular(k, v);
+                    mostrarResultado(`La frecuencia angular (w) es ${w} rad/s`);
+                    break;
+                case 3:
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
+                    var k = parseFloat(prompt("Ingresa el número de onda (rad/m): "));
+                    var v = v_velocidad(w, k);
+                    mostrarResultado(`La velocidad (v) es ${v} m/s`);
+                    break;
+                case 4:
+                    var A = parseFloat(prompt("Ingresa la amplitud (m): "));
+                    var Asw = amplitud_onda_estacionaria(A);
+                    mostrarResultado(`La amplitud de la onda estacionaria (Asw) es ${Asw} m`);
+                    break;
+                case 5:
+                    var Asw = parseFloat(prompt("Ingresa la amplitud de la onda estacionaria (m): "));
+                    var A = amplitud(Asw);
+                    mostrarResultado(`La amplitud (A) es ${A} m`);
+                    break;
+                case 6:
+                    var f = parseFloat(prompt("Ingresa la frecuencia (Hz): "));
+                    var w = frecuencia_angular(f);
+                    mostrarResultado(`La frecuencia angular (w) es ${w} rad/s`);
+                    break;
+                case 7:
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
+                    var f = frecuencia(w);
+                    mostrarResultado(`La frecuencia (f) es ${f} Hz`);
+                    break;
+                case 8:
+                    console.log("¿Qué quieres calcular?");
+                    var subopcion = parseInt(prompt("1) Longitud de onda (λ)\n2) Velocidad (v)\n:"));
+                    if (subopcion === 1) {
+                        var v = parseFloat(prompt("Ingresa la velocidad (m/s): "));
+                        var f = parseFloat(prompt("Ingresa la frecuencia (Hz): "));
+                        var λ = longitud_onda(v, f);
+                        mostrarResultado(`La longitud de onda (λ) es ${λ} m`);
+                    } else if (subopcion === 2) {
+                        var λ = parseFloat(prompt("Ingresa la longitud de onda (m): "));
+                        var f = parseFloat(prompt("Ingresa la frecuencia (Hz): "));
+                        var v = velocidad(λ, f);
+                        mostrarResultado(`La velocidad (v) es ${v} m/s`);
+                    } else {
+                        mostrarResultado("Elige una opción válida");
+                    }
+                    break;
+                case 9:
+                    var f = parseFloat(prompt("Ingresa la frecuencia (Hz): "));
+                    var p = periodo(f);
+                    mostrarResultado(`El periodo (T) es ${p} s`);
+                    break;
+                case 10:
+                    var λ = parseFloat(prompt("Ingresa la longitud de onda (m): "));
+                    var k = k_numero_de_onda_λ(λ);
+                    mostrarResultado(`El número de onda (k) es ${k} rad/m`);
+                    break;
+                case 11:
+                    var t = parseFloat(prompt("Ingresa el tiempo (s): "));
+                    var θ = parseFloat(prompt("Ingresa el la posición angular (rad)"));
+                    var vθ = velocidad_angular(t, θ);
+                    mostrarResultado(`La velocidad angular (vθ) es ${vθ} rad/s`);
+                    break;
+                case 12:
+                    var φ = fase_inicial();
+                    mostrarResultado(`La fase inicial (φ) es ${φ} rad`);
+                    break;
+                case 13:
+                    var T = parseFloat(prompt("Ingresa el periodo (s): "));
+                    var ω = velocidad_angular_periodo(T);
+                    mostrarResultado(`La velocidad angular (ω) es ${ω} rad/s`);
+                    break;
+                case 14:
+                    var v = parseFloat(prompt("Ingresa la velocidad (m/s): "));
+                    var λ = parseFloat(prompt("Ingresa la longitud de onda (m): "));
+                    var f = frecuencia_longitud(v, λ);
+                    mostrarResultado(`La frecuencia (f) es ${f} Hz`);
+                    break;
+                case 15:
+                    var x = parseFloat(prompt("Ingresa la posición x (m): "));
+                    var t = parseFloat(prompt("Ingresa el tiempo t (s): "));
+                    var A = parseFloat(prompt("Ingresa la amplitud máxima (m): "));
+                    var k = parseFloat(prompt("Ingresa el número de onda (rad/m) : "));
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular (rad/s):  "));
+                    var φ = parseFloat(prompt("Ingresa la fase inicial (rad): "));
+                    var Axt = amplitud_xt(x, t, A, k, w, φ);
+                    mostrarResultado(`La amplitud de la onda en posición x y tiempo t es ${Axt} m`);
+                    break;
+                case 16:
+                    var x = parseFloat(prompt("Ingresa la posición x (m): "));
+                    var t = parseFloat(prompt("Ingresa el tiempo t (s): "));
+                    var Axt = parseFloat(prompt("Ingresa la amplitud de la onda en posición x y tiempo t (m): "));
+                    var k = parseFloat(prompt("Ingresa el número de onda (rad/m): "));
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
+                    var φ = parseFloat(prompt("Ingresa la fase inicial (rad): "));
+                    var A = amplitud_ec_gral(x, t, Axt, k, w, φ);
+                    mostrarResultado(`La amplitud (A) es ${A} m`);
+                    break;
+                case 17:
+                    var A = parseFloat(prompt("Ingresa la amplitud máxima (m): "));
+                    var k = parseFloat(prompt("Ingresa el número de onda (rad/m): "));
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
+                    var φ = parseFloat(prompt("Ingresa la fase inicial (rad): "));
+                    mostrarResultado(`y(x,t) = ${A}sin(${k}x - ${w}t + ${φ})`);
+                    break;
+                case 18:
+                    var A = parseFloat(prompt("Ingresa la amplitud máxima (m): "));
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular rad/s: "));
+                    mostrarResultado(`y(t) = ${A}sin(${w}t)`);
+                    break;
+                case 19:
+                    var p = parseFloat(prompt("Ingresa la densidad de potencia (W/m2) "));
+                    var A = parseFloat(prompt("Ingresa la amplitud máxima (m): "));
+                    var v = parseFloat(prompt("Ingresa la velocidad de propagación (m/s) : "));
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular (rad/s):  "));
+                    var I = Intensidad(p, w, A, v);
+                    mostrarResultado(`La intensidad acústica es ${I} W/m2`);
+                    break;
+                case 20:
+                    var d = parseFloat(prompt("Ingresa la distancia (m): "));
+                    var k = numero_de_onda_d(d);
+                    mostrarResultado(`El número de onda es ${k} rad/m`);
+                    break;
+                case 21:
+                    var Y = parseFloat(prompt("Ingresa el módulo de Young (Pa): "));
+                    var p = parseFloat(prompt("Ingresa la densidad (kg/m3): "));
+                    var v = velocidad_modulo(Y, p);
+                    mostrarResultado(`La velocidad de propagación de las ondas en el medio es ${v} m/s`);
+                    break;
+                case 22:
+                    var B = parseFloat(prompt("Ingresa la constante elástica del medio (Pa): "));
+                    var S = parseFloat(prompt("Ingresa la densidad superficial (kg/m2): "));
+                    var p = parseFloat(prompt("Ingresa la presión (Pa): "));
+                    var v = velocidad_modulo_presion_volumen(B, S, p);
+                    mostrarResultado(`La velocidad de propagación de las ondas en el medio es ${v} m/s`);
+                    break;
+                case 23:
+                    var B = parseFloat(prompt("Ingresa la constante elástica del medio (Pa): "));
+                    var p = parseFloat(prompt("Ingresa la presión (Pa): "));
+                    var v = velocidad_modulo_presion(B, p);
+                    mostrarResultado(`La velocidad de propagación de las ondas en el medio es ${v} m/s`);
+                    break;
+                case 24:
+                    var Y = parseFloat(prompt("Ingresa el módulo de Young (Pa): "));
+                    var P = parseFloat(prompt("Ingresa la presión (Pa): "));
+                    var p = parseFloat(prompt("Ingresa la densidad (kg/m3): "));
+                    var v = velocidad_modulo_presion_densidad(Y, P, p);
+                    mostrarResultado(`La velocidad de propagación de las ondas en el medio es ${v} m/s`);
+                    break;
+                case 25:
+                    var Y = parseFloat(prompt("Ingresa el módulo de Young (Pa): "));
+                    var R = parseFloat(prompt("Ingresa la constante de los gases (J/(kg·K)): "));
+                    var t = parseFloat(prompt("Ingresa la temperatura (K): "));
+                    var m = parseFloat(prompt("Ingresa la masa molar del gas (kg/mol): "));
+                    var v = velocidad_modulo_constante_gases(Y, R, t, m);
+                    mostrarResultado(`La velocidad del sonido en el gas es ${v} m/s`);
+                    break;
+                case 26:
+                    var f = parseFloat(prompt("Ingresa la frecuencia (Hz): "));
+                    var λ = parseFloat(prompt("Ingresa la longitud de onda (m): "));
+                    var v = velocidad_frecuencia(f, λ);
+                    mostrarResultado(`La velocidad de propagación de las ondas es ${v} m/s`);
+                    break;
+                case 27:
+                    var d = parseFloat(prompt("Ingresa la distancia recorrida (m): "));
+                    var t = parseFloat(prompt("Ingresa el tiempo transcurrido (s): "));
+                    var v = velocidad_distancia(d, t);
+                    mostrarResultado(`La velocidad media es ${v} m/s`);
+                    break;
+                case 28:
+                    var d = parseFloat(prompt("Ingresa la distancia (m): "));
+                    var v = parseFloat(prompt("Ingresa la velocidad media (m/s): "));
+                    var t = tiempo(d, v);
+                    mostrarResultado(`El tiempo transcurrido es ${t} s`);
+                    break;
+                case 29:
+                    var v = parseFloat(prompt("Ingresa la velocidad (m/s): "));
+                    var t = parseFloat(prompt("Ingresa el tiempo (s): "));
+                    var d = distancia(v, t);
+                    mostrarResultado(`La distancia recorrida es ${d} m`);
+                    break;
+                case 30:
+                    var n = parseFloat(prompt("Ingresa el número de oscilaciones: "));
+                    var t = parseFloat(prompt("Ingresa el tiempo (s): "));
+                    var w = frecuencia_angular_oscilaciones(n, t);
+                    mostrarResultado(`La frecuencia angular es ${w} rad/s`);
+                    break;
+                case 31:
+                    var p = parseFloat(prompt("Ingresa la potencia (W/m2): "));
+                    var w = parseFloat(prompt("Ingresa la frecuencia angular (rad/s): "));
+                    var A = parseFloat(prompt("Ingresa la amplitud máxima (m): "));
+                    var k = parseFloat(prompt("Ingresa el número de onda (rad/m): "));
+                    var I = Intensidad_numero_onda(p, w, A, k);
+                    mostrarResultado(`La intensidad acústica es ${I} W/m2`);
+                    break;
+                default:
+                    mostrarResultado("Elige una opción válida");
+                    break;
+            }
+        }
+    </script>
 </head>
+
+<body>
+    <div>
+        <h1>Calculadora</h1>
+        <label for="opcion">Selecciona la propiedad que deseas calcular:</label>
+        <select id="opcion">
+            <option value="1">Número de onda (k)</option>
+            <option value="2">Frecuencia Angular (w)</option>
+            <option value="3">Velocidad (v)</option>
+            <option value="4">Amplitud Onda Estacionaria (Asw)</option>
+            <option value="5">Amplitud (A)</option>
+            <option value="6">Frecuencia Angular a partir de Frecuencia (w)</option>
+            <option value="7">Frecuencia a partir de Frecuencia Angular (f)</option>
+            <option value="8">Longitud de Onda (λ) o Velocidad (v)</option>
+            <option value="9">Periodo (T)</option>
+            <option value="10">Número de onda a partir de Longitud de Onda (k)</option>
+            <option value="11">Velocidad Angular (vθ)</option>
+            <option value="12">Fase Inicial (φ)</option>
+            <option value="13">Velocidad Angular a partir de Periodo (ω)</option>
+            <option value="14">Frecuencia a partir de Velocidad y Longitud de Onda (f)</option>
+            <option value="15">Amplitud de Onda en Posición y Tiempo (Axt)</option>
+            <option value="16">Amplitud a partir de Posición, Tiempo y Amplitud de Onda en Posición y Tiempo (A)</option>
+            <option value="17">Ecuación de Onda (y)</option>
+            <option value="18">Ecuación de Onda (y) con Amplitud y Frecuencia Angular</option>
+            <option value="19">Intensidad Acústica a partir de Potencia, Frecuencia Angular, Amplitud y Velocidad de Propagación (I)</option>
+            <option value="20">Número de Onda a partir de Distancia entre Fuentes (k)</option>
+            <option value="21">Velocidad de Propagación de Ondas Longitudinales en un Medio Elástico (v)</option>
+            <option value="22">Velocidad de Propagación de Ondas Transversales en un Medio Elástico (v)</option>
+            <option value="23">Velocidad de Propagación de Ondas Longitudinales en un Fluido, usando la constante elástica del medio (v)</option>
+            <option value="24">Velocidad de Propagación de Ondas Longitudinales en un Fluido (v)</option>
+            <option value="25">Velocidad del Sonido en Gases Ideales (v)</option>
+            <option value="26">Velocidad de Propagación de Ondas en una Cuerda (v)</option>
+            <option value="27">Velocidad Media a partir de Distancia y Tiempo (v)</option>
+            <option value="28">Tiempo a partir de Distancia y Velocidad Media (t)</option>
+            <option value="29">Distancia a partir de Velocidad y Tiempo (d)</option>
+            <option value="30">Frecuencia Angular a partir de Número de Oscilaciones y Tiempo (w)</option>
+            <option value="31">Intensidad Acústica a partir de Potencia, Frecuencia Angular, Amplitud y Número de Onda (I)</option>
+        </select>
+        <button onclick="calcular()">Calcular</button>
+        <p id="resultado"></p>
+    </div>
+</body>
 
 </html>
