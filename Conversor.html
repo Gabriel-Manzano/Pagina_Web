@@ -1,389 +1,449 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-bs-theme="light" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Acustica</title>
+    
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Articles-Cards-images.css">
+    <link rel="stylesheet" href="assets/css/Customizable-Background--Overlay.css">
+    <link rel="stylesheet" href="assets/css/Navbar-Right-Links-Dark-icons.css">
+
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        .estrellas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
         }
 
-        .top-bar {
-            background-color: #333;
-            overflow: hidden;
+        .estrella {
+            position: absolute;
+            background-color: #ffffff; /* Color blanco para las estrellas */
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            animation: twinkling 3s infinite;
         }
 
-        .top-bar a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        .top-bar a:hover {
-            background-color: #ddd;
-            color: black;
+        @keyframes twinkling {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
 
-<body>
-    <div class="top-bar">
-        <a href="Optica.html">Óptica</a>
-        <a href="Acustica.html">Acústica</a>
-        <a href="Fisica_moderna.html">Física Moderna</a>
-        <a href="Conversor.html">Conversor de Unidades</a>
-        <a href="Sobre_nosotros.html">Sobre Nosotros</a>
-        <a href="Calculadora.html">Calculadora</a>
-    </div>
-
-    <h1>Conversor de Unidades</h1>
-
-    <!-- Selector para elegir entre longitud, volumen y masa -->
-    <label for="tipoConversor">Seleccione el tipo de conversión:</label>
-    <select id="tipoConversor">
-        <option value="longitud">Longitud</option>
-        <option value="masa">Masa</option>
-        <option value="volumen">Volumen</option>
-        <option value="presion">Presión</option>
-        <option value="temperatura">Temperatura</option>
-        <option value="tiempo">Tiempo</option>
-        <option value="velocidad">Velocidad</option>
-        <option value="angulos">Ángulos</option>
-        <option value="form">Múltiplos y submúltiplos</option>
-    </select><br>
-
-    <!-- Contenedor para conversores -->
-    <div id="conversores">
-        <!-- Conversor de longitud -->
-        <div id="conversorLongitud">
-            <h2>Conversor de Longitud</h2>
-            <form id="conversorLongitudForm">
-                <label for="valorLongitud">Valor:</label>
-                <input type="number" id="valorLongitud" name="valorLongitud" step="any" required><br>
-
-                <label for="unidadInicialLongitud">Unidad inicial:</label>
-                <select id="unidadInicialLongitud" name="unidadInicialLongitud">
-                    <option value="metros">metros</option>
-                    <option value="pulgadas">pulgadas</option>
-                    <option value="millas">millas</option>
-                    <option value="pies">pies</option>
-                    <option value="yardas">yardas</option>
-                    <option value="millas_nauticas">millas náuticas</option>
-                </select><br>
-
-                <label for="tipoConversionLongitud">Convertir a:</label>
-                <select id="tipoConversionLongitud" name="tipoConversionLongitud">
-                    <option value="metros">metros</option>
-                    <option value="pulgadas">pulgadas</option>
-                    <option value="millas">millas</option>
-                    <option value="pies">pies</option>
-                    <option value="yardas">yardas</option>
-                    <option value="millas_nauticas">millas náuticas</option>
-                </select><br>
-
-                <button type="submit">Convertir</button>
-            </form>
-
-            <div id="resultadoLongitud"></div>
+<body style="background-color: rgb(24, 3, 44);">
+    <div class="estrellas"></div>   
+    <nav class="navbar navbar-expand-md bg-dark py-3" data-bs-theme="dark">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-bezier">
+                        <path fill-rule="evenodd" d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm10.5.5A1.5 1.5 0 0 1 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5 1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"></path>
+                        <path d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z"></path>
+                    </svg></span><span>Brand</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-5">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="Optica.html">Optica</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Acustica.html">Acustica</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Fisica_moderna.html">Fisica Moderna</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Conversor.html">Conversor de Unidades</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Sobre_nosotros.html">Sobre nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Calculadora.html">Calculadora</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container py-4 py-xl-5" >
+        <div style="background-image:url(&quot;assets/img/conversor.jpeg&quot;);height:500px;background-position:center;background-size:cover;background-repeat:no-repeat;">
+            <div class="d-flex justify-content-center align-items-center" style="height: inherit;min-height: initial;width: 100%;position: absolute;left: 0;background-color: rgba(30,41,99,0.53);">
+                <div class="d-flex align-items-center order-5" style="height:200px;">
+                    <div class="container">
+                        <h1 style="text-align: center; color: #ffffff;" class="text-center" style="color:rgb(242,245,248);font-size:56px;font-weight:bold;font-family:Roboto, sans-serif;">CONVERSOR DE V8</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <p class="w-lg-50"></p>
+            </div>
         </div>
 
-        <!-- Conversor de volumen -->
-        <div id="conversorVolumen" style="display:none;">
-            <h2>Conversor de Volumen</h2>
-            <form id="conversorVolumenForm">
-                <label for="valorVolumen">Valor:</label>
-                <input type="number" id="valorVolumen" name="valorVolumen" step="any" required><br>
-
-                <label for="unidadInicialVolumen">Unidad inicial:</label>
-                <select id="unidadInicialVolumen" name="unidadInicialVolumen">
-                    <option value="cm3">cm³</option>
-                    <option value="m3">m³</option>
-                    <option value="litros">litros</option>
-                    <option value="galones">galones</option>
-                    <option value="pulgadas3">pulgadas cúbicas</option>
-                    <option value="pies3">pies cúbicos</option>
-                </select><br>
-
-                <label for="tipoConversionVolumen">Convertir a:</label>
-                <select id="tipoConversionVolumen" name="tipoConversionVolumen">
-                    <option value="cm3">cm³</option>
-                    <option value="m3">m³</option>
-                    <option value="litros">litros</option>
-                    <option value="galones">galones</option>
-                    <option value="pulgadas3">pulgadas cúbicas</option>
-                    <option value="pies3">pies cúbicos</option>
-                </select><br>
-
-                <button type="submit">Convertir</button>
-            </form>
-
-            <div id="resultadoVolumen"></div>
+        <div class="row" class="position-relative" class="p-3 mb-2 bg-dark text-white">
+            <h1 style="text-align: center; color: #ffffff;" class="text-uppercase">Conversor de Unidades</h1>
+        
+            <!-- Selector para elegir entre longitud, volumen y masa -->
+            <label style="color: #ffffff;  " class="form-label" for="tipoConversor">Seleccione el tipo de conversión:</label>
+            <select id="tipoConversor"  class="form-select form-select-sm" aria-label="Small select example">
+                <option value="longitud">Longitud</option>
+                <option value="masa">Masa</option>
+                <option value="volumen">Volumen</option>
+                <option value="presion">Presión</option>
+                <option value="temperatura">Temperatura</option>
+                <option value="tiempo">Tiempo</option>
+                <option value="velocidad">Velocidad</option>
+                <option value="angulos">Ángulos</option>
+                <option value="form">Múltiplos y submúltiplos</option>
+            </select><br>
+        
+            <!-- Contenedor para conversores -->
+            <div id="conversores">
+                <!-- Conversor de longitud -->
+                <div id="conversorLongitud">
+                    <h2 style="text-align: center; color: #ffffff;" >Conversor de Longitud</h2>
+                    <form id="conversorLongitudForm">
+                        <label style="color: #ffffff;"  for="valorLongitud">Valor:</label>
+                        <input class="form-control"  type="number" id="valorLongitud" name="valorLongitud" step="any" required><br>
+        
+                        <label style="color: #ffffff;"  for="unidadInicialLongitud">Unidad inicial:</label>
+                        <select id="unidadInicialLongitud" name="unidadInicialLongitud"  class="form-select form-select-sm" aria-label="Small select example">
+                            <option value="metros">metros</option>
+                            <option value="pulgadas">pulgadas</option>
+                            <option value="millas">millas</option>
+                            <option value="pies">pies</option>
+                            <option value="yardas">yardas</option>
+                            <option value="millas_nauticas">millas náuticas</option>
+                        </select><br>
+        
+                        <label style="color: #ffffff;"  for="tipoConversionLongitud">Convertir a:</label>
+                        <select id="tipoConversionLongitud" name="tipoConversionLongitud"  class="form-select form-select-sm" aria-label="Small select example" class="shadow-none p-3 mb-5 bg-body-tertiary rounded">
+                            <option value="metros">metros</option>
+                            <option value="pulgadas">pulgadas</option>
+                            <option value="millas">millas</option>
+                            <option value="pies">pies</option>
+                            <option value="yardas">yardas</option>
+                            <option value="millas_nauticas">millas náuticas</option>
+                        </select><br>
+        
+                        <button type="submit">Convertir</button>
+                    </form>
+        
+                    <div id="resultadoLongitud"></div>
+                </div>
+        
+                <!-- Conversor de volumen -->
+                <div id="conversorVolumen" style="display:none;">
+                    <h2 style="text-align: center; color: #ffffff;">Conversor de Volumen</h2>
+                    <form id="conversorVolumenForm">
+                        <label style="color: #ffffff;"  for="valorVolumen">Valor:</label>
+                        <input class="form-control"  type="number" id="valorVolumen" name="valorVolumen" step="any" required><br>
+        
+                        <label style="color: #ffffff;"  for="unidadInicialVolumen">Unidad inicial:</label>
+                        <select id="unidadInicialVolumen" name="unidadInicialVolumen" class="form-select form-select-sm" aria-label="Small select example" class="shadow-none p-3 mb-5 bg-body-tertiary rounded">
+                            <option value="cm3">cm³</option>
+                            <option value="m3">m³</option>
+                            <option value="litros">litros</option>
+                            <option value="galones">galones</option>
+                            <option value="pulgadas3">pulgadas cúbicas</option>
+                            <option value="pies3">pies cúbicos</option>
+                        </select><br>
+        
+                        <label style="color: #ffffff;"  for="tipoConversionVolumen">Convertir a:</label>
+                        <select id="tipoConversionVolumen" name="tipoConversionVolumen" class="form-select form-select-sm" aria-label="Small select example" class="shadow-none p-3 mb-5 bg-body-tertiary rounded">
+                            <option value="cm3">cm³</option>
+                            <option value="m3">m³</option>
+                            <option value="litros">litros</option>
+                            <option value="galones">galones</option>
+                            <option value="pulgadas3">pulgadas cúbicas</option>
+                            <option value="pies3">pies cúbicos</option>
+                        </select><br>
+        
+                        <button type="submit">Convertir</button>
+                    </form>
+        
+                    <div id="resultadoVolumen"></div>
+                </div>
+        
+                <!-- Conversor de masa -->
+                <div id="conversorMasa" style="display:none;">
+                    <h2 style="text-align: center; color: #ffffff;">Conversor de Masa</h2>
+                    <form id="conversorMasaForm">
+                        <label style="color: #ffffff;"  for="valorMasa">Valor:</label>
+                        <input class="form-control"  type="number" id="valorMasa" name="valorMasa" step="any" required><br>
+        
+                        <label style="color: #ffffff;"  for="unidadInicialMasa">Unidad inicial:</label>
+                        <select id="unidadInicialMasa" name="unidadInicialMasa" class="form-select form-select-sm" aria-label="Small select example" class="shadow-none p-3 mb-5 bg-body-tertiary rounded">
+                            <option value="kilogramos">kilogramos</option>
+                            <option value="gramos">gramos</option>
+                            <option value="toneladas">toneladas</option>
+                            <option value="miligramos">miligramos</option>
+                            <option value="microgramos">microgramos</option>
+                            <option value="libras">libras</option>
+                            <option value="onzas">onzas</option>
+                        </select><br>
+        
+                        <label style="color: #ffffff;"  for="tipoConversionMasa">Convertir a:</label>
+                        <select id="tipoConversionMasa" name="tipoConversionMasa" class="form-select form-select-sm" aria-label="Small select example" class="shadow-none p-3 mb-5 bg-body-tertiary rounded">
+                            <option value="kilogramos">kilogramos</option>
+                            <option value="gramos">gramos</option>
+                            <option value="toneladas">toneladas</option>
+                            <option value="miligramos">miligramos</option>
+                            <option value="microgramos">microgramos</option>
+                            <option value="libras">libras</option>
+                            <option value="onzas">onzas</option>
+                        </select><br>
+        
+                        <button type="submit">Convertir</button>
+                    </form>
+        
+                    <div id="resultadoMasa"></div>
+                </div>
+        
+                <!-- Conversor de presión -->
+                <div id="conversorPresion" style="display:none;">
+                    <h2 style="text-align: center; color: #ffffff;">Conversor de Presion</h2>
+                    <form id="conversorPresionForm">
+                        <label style="color: #ffffff;"  for="valorPresion">Valor:</label>
+                        <input class="form-control"  type="number" id="valorPresion" name="valorPresion" step="any" required><br>
+        
+                        <label style="color: #ffffff;"  for="unidadInicialPresion">Unidad inicial:</label>
+                        <select id="unidadInicialPresion" name="unidadInicialPresion" class="form-select form-select-sm" aria-label="Small select example" class="shadow-none p-3 mb-5 bg-body-tertiary rounded">
+                            <option value="atmosferas">atmósferas</option>
+                            <option value="bar">bar</option>
+                            <option value="pascales">pascales</option>
+                        </select><br>
+        
+                        <label style="color: #ffffff;"  for="tipoConversionPresion">Convertir a:</label>
+                        <select id="tipoConversionPresion" name="tipoConversionPresion" class="form-select form-select-sm" aria-label="Small select example" class="shadow-none p-3 mb-5 bg-body-tertiary rounded">
+                            <option value="atmosferas">atmósferas</option>
+                            <option value="bar">bar</option>
+                            <option value="pascales">pascales</option>
+                        </select><br>
+        
+                        <button type="submit">Convertir</button>
+                    </form>
+        
+                    <div id="resultadoPresion"></div>
+                </div>
+        
+                <!-- Conversor de Temperatura -->
+                <div id="conversorTemperatura" style="display:none;">
+                    <h2 style="text-align: center; color: #ffffff;">Conversor de Temperatura</h2>
+                    <form id="conversorTemperaturaForm">
+                        <label style="color: #ffffff;"  for="valorTemperatura">Valor:</label>
+                        <input class="form-control"  type="number" id="valorTemperatura" name="valorTemperatura" step="any" required><br>
+        
+                        <label style="color: #ffffff;"  for="unidadInicialTemperatura">Unidad inicial:</label>
+                        <select id="unidadInicialTemperatura" name="unidadInicialTemperatura" class="form-select form-select-sm" aria-label="Small select example" class="shadow-none p-3 mb-5 bg-body-tertiary rounded">
+                            <option value="celsius">celsius</option>
+                            <option value="fahrenheit">fahrenheit</option>
+                            <option value="kelvin">kelvin</option>
+                        </select><br>
+        
+                        <label style="color: #ffffff;"  for="tipoConversionTemperatura">Convertir a:</label>
+                        <select id="tipoConversionTemperatura" name="tipoConversionTemperatura" class="form-select form-select-sm" aria-label="Small select example" class="shadow-none p-3 mb-5 bg-body-tertiary rounded">
+                            <option value="celsius">celsius</option>
+                            <option value="fahrenheit">fahrenheit</option>
+                            <option value="kelvin">kelvin</option>
+                        </select><br>
+        
+                        <button type="submit">Convertir</button>
+                    </form>
+        
+                    <div id="resultadoTemperatura"></div>
+                </div>
+        
+                <!-- Conversor de tiempo -->
+                <div id="conversorTiempo" style="display:none;">
+                    <h2 style="text-align: center; color: #ffffff;">Conversor de Tiempo</h2>
+                    <form id="conversorTiempoForm">
+                        <label style="color: #ffffff;"  for="valorTiempo">Valor:</label>
+                        <input class="form-control"  type="number" id="valorTiempo" name="valorTiempo" step="any" required><br>
+        
+                        <label style="color: #ffffff;"  for="unidadInicialTiempo">Unidad inicial:</label>
+                        <select id="unidadInicialTiempo" name="unidadInicialTiempo" class="form-select form-select-sm" aria-label="Small select example" class="shadow-none p-3 mb-5 bg-body-tertiary rounded">
+                            <option value="nanosegundos">nanosegundo</option>
+                            <option value="microsegundos">microsegundo</option>
+                            <option value="milisegundos">milisegundo</option>
+                            <option value="segundos">segundo</option>
+                            <option value="minutos">minuto</option>
+                            <option value="horas">hora</option>
+                            <option value="dias">día</option>
+                            <option value="semanas">semana</option>
+                            <option value="meses">mes</option>
+                            <option value="años">año</option>
+                            <option value="decadas">década</option>
+                            <option value="siglos">siglo</option>
+                        </select><br>
+        
+                        <label style="color: #ffffff;"  for="tipoConversionTiempo">Convertir a:</label>
+                        <select id="tipoConversionTiempo" name="tipoConversionTiempo" class="form-select form-select-sm" aria-label="Small select example" class="shadow-none p-3 mb-5 bg-body-tertiary rounded">
+                            <option value="nanosegundos">nanosegundo</option>
+                            <option value="microsegundos">microsegundo</option>
+                            <option value="milisegundos">milisegundo</option>
+                            <option value="segundos">segundo</option>
+                            <option value="minutos">minuto</option>
+                            <option value="horas">hora</option>
+                            <option value="dias">día</option>
+                            <option value="semanas">semana</option>
+                            <option value="meses">mes</option>
+                            <option value="años">año</option>
+                            <option value="decadas">década</option>
+                            <option value="siglos">siglo</option>
+                        </select><br>
+        
+                        <button type="submit">Convertir</button>
+                    </form>
+        
+                    <div id="resultadoTiempo"></div>
+                </div>
+        
+                <!-- Conversor de Velocidad -->
+                <div id="conversorVelocidad" style="display:none;">
+                    <h2 style="text-align: center; color: #ffffff;">Conversor de Velocidad</h2>
+                    <form id="conversorVelocidadForm">
+                        <label style="color: #ffffff;"  for="valorVelocidad">Valor:</label>
+                        <input class="form-control"  type="number" id="valorVelocidad" name="valorVelocidad" step="any" required><br>
+        
+                        <label style="color: #ffffff;"  for="unidadInicialVelocidad">Unidad inicial:</label>
+                        <select id="unidadInicialVelocidad" name="unidadInicialVelocidad" class="form-select form-select-sm" aria-label="Small select example" class="shadow-none p-3 mb-5 bg-body-tertiary rounded">
+                            <option value="milla">mi/h</option>
+                            <option value="pie">ft/s</option>
+                            <option value="metro">m/s</option>
+                            <option value="kilometro">km/h</option>
+                            <option value="nudo">nudo</option>
+                        </select><br>
+        
+                        <label style="color: #ffffff;"  for="tipoConversionVelocidad">Convertir a:</label>
+                        <select  id="tipoConversionVelocidad" name="tipoConversionVelocidad" class="form-select form-select-sm" aria-label="Small select example" class="shadow-none p-3 mb-5 bg-body-tertiary rounded">
+                            <option value="milla">mi/h</option>
+                            <option value="pie">ft/s</option>
+                            <option value="metro">m/s</option>
+                            <option value="kilometro">km/h</option>
+                            <option value="nudo">nudo</option>
+                        </select><br>
+        
+                        <button type="submit">Convertir</button>
+                    </form>
+        
+                    <div id="resultadoVelocidad"></div>
+                </div>
+        
+                <!-- Conversor de Angulos -->
+                <div id="conversorAngulos" style="display:none;">
+                    <h2 style="text-align: center; color: #ffffff;">Conversor de Angulos</h2>
+                    <form id="conversorAngulosForm">
+                        <label style="color: #ffffff;"  for="valorAngulos">Valor:</label>
+                        <input class="form-control"  type="number" id="valorAngulos" name="valorAngulos" step="any" required><br>
+        
+                        <label style="color: #ffffff;"  for="unidadInicialAngulos">Unidad inicial:</label>
+                        <select id="unidadInicialAngulos" name="unidadInicialAngulos" class="form-select form-select-sm" aria-label="Small select example" class="shadow-none p-3 mb-5 bg-body-tertiary rounded">
+                            <option value="grados">grados</option>
+                            <option value="radianes">radianes</option>
+                        </select><br>
+        
+                        <label style="color: #ffffff;"  for="tipoConversionAngulos">Convertir a:</label>
+                        <select id="tipoConversionAngulos" name="tipoConversionAngulos" class="form-select form-select-sm" aria-label="Small select example" class="shadow-none p-3 mb-5 bg-body-tertiary rounded">
+                            <option value="grados">grados</option>
+                            <option value="radianes">radianes</option>
+                        </select><br>
+        
+                        <button type="submit">Convertir</button>
+                    </form>
+        
+                    <div id="resultadoAngulos"></div>
+                </div>
+        
+                <!-- Conversor original -->
+                <div id="conversorForm" style="display:none;">
+                    <h2 style="text-align: center; color: #ffffff;">Conversor de múltiplos y submúltiplos</h2>
+                    <form id="conversorForm">
+                        <label style="color: #ffffff;"  for="valor">Valor:</label>
+                        <input class="form-control"  type="number" id="valor" name="valor" step="any" required><br>
+            
+                        <label style="color: #ffffff;"  for="unidadInicial">Unidad inicial:</label>
+                        <select id="unidadInicial" name="unidadInicial" class="form-select form-select-sm" aria-label="Small select example" class="shadow-none p-3 mb-5 bg-body-tertiary rounded">
+                            <option value="yottaunidades">yottaunidades</option>
+                            <option value="zettaunidades">zettaunidades</option>
+                            <option value="exaunidades">exaunidades</option>
+                            <option value="petaunidades">petaunidades</option>
+                            <option value="teraunidades">teraunidades</option>
+                            <option value="gigaunidades">gigaunidades</option>
+                            <option value="megaunidades">megaunidades</option>
+                            <option value="kilounidades">kilounidades</option>
+                            <option value="hectounidades">hectounidades</option>
+                            <option value="decaunidades">decaunidades</option>
+                            <option value="unidad">unidad</option>
+                            <option value="deciunidades">deciunidades</option>
+                            <option value="centiunidades">centiunidades</option>
+                            <option value="miliunidades">miliunidades</option>
+                            <option value="microunidades">microunidades</option>
+                            <option value="nanounidades">nanounidades</option>
+                            <option value="picounidades">picounidades</option>
+                            <option value="femtounidades">femtounidades</option>
+                            <option value="attounidades">attounidades</option>
+                            <option value="zeptounidades">zeptounidades</option>
+                            <option value="yoctounidades">yoctounidades</option>
+                        </select><br>
+            
+                        <label style="color: #ffffff;"  for="unidadFinal">Unidad final:</label>
+                        <select id="unidadFinal" name="unidadFinal" class="form-select form-select-sm" aria-label="Small select example" class="shadow-none p-3 mb-5 bg-body-tertiary rounded">
+                            <option value="yottaunidades">yottaunidades</option>
+                            <option value="zettaunidades">zettaunidades</option>
+                            <option value="exaunidades">exaunidades</option>
+                            <option value="petaunidades">petaunidades</option>
+                            <option value="teraunidades">teraunidades</option>
+                            <option value="gigaunidades">gigaunidades</option>
+                            <option value="megaunidades">megaunidades</option>
+                            <option value="kilounidades">kilounidades</option>
+                            <option value="hectounidades">hectounidades</option>
+                            <option value="decaunidades">decaunidades</option>
+                            <option value="unidad">unidad</option>
+                            <option value="deciunidades">deciunidades</option>
+                            <option value="centiunidades">centiunidades</option>
+                            <option value="miliunidades">miliunidades</option>
+                            <option value="microunidades">microunidades</option>
+                            <option value="nanounidades">nanounidades</option>
+                            <option value="picounidades">picounidades</option>
+                            <option value="femtounidades">femtounidades</option>
+                            <option value="attounidades">attounidades</option>
+                            <option value="zeptounidades">zeptounidades</option>
+                            <option value="yoctounidades">yoctounidades</option>
+                        </select><br>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button type="submit" class="btn btn-primary">Convertir</button>
+                        </div>
+                        
+        
+                    </form>
+            
+                    <div class="position-absolute top-50 start-0 translate-middle" id="resultado"></div>
+        
+                </div>
+            
+        
+            </div>
         </div>
 
-        <!-- Conversor de masa -->
-        <div id="conversorMasa" style="display:none;">
-            <h2>Conversor de Masa</h2>
-            <form id="conversorMasaForm">
-                <label for="valorMasa">Valor:</label>
-                <input type="number" id="valorMasa" name="valorMasa" step="any" required><br>
-
-                <label for="unidadInicialMasa">Unidad inicial:</label>
-                <select id="unidadInicialMasa" name="unidadInicialMasa">
-                    <option value="kilogramos">kilogramos</option>
-                    <option value="gramos">gramos</option>
-                    <option value="toneladas">toneladas</option>
-                    <option value="miligramos">miligramos</option>
-                    <option value="microgramos">microgramos</option>
-                    <option value="libras">libras</option>
-                    <option value="onzas">onzas</option>
-                </select><br>
-
-                <label for="tipoConversionMasa">Convertir a:</label>
-                <select id="tipoConversionMasa" name="tipoConversionMasa">
-                    <option value="kilogramos">kilogramos</option>
-                    <option value="gramos">gramos</option>
-                    <option value="toneladas">toneladas</option>
-                    <option value="miligramos">miligramos</option>
-                    <option value="microgramos">microgramos</option>
-                    <option value="libras">libras</option>
-                    <option value="onzas">onzas</option>
-                </select><br>
-
-                <button type="submit">Convertir</button>
-            </form>
-
-            <div id="resultadoMasa"></div>
-        </div>
-
-        <!-- Conversor de presión -->
-        <div id="conversorPresion" style="display:none;">
-            <h2>Conversor de Presion</h2>
-            <form id="conversorPresionForm">
-                <label for="valorPresion">Valor:</label>
-                <input type="number" id="valorPresion" name="valorPresion" step="any" required><br>
-
-                <label for="unidadInicialPresion">Unidad inicial:</label>
-                <select id="unidadInicialPresion" name="unidadInicialPresion">
-                    <option value="atmosferas">atmósferas</option>
-                    <option value="bar">bar</option>
-                    <option value="pascales">pascales</option>
-                </select><br>
-
-                <label for="tipoConversionPresion">Convertir a:</label>
-                <select id="tipoConversionPresion" name="tipoConversionPresion">
-                    <option value="atmosferas">atmósferas</option>
-                    <option value="bar">bar</option>
-                    <option value="pascales">pascales</option>
-                </select><br>
-
-                <button type="submit">Convertir</button>
-            </form>
-
-            <div id="resultadoPresion"></div>
-        </div>
-
-        <!-- Conversor de Temperatura -->
-        <div id="conversorTemperatura" style="display:none;">
-            <h2>Conversor de Temperatura</h2>
-            <form id="conversorTemperaturaForm">
-                <label for="valorTemperatura">Valor:</label>
-                <input type="number" id="valorTemperatura" name="valorTemperatura" step="any" required><br>
-
-                <label for="unidadInicialTemperatura">Unidad inicial:</label>
-                <select id="unidadInicialTemperatura" name="unidadInicialTemperatura">
-                    <option value="celsius">celsius</option>
-                    <option value="fahrenheit">fahrenheit</option>
-                    <option value="kelvin">kelvin</option>
-                </select><br>
-
-                <label for="tipoConversionTemperatura">Convertir a:</label>
-                <select id="tipoConversionTemperatura" name="tipoConversionTemperatura">
-                    <option value="celsius">celsius</option>
-                    <option value="fahrenheit">fahrenheit</option>
-                    <option value="kelvin">kelvin</option>
-                </select><br>
-
-                <button type="submit">Convertir</button>
-            </form>
-
-            <div id="resultadoTemperatura"></div>
-        </div>
-
-        <!-- Conversor de tiempo -->
-        <div id="conversorTiempo" style="display:none;">
-            <h2>Conversor de Tiempo</h2>
-            <form id="conversorTiempoForm">
-                <label for="valorTiempo">Valor:</label>
-                <input type="number" id="valorTiempo" name="valorTiempo" step="any" required><br>
-
-                <label for="unidadInicialTiempo">Unidad inicial:</label>
-                <select id="unidadInicialTiempo" name="unidadInicialTiempo">
-                    <option value="nanosegundos">nanosegundo</option>
-                    <option value="microsegundos">microsegundo</option>
-                    <option value="milisegundos">milisegundo</option>
-                    <option value="segundos">segundo</option>
-                    <option value="minutos">minuto</option>
-                    <option value="horas">hora</option>
-                    <option value="dias">día</option>
-                    <option value="semanas">semana</option>
-                    <option value="meses">mes</option>
-                    <option value="años">año</option>
-                    <option value="decadas">década</option>
-                    <option value="siglos">siglo</option>
-                </select><br>
-
-                <label for="tipoConversionTiempo">Convertir a:</label>
-                <select id="tipoConversionTiempo" name="tipoConversionTiempo">
-                    <option value="nanosegundos">nanosegundo</option>
-                    <option value="microsegundos">microsegundo</option>
-                    <option value="milisegundos">milisegundo</option>
-                    <option value="segundos">segundo</option>
-                    <option value="minutos">minuto</option>
-                    <option value="horas">hora</option>
-                    <option value="dias">día</option>
-                    <option value="semanas">semana</option>
-                    <option value="meses">mes</option>
-                    <option value="años">año</option>
-                    <option value="decadas">década</option>
-                    <option value="siglos">siglo</option>
-                </select><br>
-
-                <button type="submit">Convertir</button>
-            </form>
-
-            <div id="resultadoTiempo"></div>
-        </div>
-
-        <!-- Conversor de Velocidad -->
-        <div id="conversorVelocidad" style="display:none;">
-            <h2>Conversor de Velocidad</h2>
-            <form id="conversorVelocidadForm">
-                <label for="valorVelocidad">Valor:</label>
-                <input type="number" id="valorVelocidad" name="valorVelocidad" step="any" required><br>
-
-                <label for="unidadInicialVelocidad">Unidad inicial:</label>
-                <select id="unidadInicialVelocidad" name="unidadInicialVelocidad">
-                    <option value="milla">mi/h</option>
-                    <option value="pie">ft/s</option>
-                    <option value="metro">m/s</option>
-                    <option value="kilometro">km/h</option>
-                    <option value="nudo">nudo</option>
-                </select><br>
-
-                <label for="tipoConversionVelocidad">Convertir a:</label>
-                <select id="tipoConversionVelocidad" name="tipoConversionVelocidad">
-                    <option value="milla">mi/h</option>
-                    <option value="pie">ft/s</option>
-                    <option value="metro">m/s</option>
-                    <option value="kilometro">km/h</option>
-                    <option value="nudo">nudo</option>
-                </select><br>
-
-                <button type="submit">Convertir</button>
-            </form>
-
-            <div id="resultadoVelocidad"></div>
-        </div>
-
-        <!-- Conversor de Angulos -->
-        <div id="conversorAngulos" style="display:none;">
-            <h2>Conversor de Angulos</h2>
-            <form id="conversorAngulosForm">
-                <label for="valorAngulos">Valor:</label>
-                <input type="number" id="valorAngulos" name="valorAngulos" step="any" required><br>
-
-                <label for="unidadInicialAngulos">Unidad inicial:</label>
-                <select id="unidadInicialAngulos" name="unidadInicialAngulos">
-                    <option value="grados">grados</option>
-                    <option value="radianes">radianes</option>
-                </select><br>
-
-                <label for="tipoConversionAngulos">Convertir a:</label>
-                <select id="tipoConversionAngulos" name="tipoConversionAngulos">
-                    <option value="grados">grados</option>
-                    <option value="radianes">radianes</option>
-                </select><br>
-
-                <button type="submit">Convertir</button>
-            </form>
-
-            <div id="resultadoAngulos"></div>
-        </div>
-
-        <!-- Conversor original -->
-        <div id="conversorForm" style="display:none;">
-            <h2>Conversor de múltiplos y submúltiplos</h2>
-            <form id="conversorForm">
-                <label for="valor">Valor:</label>
-                <input type="number" id="valor" name="valor" step="any" required><br>
-    
-                <label for="unidadInicial">Unidad inicial:</label>
-                <select id="unidadInicial" name="unidadInicial">
-                    <option value="yottaunidades">yottaunidades</option>
-                    <option value="zettaunidades">zettaunidades</option>
-                    <option value="exaunidades">exaunidades</option>
-                    <option value="petaunidades">petaunidades</option>
-                    <option value="teraunidades">teraunidades</option>
-                    <option value="gigaunidades">gigaunidades</option>
-                    <option value="megaunidades">megaunidades</option>
-                    <option value="kilounidades">kilounidades</option>
-                    <option value="hectounidades">hectounidades</option>
-                    <option value="decaunidades">decaunidades</option>
-                    <option value="unidad">unidad</option>
-                    <option value="deciunidades">deciunidades</option>
-                    <option value="centiunidades">centiunidades</option>
-                    <option value="miliunidades">miliunidades</option>
-                    <option value="microunidades">microunidades</option>
-                    <option value="nanounidades">nanounidades</option>
-                    <option value="picounidades">picounidades</option>
-                    <option value="femtounidades">femtounidades</option>
-                    <option value="attounidades">attounidades</option>
-                    <option value="zeptounidades">zeptounidades</option>
-                    <option value="yoctounidades">yoctounidades</option>
-                </select><br>
-    
-                <label for="unidadFinal">Unidad final:</label>
-                <select id="unidadFinal" name="unidadFinal">
-                    <option value="yottaunidades">yottaunidades</option>
-                    <option value="zettaunidades">zettaunidades</option>
-                    <option value="exaunidades">exaunidades</option>
-                    <option value="petaunidades">petaunidades</option>
-                    <option value="teraunidades">teraunidades</option>
-                    <option value="gigaunidades">gigaunidades</option>
-                    <option value="megaunidades">megaunidades</option>
-                    <option value="kilounidades">kilounidades</option>
-                    <option value="hectounidades">hectounidades</option>
-                    <option value="decaunidades">decaunidades</option>
-                    <option value="unidad">unidad</option>
-                    <option value="deciunidades">deciunidades</option>
-                    <option value="centiunidades">centiunidades</option>
-                    <option value="miliunidades">miliunidades</option>
-                    <option value="microunidades">microunidades</option>
-                    <option value="nanounidades">nanounidades</option>
-                    <option value="picounidades">picounidades</option>
-                    <option value="femtounidades">femtounidades</option>
-                    <option value="attounidades">attounidades</option>
-                    <option value="zeptounidades">zeptounidades</option>
-                    <option value="yoctounidades">yoctounidades</option>
-                </select><br>
-    
-                <button type="submit">Convertir</button>
-
-            </form>
-    
-            <div id="resultado"></div>
-
-        </div>
-    
-
-    </div>
 
     <script>
+
+        //ESTRELLAAAAAAAS
+        const estrellasContainer = document.querySelector('.estrellas');
+        const numEstrellas = 200; // Número de estrellas
+        for (let i = 0; i < numEstrellas; i++) {
+            const estrella = document.createElement('div');
+            estrella.classList.add('estrella');
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            const duracion = Math.random() * 2 + 1;
+            const tamano = Math.random() * 2;
+            estrella.style.left = `${x}px`;
+            estrella.style.top = `${y}px`;
+            estrella.style.width = `${tamano}px`;
+            estrella.style.height = `${tamano}px`;
+            estrella.style.animationDuration = `${duracion}s`;
+            estrellasContainer.appendChild(estrella);
+        }
+
+
         // Función para convertir las unidades
         function convertirFrecuencia(valor, unidadInicial, unidadFinal) {
             const unidades = {
